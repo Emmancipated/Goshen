@@ -25,23 +25,6 @@ Built with [Next.js](https://nextjs.org) (App Router), React 19, TypeScript and 
 npm install
 ```
 
-### Environment variables
-
-Copy the template and fill in the values:
-
-```bash
-cp .env.example .env.local
-```
-
-| Variable | Description |
-| --- | --- |
-| `RESEND_API_KEY` | API key from [Resend](https://resend.com) used by the contact form |
-| `CONTACT_FROM_EMAIL` | Optional verified sender. Leave empty to use Resend's sandbox (`onboarding@resend.dev`) |
-| `NEXT_PUBLIC_BANK_NAME` | Bank name shown on the Donate page (public) |
-| `NEXT_PUBLIC_BANK_ACCOUNT` | Bank account number shown on the Donate page (public) |
-| `NEXT_PUBLIC_BANK_ACCOUNT_NAME` | Account name shown on the Donate page (public) |
-| `NEXT_PUBLIC_PAYSTACK_KEY` | Paystack public key (`pk_...`) to enable online card donations |
-
 ### Run the dev server
 
 ```bash
@@ -93,7 +76,7 @@ The app can be deployed to any Node.js host. The easiest path is [Vercel](https:
 npm run build
 ```
 
-Set the environment variables listed above in your hosting platform's dashboard before deploying.
+Set your environment variables in your hosting platform's dashboard before deploying.
 
 ## License
 
