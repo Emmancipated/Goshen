@@ -134,7 +134,7 @@ export function DonateForm() {
             onClick={() => setAmount(value)}
             className={`rounded-xl border px-4 py-3 text-sm font-bold transition-all duration-150 active:scale-[0.97] ${
               amount === value
-                ? "border-night-700 bg-gold-500 text-night-900 shadow-md"
+                ? "border-night-700 bg-gold-500 text-white shadow-md"
                 : "border-night-200 bg-cream-50 text-night-900 hover:border-gold-400 hover:bg-cream-100"
             }`}
           >
@@ -168,7 +168,7 @@ export function DonateForm() {
               onClick={() => setMethod("card")}
               className={`flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-semibold transition-all duration-150 active:scale-[0.97] ${
                 method === "card"
-                  ? "border-night-700 bg-gold-500 text-night-900"
+                  ? "border-night-700 bg-gold-500 text-white"
                   : "border-night-200 bg-cream-50 text-night-900 hover:border-gold-400"
               }`}
             >
@@ -179,7 +179,7 @@ export function DonateForm() {
               onClick={() => setMethod("bank")}
               className={`flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-semibold transition-all duration-150 active:scale-[0.97] ${
                 method === "bank"
-                  ? "border-night-700 bg-gold-500 text-night-900"
+                  ? "border-night-700 bg-gold-500 text-white"
                   : "border-night-200 bg-cream-50 text-night-900 hover:border-gold-400"
               }`}
             >
@@ -240,7 +240,7 @@ export function DonateForm() {
         type="button"
         disabled={processing}
         onClick={handleSubmit}
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-night-900 transition-all hover:bg-gold-400 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-gold-600 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {processing ? "Processing..." : `Donate ${amount ? formatNaira(amount) : "now"}`}
       </button>

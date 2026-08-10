@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { StatCounter } from "@/components/stat-counter";
+import { HelpButton } from "@/components/help-button";
 import {
   ArrowRightIcon,
   BriefcaseIcon,
@@ -14,21 +15,17 @@ import {
   HealthIcon,
   HeartIcon,
   HouseIcon,
-  MailIcon,
-  MapPinIcon,
-  PhoneIcon,
   RestoreIcon,
   ScaleIcon,
   ShieldIcon,
   SparklesIcon,
   UsersIcon,
-  WhatsAppIcon,
 } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "God's Home for Women Foundation is a registered Nigerian NGO operating Goshen Shelters — a refuge for women and children affected by domestic violence.",
+    "God's Home for Women Foundation is a registered Nigerian NGO operating Goshen Shelters — a safe place and a new beginning for women and children escaping domestic violence and sexual abuse.",
 };
 
 const VALUES = [
@@ -301,7 +298,7 @@ export default function AboutPage() {
             {VALUES.map(({ Icon, title, body }, i) => (
               <Reveal key={title} delay={(i % 4) * 70}>
                 <div className="group h-full rounded-2xl border border-night-100 bg-white p-6 transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-md">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-night-900">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-white">
                     <Icon className="h-5 w-5" />
                   </span>
                   <h3 className="mt-4 font-display text-base font-semibold text-gold-700">{title}</h3>
@@ -324,7 +321,7 @@ export default function AboutPage() {
             {SERVICES.map(({ Icon, title, body }, i) => (
               <Reveal key={title} delay={(i % 4) * 70}>
                 <div className="group h-full rounded-2xl border border-night-100 bg-white p-7 transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-md">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-night-900">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">{title}</h3>
@@ -333,6 +330,17 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
+          <Reveal delay={120}>
+            <p className="mt-10 text-center">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 rounded-full border border-night-300 px-7 py-3 text-sm font-semibold text-night-600 transition-all hover:-translate-y-0.5 hover:bg-white active:scale-[0.98]"
+              >
+                View all our services
+                <ArrowRightIcon className="h-4 w-4" />
+              </Link>
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -372,6 +380,17 @@ export default function AboutPage() {
               child-trafficking and 2 cases of child marriage — each woman and child met with care and confidentiality.
             </p>
           </Reveal>
+          <Reveal delay={220}>
+            <p className="mt-10 text-center">
+              <Link
+                href="/impact"
+                className="inline-flex items-center gap-2 rounded-full border border-gold-400 px-7 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
+              >
+                Explore our impact
+                <ArrowRightIcon className="h-4 w-4" />
+              </Link>
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -386,7 +405,7 @@ export default function AboutPage() {
             {IMPACT_STORIES.map(({ Icon, title, body }, i) => (
               <Reveal key={title} delay={(i % 4) * 70}>
                 <div className="group h-full rounded-2xl border border-night-100 bg-cream-50 p-7 transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-md">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500 text-night-900 transition-transform group-hover:scale-110">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500 text-white transition-transform group-hover:scale-110">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">{title}</h3>
@@ -435,7 +454,7 @@ export default function AboutPage() {
               </ul>
               <Link
                 href="/donate"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-night-900 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:bg-gold-400"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:bg-gold-600"
               >
                 Help make this vision possible
                 <ArrowRightIcon className="h-4 w-4" />
@@ -445,75 +464,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="contact" className="scroll-mt-24 bg-cream-50">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <SectionHeading
-            eyebrow="Contact us"
-            title="We are here — 24 hours, 7 days a week"
-            description="Whether you need help, want to make a referral, or would love to support our work, reach out. Everything is confidential."
-          />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            <Reveal>
-              <a href="tel:+2348027775001" className="group block h-full rounded-2xl border border-night-100 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-night-900">
-                  <PhoneIcon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-4 font-display text-lg font-semibold text-gold-700">Telephone / WhatsApp</h3>
-                <p className="mt-2 text-sm leading-6 text-night-600">0802 777 5001</p>
-                <p className="mt-1 text-xs leading-5 text-night-600/80">Open 24 hours, every day</p>
-              </a>
-            </Reveal>
-            <Reveal delay={80}>
-              <a href="mailto:goshenshelters2026@gmail.com" className="group block h-full rounded-2xl border border-night-100 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-night-900">
-                  <MailIcon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-4 font-display text-lg font-semibold text-gold-700">Email</h3>
-                <p className="mt-2 text-sm leading-6 text-night-600">goshenshelters2026@gmail.com</p>
-                <p className="mt-1 text-xs leading-5 text-night-600/80">We reply to every message</p>
-              </a>
-            </Reveal>
-            <Reveal delay={160}>
-              <div className="group h-full rounded-2xl border border-night-100 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-night-900">
-                  <MapPinIcon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-4 font-display text-lg font-semibold text-gold-700">Lagos, Nigeria</h3>
-                <p className="mt-2 text-sm leading-6 text-night-600">
-                  45C Sobo Arobiodu Close, GRA Ikeja, Lagos — 102105
-                </p>
-                <p className="mt-1 text-xs leading-5 text-night-600/80">
-                  Shelter addresses are shared confidentially with residents.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-          <Reveal delay={120}>
-            <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl bg-white p-7 shadow-sm sm:flex-row">
-              <p className="max-w-xl text-sm leading-6 text-night-600">
-                Ready to help a survivor reach safety? Every referral could be the start of a new life.
+      <section className="bg-white">
+        <Reveal className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <div className="flex flex-col items-start justify-between gap-5 rounded-3xl border border-gold-500/40 bg-night-950 p-8 text-cream-50 sm:flex-row sm:items-center sm:p-10">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">We are here for you</p>
+              <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                A safe place. A new beginning.
+              </h2>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-white/70">
+                Whether you need help, want to make a referral, or would love to support our work — reach out. Everything
+                is confidential.
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-night-900 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:bg-gold-400"
-                >
-                  Contact us
-                  <ArrowRightIcon className="h-4 w-4" />
-                </Link>
-                <a
-                  href="https://wa.me/2348027775001"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-night-300 px-6 py-3 text-sm font-semibold text-night-600 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:bg-white"
-                >
-                  <WhatsAppIcon className="h-4 w-4" />
-                  WhatsApp us
-                </a>
-              </div>
             </div>
-          </Reveal>
-        </div>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+              <HelpButton
+                title="Get Help Now"
+                intro="A trained member of our team is available 24/7. Choose how you would like to reach us — everything is confidential."
+                className="inline-flex items-center justify-center rounded-full bg-gold-500 px-7 py-3 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:scale-[0.98]"
+              >
+                Get Help Now
+              </HelpButton>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-gold-400 px-7 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
+              >
+                Contact us
+                <ArrowRightIcon className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </Reveal>
       </section>
     </>
   );

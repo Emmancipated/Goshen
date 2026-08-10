@@ -1,135 +1,91 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
-import { SectionHeading } from "@/components/section-heading";
-import { DonateForm } from "@/app/donate/donate-form";
-import { HeartIcon, PhoneIcon, SparklesIcon, UsersIcon, BankIcon } from "@/components/icons";
+import { SupportOptions } from "@/app/donate/support-options";
+import { LockIcon, ShieldIcon, HeartIcon, PhoneIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Donate",
   description:
-    "Your kindness keeps our shelters running. Donate to help women and children affected by domestic violence find safety.",
+    "Give hope. Restore dignity. Change lives. Support God's Home for Women Foundation and Goshen Shelters by donating, volunteering, giving items, partnering or fundraising.",
 };
-
-const OTHER_WAYS = [
-  {
-    Icon: UsersIcon,
-    title: "Volunteer",
-    body: "Give your time — as a counsellor, mentor, driver, teacher or behind the scenes.",
-  },
-  {
-    Icon: HeartIcon,
-    title: "Fundraise",
-    body: "Run, bake, host a dinner or celebrate a birthday for Goshen. We'll support your campaign.",
-  },
-  {
-    Icon: SparklesIcon,
-    title: "Donate items",
-    body: "Clothing, toiletries, baby items, food and school supplies are always needed.",
-  },
-  {
-    Icon: BankIcon,
-    title: "Corporate support",
-    body: "Sponsor a shelter bed, a training programme or a corporate giving match.",
-  },
-];
 
 export default function DonatePage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Support us"
-        title="Your kindness makes it possible"
-        description="Beds in a safe home, helpline calls, counselling and court support — none of it is free. Every naira you give goes somewhere it is needed."
-      />
-
-      <section className="bg-cream-50">
-        <div className="mx-auto grid max-w-6xl items-start gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal className="lg:sticky lg:top-28">
-            <div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-2xl">
-              <Image
-                src="/images/donate.jpg"
-                alt="A helper handing a donation to a woman in need"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-night-950/50 to-transparent" />
-            </div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-600">Where your money goes</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight">Every gift changes a story</h2>
-            <ul className="mt-6 space-y-3">
-              {[
-                { amount: "₦5,000", benefit: "a week of warm meals and essentials for a mother and child" },
-                { amount: "₦25,000", benefit: "a safe night's shelter for a family fleeing danger" },
-                { amount: "₦100,000", benefit: "two weeks of trauma counselling for a survivor" },
-              ].map(({ amount, benefit }) => (
-                <li key={amount} className="flex items-start gap-3 rounded-xl border border-night-100 bg-white p-4 transition-colors hover:border-gold-300">
-                  <span className="shrink-0 font-display text-base font-semibold text-gold-700">{amount}</span>
-                  <span className="text-sm leading-6 text-night-600">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-6 rounded-2xl bg-night-900 p-6 text-cream-50 transition-colors hover:border hover:border-gold-500/40">
-              <p className="text-sm leading-6 text-white/70">
-                <span className="font-bold text-gold-400">Every naira counts.</span> Your gift directly funds shelter,
-                three meals daily, clothing, toiletries, healthcare, skills support and education for the women and
-                children we serve.
-              </p>
-            </div>
-          </Reveal>
-
-          <DonateForm />
+      <section className="relative overflow-hidden bg-night-950 text-cream-50">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="animate-float-slow absolute -top-32 right-0 h-96 w-96 rounded-full bg-gold-500/10 blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,162,39,0.14),transparent_60%)]" />
+        </div>
+        <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-8 px-4 pb-24 pt-16 sm:px-6 lg:pt-24">
+          <h1 className="animate-fade-up max-w-3xl font-display text-5xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl">
+            Give Hope.
+            <br />
+            Restore Dignity.
+            <br />
+            <span className="text-gold-400">Change Lives.</span>
+          </h1>
+          <a
+            href="#ways"
+            className="animate-fade-up inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:translate-y-0 active:scale-[0.98]"
+            style={{ animationDelay: "150ms" }}
+          >
+            Donate Now
+          </a>
+          <a
+            href="tel:+2348027775001"
+            className="animate-fade-up inline-flex items-center gap-2 text-sm text-cream-100/90 transition-colors hover:text-gold-300"
+            style={{ animationDelay: "250ms" }}
+          >
+            <PhoneIcon className="h-4 w-4 text-gold-400" />
+            Confidential help 24/7 on 0802 777 5001
+          </a>
         </div>
       </section>
 
-      <section className="bg-white">
-        <Reveal className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <p className="text-center text-sm text-night-600/80">
-            Prefer to give by phone? Call{" "}
-            <a href="tel:+2348027775001" className="inline-flex items-center gap-1.5 font-bold text-gold-700 underline underline-offset-4">
-              <PhoneIcon className="h-4 w-4" />
-              0802 777 5001
-            </a>
-          </p>
+      <section id="ways" className="scroll-mt-20 bg-cream-50">
+        <Reveal>
+          <SupportOptions />
         </Reveal>
       </section>
 
-      <section id="other-ways" className="scroll-mt-24 bg-cream-100">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <SectionHeading
-            eyebrow="Beyond money"
-            title="Other ways to make a difference"
-            description="You can give time, skills, items or influence — all of it matters."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {OTHER_WAYS.map(({ Icon, title, body }, i) => (
-              <Reveal key={title} delay={(i % 4) * 70}>
-                <div className="group h-full rounded-2xl border border-night-100 bg-white p-7 transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-md">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-night-900">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-4 font-display text-lg font-semibold text-gold-700">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-night-600">{body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal delay={120}>
-            <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl bg-night-900 p-7 text-cream-50 sm:flex-row">
-              <p className="max-w-xl text-sm leading-6 text-white/70">
-                Want to get involved? We would love to hear from you.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-night-900 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:bg-gold-400"
-              >
-                Get in touch
-              </Link>
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+          <div className="grid gap-6 sm:grid-cols-3">
+            <div className="flex items-start gap-3 rounded-2xl border border-night-100 bg-cream-50 p-5">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold-100 text-gold-700">
+                <LockIcon className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-sm font-bold text-night-900">Secure &amp; confidential</p>
+                <p className="mt-1 text-xs leading-5 text-night-600">
+                  Payments are processed securely via Paystack. We never collect or store your card details.
+                </p>
+              </div>
             </div>
-          </Reveal>
+            <div className="flex items-start gap-3 rounded-2xl border border-night-100 bg-cream-50 p-5">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold-100 text-gold-700">
+                <ShieldIcon className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-sm font-bold text-night-900">Every naira counts</p>
+                <p className="mt-1 text-xs leading-5 text-night-600">
+                  Your gift funds shelter, three meals daily, clothing, healthcare, education and skills support.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 rounded-2xl border border-night-100 bg-cream-50 p-5">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold-100 text-gold-700">
+                <HeartIcon className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-sm font-bold text-night-900">Acknowledgement</p>
+                <p className="mt-1 text-xs leading-5 text-night-600">
+                  You will receive a receipt by email, and the Foundation is notified of every successful gift.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
