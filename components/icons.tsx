@@ -270,3 +270,120 @@ export function RestoreIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+export function PlayIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M8 5.5v13l11-6.5-11-6.5z" />
+    </svg>
+  );
+}
+
+export function ChevronLeftIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="m15 6-6 6 6 6" />
+    </svg>
+  );
+}
+
+export function ChevronRightIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="m9 6 6 6-6 6" />
+    </svg>
+  );
+}
+
+export function QuoteIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M9.6 6.5c-3.2 1-5.1 3.6-5.1 7.1v4h6.2v-6.2H7.6c.1-2 1.2-3.4 3-4.1L9.6 6.5zm9.7 0c-3.2 1-5.1 3.6-5.1 7.1v4h6.2v-6.2h-3.1c.1-2 1.2-3.4 3-4.1l-1-0.8z" />
+    </svg>
+  );
+}
+
+export function GiftIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M3.5 8.5h17V13h-17V8.5z" />
+      <path d="M12 8.5V20M3.5 13v4.5a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V13" />
+      <path d="M12 8.5S10 3.5 7 5.5c-1.5 1 0 3 3 3h2zm0 0s2-5 5-3c1.5 1 0 3-3 3h-2z" />
+    </svg>
+  );
+}
+
+export function HandshakeIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M3 8.5 8 5l4 3 4-3 5 3.5v3l-5 3.5-4-3-4 3-5-3.5v-3z" />
+      <path d="M8 5v5M16 5v5M3 12l2 6.5h4l-1-5M21 12l-2 6.5h-4l1-5" />
+    </svg>
+  );
+}
+
+export function MegaphoneIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M4 10v4h3l7 4V6l-7 4H4z" />
+      <path d="M18 8.5a5 5 0 0 1 0 7" />
+      <path d="M20 6a9 9 0 0 1 0 12" />
+    </svg>
+  );
+}
+
+export function CalendarIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <rect x="3.5" y="5" width="17" height="16" rx="2.5" />
+      <path d="M3.5 10h17M8 3v4M16 3v4" />
+    </svg>
+  );
+}
+
+export function VideoIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <rect x="3" y="6" width="13" height="12" rx="2.5" />
+      <path d="m16 10.5 5-2.5v8l-5-2.5" />
+    </svg>
+  );
+}
+
+export function CameraIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M4 8h2.5L8 5h8l1.5 3H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z" />
+      <circle cx="12" cy="13" r="3.5" />
+    </svg>
+  );
+}
+
+export function UserPlusIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <circle cx="10" cy="8" r="3.5" />
+      <path d="M3.5 20c.8-3.2 3.4-5 6.5-5 1.4 0 2.6.3 3.6 1" />
+      <path d="M18 8v6M15 11h6" />
+    </svg>
+  );
+}
+
+export function BuildingIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M4 21V5l8-2v18" />
+      <path d="M12 7h8v14H4" />
+      <path d="M7 21v-3M7 14v-2M16 21v-3M16 13v-2M9 7.5h2M13 7.5h2M14.5 10h2M9.5 10h2" />
+    </svg>
+  );
+}
+
+export function BookIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15.5H6.5A2.5 2.5 0 0 0 4 21V5.5z" />
+      <path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20" />
+    </svg>
+  );
+}

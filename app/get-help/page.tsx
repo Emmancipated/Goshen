@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Get Help",
   description:
-    "If you are experiencing domestic violence, find safe steps, confidential helplines and how to reach a Goshen Shelters refuge.",
+    "If you are experiencing domestic violence, find safe steps, confidential helplines and how to reach a Goshen Shelters refuge. We believe you. You are not alone.",
 };
 
 const HELPLINES = [
@@ -83,52 +83,52 @@ export default function GetHelpPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <Reveal>
             <div className="rounded-2xl border-2 border-gold-500/50 bg-night-900 p-6 text-cream-50 sm:p-8">
-            <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold-500 text-night-900">
-                <AlertIcon className="h-6 w-6" />
-              </span>
-              <div>
-                <h2 className="font-display text-2xl font-semibold text-gold-400">
-                  A delayed exit can lead to an untimely death.
-                </h2>
-                <p className="mt-2 text-sm leading-6 text-white/80">
-                  If you are in immediate danger, call{" "}
-                  <a href="tel:112" className="font-bold text-gold-400 underline underline-offset-2">112</a> — it is
-                  free from any network and connects you to the police. If you cannot speak, call 112 and{" "}
-                  <span className="font-semibold">cough, tap or press any button</span> so the operator knows you need
-                  help, then leave the line open. Or call Goshen on{" "}
-                  <a href="tel:+2348027775001" className="font-bold text-gold-400 underline underline-offset-2">
-                    0802 777 5001
-                  </a>{" "}
-                  — confidential, 24/7.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <a
-                    href="tel:112"
-                    className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-bold text-night-900 transition-colors hover:bg-gold-400"
-                  >
-                    <PhoneIcon className="h-4 w-4" />
-                    Call 112 now
-                  </a>
-                  <a
-                    href="tel:+2348027775001"
-                    className="inline-flex items-center gap-2 rounded-full border border-gold-400 px-5 py-2.5 text-sm font-bold text-gold-400 transition-colors hover:bg-gold-500 hover:text-night-900"
-                  >
-                    <PhoneIcon className="h-4 w-4" />
-                    0802 777 5001
-                  </a>
-                  <a
-                    href="https://www.google.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-night-500 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-night-700"
-                  >
-                    Exit site
-                  </a>
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold-500 text-white">
+                  <AlertIcon className="h-6 w-6" />
+                </span>
+                <div>
+                  <h2 className="font-display text-2xl font-semibold text-gold-400">
+                    A delayed exit can lead to an untimely death.
+                  </h2>
+                  <p className="mt-2 text-sm leading-6 text-white/80">
+                    If you are in immediate danger, call{" "}
+                    <a href="tel:112" className="font-bold text-gold-400 underline underline-offset-2">112</a> — it is
+                    free from any network and connects you to the police. If you cannot speak, call 112 and{" "}
+                    <span className="font-semibold">cough, tap or press any button</span> so the operator knows you need
+                    help, then leave the line open. Or call Goshen on{" "}
+                    <a href="tel:+2348027775001" className="font-bold text-gold-400 underline underline-offset-2">
+                      0802 777 5001
+                    </a>{" "}
+                    — confidential, 24/7.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    <a
+                      href="tel:112"
+                      className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-gold-600"
+                    >
+                      <PhoneIcon className="h-4 w-4" />
+                      Call 112 now
+                    </a>
+                    <a
+                      href="tel:+2348027775001"
+                      className="inline-flex items-center gap-2 rounded-full border border-gold-400 px-5 py-2.5 text-sm font-bold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
+                    >
+                      <PhoneIcon className="h-4 w-4" />
+                      0802 777 5001
+                    </a>
+                    <a
+                      href="https://www.google.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-night-500 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-night-700"
+                    >
+                      Exit site
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </Reveal>
 
           <Reveal className="relative mt-10 h-52 overflow-hidden rounded-2xl">
@@ -160,7 +160,7 @@ export default function GetHelpPage() {
                     href={`tel:${number.replace(/\s/g, "")}`}
                     className={`flex h-full flex-col rounded-2xl border p-6 transition-all hover:-translate-y-1 hover:shadow-md ${
                       primary
-                        ? "border-night-900 bg-gold-500 text-night-900"
+                        ? "border-night-900 bg-gold-500 text-white"
                         : "border-night-100 bg-white text-night-900"
                     }`}
                   >
@@ -185,7 +185,7 @@ export default function GetHelpPage() {
               {STEPS.map(({ title, body }, i) => (
                 <Reveal key={title} delay={i * 90}>
                   <div className="group h-full rounded-2xl border border-night-100 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-md">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-100 font-display text-base font-semibold text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-night-900">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-100 font-display text-base font-semibold text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-white">
                       {title.split(" ")[0]}
                     </span>
                     <h3 className="mt-4 font-display text-lg font-semibold text-gold-700">{title.split(" · ")[1]}</h3>
@@ -197,7 +197,7 @@ export default function GetHelpPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <a
                 href="tel:+2348027775001"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-semibold text-night-900 transition-colors hover:bg-gold-400"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-gold-600"
               >
                 <PhoneIcon className="h-4 w-4" />
                 0802 777 5001
@@ -233,7 +233,7 @@ export default function GetHelpPage() {
             <Reveal>
               <div className="group h-full rounded-2xl border border-night-100 bg-white p-8 transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-md">
                 <h3 className="flex items-center gap-2 font-display text-lg font-semibold text-gold-700">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-500 text-night-900 transition-transform group-hover:scale-110">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-500 text-white transition-transform group-hover:scale-110">
                     <CheckIcon className="h-4 w-4" />
                   </span>
                   What you can do
@@ -272,7 +272,7 @@ export default function GetHelpPage() {
               </p>
               <a
                 href="tel:+2348027775001"
-                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-night-900 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:bg-gold-400"
+                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:bg-gold-600"
               >
                 <PhoneIcon className="h-4 w-4" />
                 0802 777 5001
@@ -293,7 +293,7 @@ export default function GetHelpPage() {
             {SIGNS.map((sign, i) => (
               <Reveal key={sign} delay={(i % 2) * 60}>
                 <div className="flex items-start gap-3 rounded-xl border border-night-100 bg-cream-50 p-4 transition-colors hover:border-gold-300">
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-500 text-night-900">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-500 text-white">
                     <CheckIcon className="h-3.5 w-3.5" />
                   </span>
                   <p className="text-sm leading-6 text-night-900">{sign}</p>
@@ -371,7 +371,7 @@ export default function GetHelpPage() {
             ].map(({ Icon, title, body }, i) => (
               <Reveal key={title} delay={i * 90}>
                 <div className="group h-full rounded-2xl border border-night-100 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-md">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-night-900">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">{title}</h3>
@@ -406,7 +406,7 @@ export default function GetHelpPage() {
           </p>
           <Link
             href="/donate"
-            className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-night-900 transition-colors hover:bg-gold-400"
+            className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-gold-600"
           >
             Help others find safety
             <ArrowRightIcon className="h-4 w-4" />
