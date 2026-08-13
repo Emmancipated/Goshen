@@ -220,32 +220,40 @@ export default function AboutPage() {
       <section className="bg-cream-50">
         <div className="mx-auto grid max-w-6xl items-start gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-600">Our story</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-600">
+              Our story
+            </p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
               Why we are called Goshen
             </h2>
             <div className="mt-6 space-y-4 text-base leading-7 text-night-600">
               <p>
-                God&rsquo;s Home for Women Foundation is a registered Non-Governmental Organisation (NGO), established
-                in July 2015 by God&rsquo;s Chosen Women Fellowship through the founder&rsquo;s vision of providing
-                refuge and support for women and children affected by domestic violence.
+                God&rsquo;s Home for Women Foundation is a registered
+                Non-Governmental Organisation (NGO), established in July 2015 by
+                God&rsquo;s Chosen Women Fellowship through the founder&rsquo;s
+                vision of providing refuge and support for women and children
+                affected by domestic violence.
               </p>
               <p>
-                The foundation operates Goshen Shelters — a safe and confidential environment where women and children
-                facing domestic violence and sexual abuse can find refuge. In the scriptures, Goshen was the place
-                where a family was given refuge: a land kept safe from the storms around it, where people were
-                protected, provided for and given room to flourish.
+                The foundation operates Goshen Shelters — a safe and
+                confidential environment where women and children facing
+                domestic violence and sexual abuse can find refuge. In the
+                scriptures, Goshen was the place where a family was given
+                refuge: a land kept safe from the storms around it, where people
+                were protected, provided for and given room to flourish.
               </p>
               <p>
-                Beyond accommodation, the shelter supports survivors through emotional and physical restoration, skills
-                acquisition, education and healthcare — helping them rebuild their lives and reintegrate into society
-                within three to six months, and up to a year in usual circumstances.
+                Beyond accommodation, the shelter supports survivors through
+                emotional and physical restoration, skills acquisition,
+                education and healthcare — helping them rebuild their lives and
+                reintegrate into society within three to six months, and up to a
+                year in usual circumstances.
               </p>
             </div>
           </Reveal>
           <Reveal delay={120}>
             <div className="relative overflow-hidden rounded-3xl border border-night-100 shadow-sm">
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-4/3">
                 <Image
                   src="/images/about.jpg"
                   alt="Women and volunteers joining hands in support and unity"
@@ -253,17 +261,22 @@ export default function AboutPage() {
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-night-950/50 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-night-950/50 to-transparent" />
               </div>
             </div>
             <div className="mt-6 rounded-3xl border border-night-100 bg-night-900 p-8 text-cream-50">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-400">Our aim</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-400">
+                Our aim
+              </p>
               <p className="mt-4 font-display text-xl leading-9 text-cream-50/90">
-                To remove women from places of violence and provide temporary shelter while restoring them emotionally
-                and physically — healing survivors in mind, body and soul before they are reintegrated into society.
+                To remove women from places of violence and provide temporary
+                shelter while restoring them emotionally and physically —
+                healing survivors in mind, body and soul before they are
+                reintegrated into society.
               </p>
               <p className="mt-6 text-sm leading-6 text-white/60">
-                God&rsquo;s Home for Women Foundation &middot; CAC/IT/No/77215 &middot; Established July 2015
+                God&rsquo;s Home for Women Foundation &middot; CAC/IT/No/77215
+                &middot; Established July 2015
               </p>
             </div>
           </Reveal>
@@ -272,24 +285,34 @@ export default function AboutPage() {
 
       <section id="mission" className="scroll-mt-24 bg-cream-100">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <SectionHeading eyebrow="What drives us" title="Our mission, vision and values" />
+          <SectionHeading
+            eyebrow="What drives us"
+            title="Our mission, vision and values"
+          />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <Reveal>
               <div className="rounded-2xl border border-night-100 bg-white p-8 transition-all hover:border-gold-300 hover:shadow-md">
-                <p className="text-xs font-bold uppercase tracking-wider text-gold-600">Our mission</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-gold-600">
+                  Our mission
+                </p>
                 <p className="mt-3 font-display text-xl font-semibold leading-8 text-gold-700">
-                  Inspired by God&rsquo;s love and compassion, we provide a safe, confidential haven for women and
-                  children escaping domestic violence. We offer hope, healing, practical support and advocacy, empowering
-                  every survivor to rebuild her life with dignity, courage and faith in a future free from abuse.
+                  Inspired by God&rsquo;s love and compassion, we provide a
+                  safe, confidential haven for women and children escaping
+                  domestic violence. We offer hope, healing, practical support
+                  and advocacy, empowering every survivor to rebuild her life
+                  with dignity, courage and faith in a future free from abuse.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={100}>
               <div className="rounded-2xl border border-night-100 bg-white p-8 transition-all hover:border-gold-300 hover:shadow-md">
-                <p className="text-xs font-bold uppercase tracking-wider text-gold-600">Our vision</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-gold-600">
+                  Our vision
+                </p>
                 <p className="mt-3 font-display text-xl font-semibold leading-8 text-gold-700">
-                  A world where every woman and child lives in safety, dignity, and hope — free from violence and
-                  empowered to thrive through God&rsquo;s love and the support of a compassionate community.
+                  A world where every woman and child lives in safety, dignity,
+                  and hope — free from violence and empowered to thrive through
+                  God&rsquo;s love and the support of a compassionate community.
                 </p>
               </div>
             </Reveal>
@@ -301,8 +324,12 @@ export default function AboutPage() {
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-white">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-4 font-display text-base font-semibold text-gold-700">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-night-600">{body}</p>
+                  <h3 className="mt-4 font-display text-base font-semibold text-gold-700">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-night-600">
+                    {body}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -324,8 +351,12 @@ export default function AboutPage() {
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-night-600">{body}</p>
+                  <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-night-600">
+                    {body}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -344,7 +375,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="impact" className="relative scroll-mt-24 overflow-hidden bg-night-900 text-cream-50">
+      <section
+        id="impact"
+        className="relative scroll-mt-24 overflow-hidden bg-night-900 text-cream-50"
+      >
         <div className="absolute inset-0">
           <Image
             src="/images/impact.jpg"
@@ -353,7 +387,7 @@ export default function AboutPage() {
             sizes="100vw"
             className="object-cover opacity-15"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-night-950/80 via-night-900/85 to-night-950/90" />
+          <div className="absolute inset-0 bg-linear-to-b from-night-950/80 via-night-900/85 to-night-950/90" />
         </div>
         <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <SectionHeading
@@ -369,15 +403,19 @@ export default function AboutPage() {
                   <p className="font-display text-3xl font-semibold text-gold-400">
                     <StatCounter value={value} />
                   </p>
-                  <p className="mt-2 text-sm leading-5 text-white/70">{label}</p>
+                  <p className="mt-2 text-sm leading-5 text-white/70">
+                    {label}
+                  </p>
                 </div>
               </Reveal>
             ))}
           </div>
           <Reveal delay={150}>
             <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-6 text-white/60">
-              These journeys include supporting 22 rape survivors, 15 cases of child sexual abuse, 2 cases of
-              child-trafficking and 2 cases of child marriage — each woman and child met with care and confidentiality.
+              These journeys include supporting 22 rape survivors, 15 cases of
+              child sexual abuse, 2 cases of child-trafficking and 2 cases of
+              child marriage — each woman and child met with care and
+              confidentiality.
             </p>
           </Reveal>
           <Reveal delay={220}>
@@ -408,8 +446,12 @@ export default function AboutPage() {
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500 text-white transition-transform group-hover:scale-110">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-night-600">{body}</p>
+                  <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-night-600">
+                    {body}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -428,8 +470,12 @@ export default function AboutPage() {
             {CHALLENGES.map(({ title, body }, i) => (
               <Reveal key={title} delay={(i % 4) * 70}>
                 <div className="group h-full rounded-2xl border border-night-100 bg-white p-6 transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-md">
-                  <h3 className="font-display text-base font-semibold text-gold-700">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-night-600">{body}</p>
+                  <h3 className="font-display text-base font-semibold text-gold-700">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-night-600">
+                    {body}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -437,7 +483,9 @@ export default function AboutPage() {
 
           <Reveal delay={120}>
             <div className="mt-16 rounded-3xl bg-night-900 p-8 text-cream-50 sm:p-10">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-400">Looking ahead</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-400">
+                Looking ahead
+              </p>
               <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
                 A permanent home, sustainable support
               </h2>
@@ -446,8 +494,14 @@ export default function AboutPage() {
               </p>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {LOOKING_AHEAD.map((item) => (
-                  <li key={item} className="flex items-start gap-3 rounded-xl bg-night-800/60 px-4 py-3 text-sm leading-6 text-white/80 transition-colors hover:bg-night-800">
-                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gold-400" aria-hidden="true" />
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 rounded-xl bg-night-800/60 px-4 py-3 text-sm leading-6 text-white/80 transition-colors hover:bg-night-800"
+                  >
+                    <span
+                      className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gold-400"
+                      aria-hidden="true"
+                    />
                     {item}
                   </li>
                 ))}
@@ -468,13 +522,15 @@ export default function AboutPage() {
         <Reveal className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="flex flex-col items-start justify-between gap-5 rounded-3xl border border-gold-500/40 bg-night-950 p-8 text-cream-50 sm:flex-row sm:items-center sm:p-10">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">We are here for you</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
+                We are here for you
+              </p>
               <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight sm:text-3xl">
                 A safe place. A new beginning.
               </h2>
               <p className="mt-2 max-w-xl text-sm leading-6 text-white/70">
-                Whether you need help, want to make a referral, or would love to support our work — reach out. Everything
-                is confidential.
+                Whether you need help, want to make a referral, or would love to
+                support our work — reach out. Everything is confidential.
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
