@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* for fonty */
+:root {
+  --bg: #f7f4ef;
+  --ink: #1c1a17;
+  --muted: #6b645a;
+  --line: #ddd5c8;
+  --accent: #3f6b5a;
+  --card: #fffdf9;
+}
 @theme {
   --color-night-950: #1d1534;
   --color-night-900: #402e60;

@@ -5,6 +5,7 @@ import { EmergencyBanner } from "@/components/emergency-banner";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { HelpModalProvider } from "@/components/help-modal-provider";
+import { fontVariables } from "./fonty/font";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -48,7 +49,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${fontVariables} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col">
         <HelpModalProvider>
           <EmergencyBanner />
