@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Libre_Baskerville, Montserrat, Outfit } from "next/font/google";
 import "./globals.css";
 import { EmergencyBanner } from "@/components/emergency-banner";
 import { SiteHeader } from "@/components/site-header";
@@ -10,6 +10,20 @@ import { fontVariables } from "./fonty/font";
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
+});
+
+export const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-libre-baskerville",
+  display: "swap",
+});
+
+export const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -51,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${fontVariables} h-full antialiased`}
+      className={`${montserrat.variable} ${outfit.variable} ${libreBaskerville.variable} ${fontVariables}  h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <HelpModalProvider>

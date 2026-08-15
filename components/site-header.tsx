@@ -12,8 +12,9 @@ const NAV_ITEMS = [
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Our Services" },
   { href: "/impact", label: "Impact" },
-  { href: "/media", label: "Media" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/support", label: "Support Goshen" },
+  // { href: "/media", label: "Media" },
+  // { href: "/contact", label: "Contact Us" },
 ];
 
 export function SiteHeader() {
@@ -28,7 +29,8 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header
@@ -41,13 +43,18 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Logo />
 
-        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main navigation">
+        <nav
+          className="hidden items-center gap-0.5 lg:flex"
+          aria-label="Main navigation"
+        >
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={`nav-link rounded-full px-3.5 py-2 text-sm font-medium transition-colors xl:px-4 ${
-                isActive(item.href) ? "nav-link-active text-gold-700" : "text-night-600 hover:text-gold-700"
+                isActive(item.href)
+                  ? "nav-link-active text-gold-700"
+                  : "text-night-600 hover:text-gold-700"
               }`}
             >
               {item.label}
@@ -84,21 +91,30 @@ export function SiteHeader() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
-            {open ? <CloseIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+            {open ? (
+              <CloseIcon className="h-5 w-5" />
+            ) : (
+              <MenuIcon className="h-5 w-5" />
+            )}
           </button>
         </div>
       </div>
 
       {open && (
         <div className="border-t border-night-100 bg-cream-50 lg:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6" aria-label="Mobile navigation">
+          <nav
+            className="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6"
+            aria-label="Mobile navigation"
+          >
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={`rounded-lg px-3 py-3 text-sm font-medium ${
-                  isActive(item.href) ? "bg-gold-100 text-night-900" : "text-night-600 hover:bg-cream-100"
+                  isActive(item.href)
+                    ? "bg-gold-100 text-night-900"
+                    : "text-night-600 hover:bg-cream-100"
                 }`}
               >
                 {item.label}
