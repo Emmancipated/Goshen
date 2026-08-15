@@ -1,9 +1,14 @@
 "use client";
 
 import { useRef } from "react";
-import { DonationFlow } from "@/components/donation/donation-flow";
 import Image from "next/image";
 import Link from "next/link";
+import { GiveItemsJourney } from "@/components/items/give-items-journey";
+import { GiveTimeJourney } from "@/components/volunteer/give-time-journey";
+import { GiveMoneyJourney } from "@/components/donation/give-money-journey";
+import { PartnerJourney } from "@/components/partnership/partner-journey";
+import { FundraisingJourney } from "@/components/fundraising/fundraising-journey";
+import { SurvivorKitJourney } from "@/components/survivor-kit/survivor-kit-journey";
 
 type DonationFlowHandle = {
   open: () => void;
@@ -78,7 +83,6 @@ export default function SupportPage() {
             <div className="absolute inset-0 bg-linear-to-t from-[#F7F3EC] via-[#F7F3EC]/10 to-transparent" />
           </div>
         </div>
-        <DonationFlow ref={donationFlowRef} />
 
         {/* Support cards INSIDE the hero */}
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3 relative mx-auto max-w-7xl px-4 sm:px-6 py-4">
@@ -96,19 +100,26 @@ export default function SupportPage() {
               </p>
 
               {card.title === "Give Money" ? (
-                <button
-                  onClick={handleOpenDonation}
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-[#B64A16] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12] cursor-pointer"
-                >
-                  Give Now
-                </button>
+                <GiveMoneyJourney>
+                  <button
+                    onClick={handleOpenDonation}
+                    className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-[#B64A16] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12] cursor-pointer"
+                  >
+                    Give Now
+                  </button>
+                </GiveMoneyJourney>
+              ) : card.title === "Give Items" ? (
+                <GiveItemsJourney>
+                  <button className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-[#B64A16] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12] cursor-pointer">
+                    {card.button}
+                  </button>
+                </GiveItemsJourney>
               ) : (
-                <Link
-                  href={card.href}
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-[#B64A16] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12]"
-                >
-                  {card.button}
-                </Link>
+                <GiveTimeJourney>
+                  <button className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-[#B64A16] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12] cursor-pointer">
+                    {card.button}
+                  </button>
+                </GiveTimeJourney>
               )}
             </div>
           ))}
@@ -130,16 +141,15 @@ export default function SupportPage() {
                 available to women and children through meaningful partnerships.
               </p>
 
-              <Link
-                href="/contact"
-                className="mt-8 inline-flex rounded-xl bg-[#43206F] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#341857]"
-              >
-                Partner With Goshen
-              </Link>
+              <PartnerJourney>
+                <button className="mt-8 inline-flex rounded-xl bg-[#43206F] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#341857] cursor-pointer">
+                  Partner With Goshen
+                </button>
+              </PartnerJourney>
             </div>
 
             {/* Image with fade overlay */}
-            <div className="relative aspect-4/3 lg:aspect-auto lg:h-full">
+            <div className="relative aspect-4/2 lg:aspect-auto lg:h-full">
               <Image
                 src="/images/partners.jpg"
                 alt="Partnership"
@@ -169,16 +179,15 @@ export default function SupportPage() {
                 support women and children affected by violence.
               </p>
 
-              <Link
-                href="/contact"
-                className="mt-8 inline-flex rounded-xl bg-[#B64A16] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12]"
-              >
-                Learn More
-              </Link>
+              <FundraisingJourney>
+                <button className="mt-8 inline-flex rounded-xl bg-[#B64A16] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12] cursor-pointer">
+                  Learn More
+                </button>
+              </FundraisingJourney>
             </div>
 
             {/* Image with fade overlay */}
-            <div className="relative aspect-4/3 lg:aspect-auto lg:h-full">
+            <div className="relative aspect-4/2 lg:aspect-auto lg:h-full">
               <Image
                 src="/images/fundraiser.jpg"
                 alt="Partnership"
@@ -213,16 +222,15 @@ export default function SupportPage() {
                 home.
               </p>
 
-              <Link
-                href="/contact"
-                className="mt-8 inline-flex rounded-xl bg-[#43206F] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#341857]"
-              >
-                See the Survivor's Kit
-              </Link>
+              <SurvivorKitJourney>
+                <button className="mt-8 inline-flex rounded-xl bg-[#43206F] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#341857] cursor-pointer">
+                  See the Survivor's Kit
+                </button>
+              </SurvivorKitJourney>
             </div>
 
             {/* Image with fade overlay */}
-            <div className="relative aspect-4/3 lg:aspect-auto lg:h-full">
+            <div className="relative aspect-4/2 lg:aspect-auto lg:h-full">
               <Image
                 src="/images/empower.jpg"
                 alt="Partnership"
