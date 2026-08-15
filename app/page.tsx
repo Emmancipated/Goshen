@@ -83,7 +83,8 @@ function Hero() {
             style={{ animationDelay: "300ms" }}
           >
             <HelpButton
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:translate-y-0 active:scale-[0.98]"
+              // className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:translate-y-0 active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-8 py-4 text-sm font-bold uppercase tracking-wider text-cream-50 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0 active:scale-[0.98]"
               title="I Need Help"
               intro="You are not alone. We are here for you — a trained member of our team is available 24 hours a day, 7 days a week. Choose how you would like to reach us. Everything is confidential."
             >
@@ -91,7 +92,9 @@ function Hero() {
             </HelpButton>
             <Link
               href="/donate"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-8 py-4 text-sm font-bold uppercase tracking-wider text-cream-50 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0 active:scale-[0.98]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:translate-y-0 active:scale-[0.98]"
+
+              // className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-8 py-4 text-sm font-bold uppercase tracking-wider text-cream-50 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0 active:scale-[0.98]"
             >
               Donate
             </Link>
@@ -246,7 +249,7 @@ function ImpactAndFounder() {
                 className="rounded-2xl border border-night-100 bg-white p-5 text-center shadow-sm transition-colors hover:border-gold-300"
               >
                 <p className="font-display text-2xl font-semibold text-gold-700 sm:text-3xl">
-                  <StatCounter value={value} />
+                  <StatCounter value={value} delay={50} speed={0.4} />
                 </p>
                 <p className="mt-2 text-xs leading-5 text-night-600">{label}</p>
               </Reveal>
