@@ -8,12 +8,16 @@ type StatCounterProps = {
   value: number;
   suffix?: string;
   className?: string;
+  delay?: number;
+  speed?: number;
 };
 
 export function StatCounter({
   value,
   suffix = "",
   className = "",
+  delay = 0,
+  speed = 1,
 }: StatCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
@@ -31,23 +35,27 @@ export function StatCounter({
 
     if (typeof IntersectionObserver === "undefined") {
       started.current = true;
-      const id = window.setTimeout(() => setIsActive(true), 0);
+      const id = window.setTimeout(() => setIsActive(true), delay);
       return () => window.clearTimeout(id);
     }
 
+    let timeoutId: number;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || started.current) return;
         started.current = true;
         observer.disconnect();
-        setIsActive(true);
+        timeoutId = window.setTimeout(() => setIsActive(true), delay);
       },
       { threshold: 0.4 },
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(timeoutId);
+    };
+  }, [delay]);
 
   const chars = useMemo(() => value.toLocaleString("en-NG").split(""), [value]);
 
@@ -71,8 +79,8 @@ export function StatCounter({
                   ? `translateY(-${Number(char)}em)`
                   : "translateY(0)",
                 transitionProperty: reducedMotion ? "none" : "transform",
-                transitionDuration: "1.1s",
-                transitionDelay: reducedMotion ? "0s" : `${i * 60}ms`,
+                transitionDuration: reducedMotion ? "0s" : `${1.1 / speed}s`,
+                transitionDelay: reducedMotion ? "0s" : `${(i * 60) / speed}ms`,
                 transitionTimingFunction: "cubic-bezier(0.15, 0.85, 0.35, 1)",
               }}
             >
@@ -89,67 +97,3 @@ export function StatCounter({
     </span>
   );
 }
-
-// "use client";
-
-// import { useEffect, useRef, useState } from "react";
-
-// type StatCounterProps = {
-//   value: number;
-//   suffix?: string;
-//   className?: string;
-// };
-
-// export function StatCounter({ value, suffix = "", className = "" }: StatCounterProps) {
-//   const ref = useRef<HTMLSpanElement>(null);
-//   const started = useRef(false);
-//   const [display, setDisplay] = useState(0);
-
-//   useEffect(() => {
-//     const el = ref.current;
-//     if (!el) return;
-
-//     if (typeof IntersectionObserver === "undefined") {
-//       const id = window.setTimeout(() => setDisplay(value), 0);
-//       return () => window.clearTimeout(id);
-//     }
-
-//     const reduced =
-//       typeof window.matchMedia !== "undefined" &&
-//       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (!entry.isIntersecting || started.current) return;
-//         started.current = true;
-//         observer.disconnect();
-
-//         if (reduced) {
-//           setDisplay(value);
-//           return;
-//         }
-
-//         const duration = 1400;
-//         const start = performance.now();
-//         const tick = (now: number) => {
-//           const progress = Math.min((now - start) / duration, 1);
-//           const eased = 1 - Math.pow(1 - progress, 3);
-//           setDisplay(Math.round(eased * value));
-//           if (progress < 1) requestAnimationFrame(tick);
-//         };
-//         requestAnimationFrame(tick);
-//       },
-//       { threshold: 0.4 },
-//     );
-
-//     observer.observe(el);
-//     return () => observer.disconnect();
-//   }, [value]);
-
-//   return (
-//     <span ref={ref} className={className}>
-//       {display.toLocaleString("en-NG")}
-//       {suffix}
-//     </span>
-//   );
-// }

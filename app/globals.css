@@ -39,7 +39,10 @@
   --color-cream-300: #c0ac9c;
 
   --font-sans: Arial, Helvetica, sans-serif;
-  --font-display: var(--font-montserrat);
+  /* --font-display: var(--font-montserrat); */
+  --font-display: var(--font-libre-baskerville);
+
+  --font-body: var(--font-outfit);
 }
 
 html {
@@ -49,7 +52,7 @@ html {
 body {
   background: var(--color-cream-50);
   color: var(--color-night-600);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
 }
 
 ::selection {
