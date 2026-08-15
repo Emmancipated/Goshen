@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import type { Transition } from "framer-motion";
 import { ReactNode, useEffect, useState } from "react";
 import { ArrowLeft, X } from "lucide-react";
 import { createPortal } from "react-dom";
@@ -21,7 +22,7 @@ type JourneyModalProps = {
   size?: "sm" | "md" | "lg";
 };
 
-const modalTransition = {
+const modalTransition: Transition = {
   type: "spring",
   stiffness: 320,
   damping: 30,
