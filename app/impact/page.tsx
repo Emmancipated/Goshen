@@ -1,5 +1,3 @@
-"use client";
-
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +5,7 @@ import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { StatCounter } from "@/components/stat-counter";
-import { useDonationModal } from "@/components/donation/donation-modal-provider";
+import { DonateButton } from "@/components/donate-button";
 import {
   ArrowRightIcon,
   BriefcaseIcon,
@@ -79,8 +77,6 @@ const STORIES = [
 ];
 
 export default function ImpactPage() {
-  const { openDonation } = useDonationModal();
-
   return (
     <>
       <PageHeader
@@ -161,14 +157,12 @@ export default function ImpactPage() {
               greatest needs.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <button
-                type="button"
-                onClick={openDonation}
+              <DonateButton
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:scale-[0.98]"
+                icon="arrow"
               >
                 Help us do more
-                <ArrowRightIcon className="h-4 w-4" />
-              </button>
+              </DonateButton>
               <Link
                 href="/services"
                 className="inline-flex items-center justify-center rounded-full border border-night-300 px-7 py-3.5 text-sm font-semibold text-night-600 transition-all hover:-translate-y-0.5 hover:bg-white active:scale-[0.98]"
