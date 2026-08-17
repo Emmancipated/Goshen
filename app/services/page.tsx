@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { HelpButton } from "@/components/help-button";
+import { DonateButton } from "@/components/donate-button";
 import {
   ArrowRightIcon,
   BriefcaseIcon,
@@ -206,13 +207,12 @@ export default function ServicesPage() {
                 Your support funds shelter, meals, counselling, education and skills — every gift changes a story.
               </p>
             </div>
-            <Link
-              href="/donate"
+            <DonateButton
               className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:scale-[0.98]"
+              icon="arrow"
             >
               Donate Now
-              <ArrowRightIcon className="h-4 w-4" />
-            </Link>
+            </DonateButton>
           </div>
         </Reveal>
       </section>

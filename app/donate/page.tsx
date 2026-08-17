@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Reveal } from "@/components/reveal";
 import { SupportOptions } from "@/app/donate/support-options";
 import { LockIcon, ShieldIcon, HeartIcon, PhoneIcon } from "@/components/icons";
+import { DonatePageClient } from "@/app/donate/donate-page-client";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -88,6 +89,7 @@ export default function DonatePage() {
           </div>
         </div>
       </section>
+      <DonatePageClient />
     </>
   );
 }

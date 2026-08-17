@@ -6,6 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { StatCounter } from "@/components/stat-counter";
 import { HelpButton } from "@/components/help-button";
+import { DonateButton } from "@/components/donate-button";
 import {
   ArrowRightIcon,
   BriefcaseIcon,
@@ -506,13 +507,12 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/donate"
+              <DonateButton
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:bg-gold-600"
+                icon="arrow"
               >
                 Help make this vision possible
-                <ArrowRightIcon className="h-4 w-4" />
-              </Link>
+              </DonateButton>
             </div>
           </Reveal>
         </div>

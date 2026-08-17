@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
@@ -6,6 +8,7 @@ import { StatCounter } from "@/components/stat-counter";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { FounderVideo } from "@/components/founder-video";
 import { HelpButton } from "@/components/help-button";
+import { useDonationModal } from "@/components/donation/donation-modal-provider";
 import {
   ArrowRightIcon,
   HeartIcon,
@@ -25,6 +28,8 @@ const IMPACT_STATS = [
 ];
 
 function Hero() {
+  const { openDonation } = useDonationModal();
+
   return (
     <section className="relative isolate overflow-hidden bg-night-950 text-cream-50">
       <div aria-hidden="false" className="absolute inset-0">
@@ -90,14 +95,13 @@ function Hero() {
             >
               I Need Help
             </HelpButton>
-            <Link
-              href="/donate"
+            <button
+              type="button"
+              onClick={openDonation}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:translate-y-0 active:scale-[0.98]"
-
-              // className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-8 py-4 text-sm font-bold uppercase tracking-wider text-cream-50 backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/10 active:translate-y-0 active:scale-[0.98]"
             >
               Donate
-            </Link>
+            </button>
           </div>
 
           <div
@@ -158,6 +162,8 @@ function Hero() {
 }
 
 function QuickActions() {
+  const { openDonation } = useDonationModal();
+
   return (
     <section className="bg-cream-50">
       <div className="mx-auto grid max-w-7xl gap-5 px-4 py-16 sm:px-6 lg:grid-cols-3">
@@ -184,9 +190,10 @@ function QuickActions() {
         </Reveal>
 
         <Reveal delay={80}>
-          <Link
-            href="/donate"
-            className="group flex h-full flex-col rounded-2xl border border-night-100 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-lg"
+          <button
+            type="button"
+            onClick={openDonation}
+            className="group flex h-full flex-col rounded-2xl border border-night-100 bg-white p-8 text-left shadow-sm transition-all hover:-translate-y-1 hover:border-gold-300 hover:shadow-lg"
           >
             <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500 text-white transition-transform group-hover:scale-110">
               <HeartIcon className="h-6 w-6" />
@@ -201,7 +208,7 @@ function QuickActions() {
               Support Us
               <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
-          </Link>
+          </button>
         </Reveal>
 
         <Reveal delay={160}>
