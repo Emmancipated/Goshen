@@ -5,6 +5,7 @@ import { EmergencyBanner } from "@/components/emergency-banner";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { HelpModalProvider } from "@/components/help-modal-provider";
+import { DonationModalProvider } from "@/components/donation/donation-modal-provider";
 import { fontVariables } from "./fonty/font";
 
 const montserrat = Montserrat({
@@ -69,10 +70,12 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <HelpModalProvider>
-          <EmergencyBanner />
-          <SiteHeader />
-          <div className="flex-1">{children}</div>
-          <SiteFooter />
+          <DonationModalProvider>
+            <EmergencyBanner />
+            <SiteHeader />
+            <div className="flex-1">{children}</div>
+            <SiteFooter />
+          </DonationModalProvider>
         </HelpModalProvider>
       </body>
     </html>

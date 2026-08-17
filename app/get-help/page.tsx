@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
+import { DonateButton } from "@/components/donate-button";
 import {
   AlertIcon,
   ArrowRightIcon,
@@ -404,13 +405,12 @@ export default function GetHelpPage() {
             </a>{" "}
             at any time.
           </p>
-          <Link
-            href="/donate"
+          <DonateButton
             className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-gold-600"
+            icon="arrow"
           >
             Help others find safety
-            <ArrowRightIcon className="h-4 w-4" />
-          </Link>
+          </DonateButton>
         </Reveal>
       </section>
     </>

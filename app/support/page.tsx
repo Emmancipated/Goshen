@@ -1,18 +1,13 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GiveItemsJourney } from "@/components/items/give-items-journey";
 import { GiveTimeJourney } from "@/components/volunteer/give-time-journey";
-import { GiveMoneyJourney } from "@/components/donation/give-money-journey";
 import { PartnerJourney } from "@/components/partnership/partner-journey";
 import { FundraisingJourney } from "@/components/fundraising/fundraising-journey";
 import { SurvivorKitJourney } from "@/components/survivor-kit/survivor-kit-journey";
-
-type DonationFlowHandle = {
-  open: () => void;
-};
+import { useDonationModal } from "@/components/donation/donation-modal-provider";
 
 const supportCards = [
   {
@@ -37,11 +32,7 @@ const supportCards = [
 ];
 
 export default function SupportPage() {
-  const donationFlowRef = useRef<DonationFlowHandle>(null);
-
-  const handleOpenDonation = () => {
-    donationFlowRef.current?.open();
-  };
+  const { openDonation } = useDonationModal();
 
   return (
     <main className="min-h-screen bg-[#F7F3EC]">
@@ -99,14 +90,13 @@ export default function SupportPage() {
               </p>
 
               {card.title === "Give Money" ? (
-                <GiveMoneyJourney>
-                  <button
-                    onClick={handleOpenDonation}
-                    className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-[#B64A16] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12] cursor-pointer"
-                  >
-                    Give Now
-                  </button>
-                </GiveMoneyJourney>
+                <button
+                  type="button"
+                  onClick={openDonation}
+                  className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-[#B64A16] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12] cursor-pointer"
+                >
+                  Give Now
+                </button>
               ) : card.title === "Give Items" ? (
                 <GiveItemsJourney>
                   <button className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-[#B64A16] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12] cursor-pointer">
@@ -253,12 +243,13 @@ export default function SupportPage() {
               safety, healing and hope.
             </h2>
 
-            <Link
-              href="/donate"
+            <button
+              type="button"
+              onClick={openDonation}
               className="inline-flex shrink-0 rounded-xl bg-[#B64A16] px-7 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#9E3F12]"
             >
               Support Goshen Today
-            </Link>
+            </button>
           </div>
         </section>
       </div>

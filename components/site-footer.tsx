@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { useHelpModal } from "@/components/help-modal-provider";
+import { useDonationModal } from "@/components/donation/donation-modal-provider";
 import {
   WhatsAppIcon,
   MailIcon,
@@ -23,6 +24,7 @@ const QUICK_LINKS = [
 
 export function SiteFooter() {
   const { openHelpModal } = useHelpModal();
+  const { openDonation } = useDonationModal();
 
   return (
     <footer className="bg-night-950 text-white/70">
@@ -120,13 +122,14 @@ export function SiteFooter() {
               Every gift funds shelter, meals, healthcare, education and skills
               for women and children.
             </p>
-            <Link
-              href="/donate"
+            <button
+              type="button"
+              onClick={openDonation}
               className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-gold-500 px-5 py-2 text-xs font-bold uppercase tracking-wider text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
             >
               Donate
               <ArrowRightIcon className="h-3.5 w-3.5" />
-            </Link>
+            </button>
           </div>
         </div>
       </div>
