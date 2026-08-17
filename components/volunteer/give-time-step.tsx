@@ -20,7 +20,7 @@ const opportunities = [
   },
   {
     icon: <Users className="h-5 w-5" />,
-    title: "Mentoring and encouragement",
+    title: "Mentoring",
   },
   {
     icon: <GraduationCap className="h-5 w-5" />,
@@ -28,15 +28,19 @@ const opportunities = [
   },
   {
     icon: <BookOpen className="h-5 w-5" />,
-    title: "Skills development and training",
+    title: "Skills development",
   },
   {
     icon: <Briefcase className="h-5 w-5" />,
-    title: "Professional support (legal, medical, business, counselling)",
+    title: "Professional support",
   },
   {
     icon: <Wrench className="h-5 w-5" />,
-    title: "Practical support and volunteering",
+    title: "Driving and practical assistance",
+  },
+  {
+    icon: <Wrench className="h-5 w-5" />,
+    title: "Other appropriate areas where skills can help",
   },
 ];
 
@@ -65,11 +69,11 @@ export function GiveTimeStep({ onContinue }: GiveTimeStepProps) {
           {opportunities.map((item) => (
             <div
               key={item.title}
-              className="flex items-start gap-4 rounded-2xl border border-[#E8DED5] bg-white p-4 transition-all duration-200 hover:border-[#43206F] hover:shadow-sm"
+              className="flex items-start gap-4 rounded-2xl border border-[#E8DED5] bg-white p-2 transition-all duration-200 hover:border-[#43206F] hover:shadow-sm"
             >
-              <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
+              {/* <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
                 {item.icon}
-              </div>
+              </div> */}
 
               <p className="leading-7 text-[#4E4742]">{item.title}</p>
             </div>
@@ -77,7 +81,7 @@ export function GiveTimeStep({ onContinue }: GiveTimeStepProps) {
         </div>
       </div>
       {/* Encouragement panel */}
-      <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6">
+      {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#43206F] text-white">
             <HeartHandshake className="h-5 w-5" />
@@ -95,15 +99,15 @@ export function GiveTimeStep({ onContinue }: GiveTimeStepProps) {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Closing text */}
-      <div className="space-y-3">
+      {/* <div className="space-y-3">
         <p className="leading-7 text-[#5E5752]">
           Have a skill, profession, or experience you'd like to offer?
         </p>
 
         <p className="leading-7 text-[#5E5752]">We'd love to hear from you.</p>
-      </div>
+      </div> */}
       {/* CTA */}
       <button
         onClick={onContinue}

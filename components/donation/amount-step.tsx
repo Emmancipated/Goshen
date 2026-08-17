@@ -79,10 +79,10 @@ export function AmountStep({
         {" "}
         <div className="flex items-center gap-3">
           {" "}
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F3E8FF]">
+          {/* <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F3E8FF]">
             {" "}
             <Heart className="h-6 w-6 text-[#43206F]" />{" "}
-          </div>
+          </div> */}
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#43206F]">
               Choose your amount
@@ -92,12 +92,12 @@ export function AmountStep({
             </p>
           </div>
         </div>
-        <p className="text-[1.05rem] leading-8 text-[#5E5752]">
+        {/* <p className="text-[1.05rem] leading-8 text-[#5E5752]">
           Select a donation amount or enter a custom amount below.
-        </p>
+        </p> */}
       </div>
       {/* Payment summary */}
-      <div className="rounded-3xl border border-[#E5DDD3] bg-white p-5">
+      {/* <div className="rounded-3xl border border-[#E5DDD3] bg-white p-5">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F3E8FF]">
             {paymentIcon}
@@ -108,9 +108,9 @@ export function AmountStep({
             <p className="text-sm text-[#5E5752]">{paymentLabel}</p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Preset amounts */}
-      <div className="space-y-4">
+      {/* <div className="space-y-4">
         <h3 className="font-serif text-2xl font-semibold text-[#2F1B69]">
           Select an amount
         </h3>
@@ -136,14 +136,14 @@ export function AmountStep({
             );
           })}
         </div>
-      </div>
+      </div> */}
       {/* Custom amount */}
       <div className="space-y-3">
         <label
           htmlFor="donation-amount"
           className="text-sm font-semibold text-[#2F1B69]"
         >
-          Or enter a custom amount
+          Enter amount
         </label>
 
         <div className="relative">
@@ -186,9 +186,9 @@ export function AmountStep({
             </p>
           </div>
 
-          <div className="rounded-full bg-[#FCE8E8] p-3">
+          {/* <div className="rounded-full bg-[#FCE8E8] p-3">
             <Heart className="h-6 w-6 text-[#B31312]" />
-          </div>
+          </div> */}
         </div>
       </div>
       {/* Continue button */}
@@ -203,7 +203,7 @@ export function AmountStep({
         Continue to secure payment
       </button>
       {/* Security footer */}
-      <div className="rounded-2xl border border-[#E5DDD3] bg-white p-4">
+      {/* <div className="rounded-2xl border border-[#E5DDD3] bg-white p-4">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8F3EC]">
             <Lock className="h-5 w-5 text-[#2E7D32]" />
@@ -217,7 +217,7 @@ export function AmountStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

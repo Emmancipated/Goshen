@@ -19,11 +19,12 @@ type VolunteerFormStepProps = {
 
 const supportAreas = [
   "Counselling and emotional support",
-  "Mentoring and encouragement",
+  "Mentoring",
   "Children's educational support",
-  "Skills development and training",
-  "Professional support (legal, medical, business, counselling)",
-  "Practical support and volunteering",
+  "Skills development",
+  "Professional support",
+  "Driving and practical assistance",
+  "Other appropriate areas where skills can help",
 ];
 
 export function VolunteerFormStep({
@@ -250,7 +251,7 @@ export function VolunteerFormStep({
         </div>
       </div>
       {/* Privacy panel */}
-      <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-5">
+      {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-5">
         <div className="flex items-start gap-4">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#43206F] text-white">
             <Lock className="h-5 w-5" />
@@ -267,7 +268,7 @@ export function VolunteerFormStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Submit */}
       <button
         type="submit"

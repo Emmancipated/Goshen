@@ -55,6 +55,7 @@ export function PartnerJourney({ children }: PartnerJourneyProps) {
     organizationType: "",
     partnershipInterest: "",
     message: "",
+    preferredContact: "email",
   });
 
   const progress = useMemo(() => {
@@ -80,6 +81,7 @@ export function PartnerJourney({ children }: PartnerJourneyProps) {
       organizationType: "",
       partnershipInterest: "",
       message: "",
+      preferredContact: "email",
     });
     setOpen(true);
   };

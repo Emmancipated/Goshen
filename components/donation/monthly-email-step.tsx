@@ -22,13 +22,13 @@ export function MonthlyEmailStep({
   const canContinue = isValidEmail;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 pb-5">
       {/* Intro */}
       <div className="space-y-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FCE8E8]">
+          {/* <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FCE8E8]">
             <Heart className="h-6 w-6 text-[#B31312]" />
-          </div>
+          </div> */}
 
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#B31312]">
@@ -89,7 +89,7 @@ export function MonthlyEmailStep({
       </div>
 
       {/* Monthly impact panel */}
-      <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6">
+      {/* <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FCE8E8]">
             <Heart className="h-5 w-5 text-[#B31312]" />
@@ -108,7 +108,7 @@ export function MonthlyEmailStep({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Continue button */}
       <button
@@ -129,9 +129,9 @@ export function MonthlyEmailStep({
       {/* Security footer */}
       <div className="rounded-2xl border border-[#E5DDD3] bg-white p-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8F3EC]">
+          {/* <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8F3EC]">
             <ShieldCheck className="h-5 w-5 text-[#2E7D32]" />
-          </div>
+          </div> */}
 
           <div>
             <p className="font-semibold text-[#2F1B69]">

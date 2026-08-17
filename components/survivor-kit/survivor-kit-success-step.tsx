@@ -34,19 +34,19 @@ export function SurvivorKitSuccessStep({
         >
           {" "}
           <div className="absolute inset-0 rounded-full bg-[#2E7D32]/15 blur-xl" />
-          <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-[#E8F3EC]">
+          {/* <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-[#E8F3EC]">
             <CheckCircle2 className="h-12 w-12 text-[#2E7D32]" />
-          </div>
+          </div> */}
         </motion.div>
       </div>
       {/* Thank you */}
       <div className="space-y-4">
-        <div className="inline-flex items-center gap-2 rounded-full bg-[#F3E8FF] px-4 py-2">
+        {/* <div className="inline-flex items-center gap-2 rounded-full bg-[#F3E8FF] px-4 py-2">
           <Heart className="h-4 w-4 text-[#43206F]" />
           <span className="text-sm font-semibold text-[#43206F]">
             Donation completed
           </span>
-        </div>
+        </div> */}
 
         <h3 className="font-serif text-3xl font-semibold text-[#2F1B69]">
           Thank you, {firstName}
@@ -63,7 +63,7 @@ export function SurvivorKitSuccessStep({
         </p>
       </div>
       {/* Impact card */}
-      <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
+      {/* <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
             <Home className="h-5 w-5 text-[#43206F]" />
@@ -82,9 +82,9 @@ export function SurvivorKitSuccessStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Emotional panel */}
-      <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6 text-left">
+      {/* <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6 text-left">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FCE8E8]">
             <Heart className="h-5 w-5 text-[#B31312]" />
@@ -102,14 +102,14 @@ export function SurvivorKitSuccessStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Receipt note */}
-      <div className="rounded-2xl border border-[#E8DED5] bg-[#F8F4FD] p-5">
+      {/* <div className="rounded-2xl border border-[#E8DED5] bg-[#F8F4FD] p-5">
         <p className="text-sm leading-6 text-[#5E5752]">
           A donation confirmation and receipt will be sent to{" "}
           <strong>{donor.email}</strong> shortly.
         </p>
-      </div>
+      </div> */}
       {/* CTA */}
       <button
         onClick={onClose}
@@ -119,10 +119,10 @@ export function SurvivorKitSuccessStep({
         <ArrowRight className="h-5 w-5" />
       </button>
       {/* Footer */}
-      <p className="text-sm leading-6 text-[#6B6560]">
+      {/* <p className="text-sm leading-6 text-[#6B6560]">
         Your generosity helps women and children rebuild their lives with
         safety, dignity, and hope.
-      </p>
+      </p> */}
     </div>
   );
 }

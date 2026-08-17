@@ -19,28 +19,32 @@ const kitItems = [
   {
     icon: <Bed className="h-5 w-5" />,
     title: "Mattress and pillow",
-    description: "A safe place to sleep and begin healing.",
+    description: "Mattress and pillow",
   },
   {
     icon: <Flame className="h-5 w-5" />,
     title: "Two-burner gas cooker",
-    description: "A practical foundation for preparing daily meals.",
+    description: "Two-burner gas cooker",
   },
   {
     icon: <CookingPot className="h-5 w-5" />,
     title: "Cooking pots and utensils",
-    description: "Essential cookware for a new home.",
+    description: "Two cooking pots",
   },
   {
     icon: <UtensilsCrossed className="h-5 w-5" />,
     title: "Plates, bowls, spoons, and cups",
-    description: "Basic dining essentials for independent living.",
+    description: "Cooking utensils",
   },
   {
     icon: <CircleDollarSign className="h-5 w-5" />,
     title: "Bucket and household essentials",
-    description:
-      "Practical everyday items that make a home functional and dignified.",
+    description: "Plastic bucket and small bowl",
+  },
+  {
+    icon: <CircleDollarSign className="h-5 w-5" />,
+    title: "Two plates and spoons",
+    description: "Two plates and spoons",
   },
 ];
 
@@ -50,34 +54,30 @@ export function SurvivorKitStep({ onContinue }: SurvivorKitStepProps) {
       {/* Intro */}{" "}
       <div className="space-y-4">
         {" "}
-        <p className="text-[1.05rem] leading-8 text-[#5E5752]">
-          Help a survivor start again.{" "}
-        </p>
         <p className="leading-8 text-[#5E5752]">
           When a woman leaves Goshen to begin an independent life, she receives
-          a basic Survivor's Kit to help her establish her new home and begin
-          the next chapter with dignity and hope.
+          a basic Survivor's Kit to help establish her new home.
         </p>
       </div>
       {/* Kit contents */}
       <div className="space-y-5">
         <h3 className="font-serif text-2xl font-semibold text-[#2F1B69]">
-          The Survivor's Kit includes
+          The kit includes:
         </h3>
 
         <div className="space-y-4">
           {kitItems.map((item) => (
             <div
               key={item.title}
-              className="rounded-3xl border border-[#E8DED5] bg-white p-5"
+              className="rounded-3xl border border-[#E8DED5] bg-white p-2"
             >
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
+                {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
                   {item.icon}
-                </div>
+                </div> */}
 
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-[#2F1B69]">{item.title}</h4>
+                  {/* <h4 className="font-semibold text-[#2F1B69]">{item.title}</h4> */}
 
                   <p className="leading-7 text-[#5E5752]">{item.description}</p>
                 </div>
@@ -87,7 +87,7 @@ export function SurvivorKitStep({ onContinue }: SurvivorKitStepProps) {
         </div>
       </div>
       {/* Impact panel */}
-      <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6">
+      {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#43206F] text-white">
             <Heart className="h-5 w-5" />
@@ -106,7 +106,7 @@ export function SurvivorKitStep({ onContinue }: SurvivorKitStepProps) {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Primary CTA */}
       <button
         onClick={onContinue}
@@ -126,7 +126,7 @@ export function SurvivorKitStep({ onContinue }: SurvivorKitStepProps) {
           href="tel:+2348027775001"
           className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#43206F] px-5 py-4 text-sm font-bold text-[#43206F] transition hover:bg-[#43206F] hover:text-white"
         >
-          <Phone className="h-5 w-5" />
+          {/* <Phone className="h-5 w-5" /> */}
           Call us
         </a>
 
@@ -136,7 +136,7 @@ export function SurvivorKitStep({ onContinue }: SurvivorKitStepProps) {
           rel="noreferrer"
           className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#1FA855] px-5 py-4 text-sm font-bold text-[#1FA855] transition hover:bg-[#1FA855] hover:text-white"
         >
-          <MessageCircle className="h-5 w-5" />
+          {/* <MessageCircle className="h-5 w-5" /> */}
           WhatsApp us
         </a>
       </div>

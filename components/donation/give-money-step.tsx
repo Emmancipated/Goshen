@@ -16,24 +16,25 @@ export function GiveMoneyStep({
       {/* Intro */}
       <div className="space-y-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F3E6E6]">
+          {/* <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F3E6E6]">
             <Heart className="h-6 w-6 text-[#B31312]" />
-          </div>
+          </div> */}
 
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#8B6A3D]">
               Support women and children
             </p>
-            <p className="text-sm text-[#6B6560]">
+            {/* <p className="text-sm text-[#6B6560]">
               Every gift helps provide safety, shelter and hope.
-            </p>
+            </p> */}
           </div>
         </div>
 
         <p className="text-[1.05rem] leading-8 text-[#5E5752]">
-          Your donation helps provide emergency shelter, nutritious meals,
-          counselling, healthcare, education support and practical assistance
-          for women and children rebuilding their lives.
+          Your donation helps provide: food and accommodation; healthcare and
+          medical expenses including maternity care and childbirth; clothing and
+          personal necessities; and other essential costs of running and
+          maintaining the shelter.
         </p>
       </div>
 
@@ -60,9 +61,9 @@ export function GiveMoneyStep({
                 </p>
               </div>
 
-              <div className="rounded-full bg-[#F3E8FF] p-2 transition-colors group-hover:bg-[#43206F]">
+              {/* <div className="rounded-full bg-[#F3E8FF] p-2 transition-colors group-hover:bg-[#43206F]">
                 <Heart className="h-5 w-5 text-[#43206F] group-hover:text-white" />
-              </div>
+              </div> */}
             </div>
 
             <div className="mt-6 flex items-center justify-between">
@@ -91,9 +92,9 @@ export function GiveMoneyStep({
                 </p>
               </div>
 
-              <div className="rounded-full bg-[#FCE8E8] p-2 transition-colors group-hover:bg-[#B31312]">
+              {/* <div className="rounded-full bg-[#FCE8E8] p-2 transition-colors group-hover:bg-[#B31312]">
                 <Heart className="h-5 w-5 text-[#B31312] group-hover:text-white" />
-              </div>
+              </div> */}
             </div>
 
             <div className="mt-6 flex items-center justify-between">
@@ -109,7 +110,7 @@ export function GiveMoneyStep({
       </div>
 
       {/* Impact message */}
-      <div className="rounded-2xl border border-[#E5DDD3] bg-white p-5">
+      {/* <div className="rounded-2xl border border-[#E5DDD3] bg-white p-5">
         <div className="flex items-start gap-4">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F8E9E9]">
             <Heart className="h-5 w-5 text-[#B31312]" />
@@ -126,14 +127,14 @@ export function GiveMoneyStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Security footer */}
       <div className="rounded-2xl border border-[#E5DDD3] bg-white p-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8F3EC]">
+          {/* <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8F3EC]">
             <ShieldCheck className="h-5 w-5 text-[#2E7D32]" />
-          </div>
+          </div> */}
 
           <div>
             <p className="font-semibold text-[#2F1B69]">

@@ -17,21 +17,20 @@ type DonationFlowHandle = {
 const supportCards = [
   {
     title: "Give Money",
-    description:
-      "Your generosity helps provide safety, care and support for women and children.",
+    description: "Financial support for Goshen.",
     button: "Give Now",
     href: "/donate",
   },
   {
     title: "Give Items",
     description:
-      "Provide practical necessities for women and children staying at Goshen.",
+      "Practical necessities for women and children staying at Goshen.",
     button: "Learn More",
     href: "/contact",
   },
   {
     title: "Give Your Time",
-    description: "Share your time, skills and experience to support Goshen.",
+    description: "Share time, skills and experience to support Goshen.",
     button: "Learn More",
     href: "/contact",
   },
@@ -89,7 +88,7 @@ export default function SupportPage() {
           {supportCards.map((card) => (
             <div
               key={card.title}
-              className="rounded-3xl border border-white/30 bg-white/80 p-6 backdrop-blur-md shadow-lg"
+              className="rounded-3xl border border-white/30 bg-white/80 p-6 backdrop-blur-md shadow-lg flex flex-col justify-between"
             >
               <h3 className="font-serif text-2xl font-semibold text-[#2F1B69]">
                 {card.title}
@@ -137,8 +136,8 @@ export default function SupportPage() {
               </h2>
 
               <p className="mt-4 text-lg leading-8 text-[#5E5752]">
-                Organisations and groups can help Goshen strengthen the support
-                available to women and children through meaningful partnerships.
+                Organisations and groups can strengthen support through
+                meaningful partnerships.
               </p>
 
               <PartnerJourney>
@@ -175,8 +174,8 @@ export default function SupportPage() {
                 Fundraise for Goshen
               </h2>
               <p className="mt-4 text-lg leading-8 text-[#5E5752]">
-                Bring your community, church, school or organisation together to
-                support women and children affected by violence.
+                Bring a community, church, school or organisation together to
+                support Goshen.
               </p>
 
               <FundraisingJourney>
@@ -217,9 +216,7 @@ export default function SupportPage() {
               </h2>
 
               <p className="mt-4 text-lg leading-8 text-[#5E5752]">
-                When a woman leaves Goshen to begin an independent life, she
-                receives a basic Survivor's Kit to help her establish her new
-                home.
+                Help a survivor start again with a basic Survivor's Kit.
               </p>
 
               <SurvivorKitJourney>
@@ -268,42 +265,3 @@ export default function SupportPage() {
     </main>
   );
 }
-
-// <div
-//   aria-hidden="false"
-//   className="absolute h-full inset-0 md:left-[48%] lg:left-[50%]"
-// >
-//   <Image
-//     src="/images/mother-child.jpg"
-//     alt="A woman and child"
-//     fill
-//     sizes="100vw"
-//     preload
-//     className="object-cover "
-//   />
-// </div>
-// {/* Mobile overlay */}
-// <div className="absolute inset-0 md:hidden bg-[linear-gradient(to_bottom,rgba(247,243,236,0.96)_0%,rgba(247,243,236,0.88)_40%,rgba(247,243,236,0.72)_70%,rgba(247,243,236,0.92)_100%)]" />
-
-// {/* Tablet overlay */}
-// <div className="absolute inset-0 hidden md:block lg:hidden bg-[linear-gradient(to_right,#EFE7E3_0%,#EFE7E3_58%,rgba(239,231,227,0.42)_70%,transparent_78%)]" />
-
-// {/* Desktop overlay */}
-// <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,#EFE7E3_0%,#EFE7E3_53%,rgba(239,231,227,0.35)_66%,transparent_68%)]" />
-
-// {/* Bottom fade */}
-// <div className="absolute inset-0 bg-linear-to-t from-[#F7F3EC] via-[#F7F3EC]/10 to-transparent" />
-
-// <div className="relative mx-auto flex max-w-7xl flex-col  px-4 pb-20 pt-24 sm:px-6 lg:min-h-[42svh] lg:pb-24 lg:pt-28">
-//   <div className="max-w-2xl">
-//     <div>
-//       <h1 className="font-serif text-5xl font-semibold leading-tight text-[#2F1B69] md:text-6xl">
-//         Support Goshen
-//       </h1>
-//       <p className="mt-6 max-w-xl text-lg leading-8 text-[#4E4742]">
-//         There are different ways to support women and children seeking
-//         safety, healing and a new beginning.
-//       </p>
-//     </div>
-//   </div>
-// </div>
