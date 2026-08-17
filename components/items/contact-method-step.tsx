@@ -25,10 +25,10 @@ export function ContactMethodStep({
         <p className="text-[1.05rem] leading-8 text-[#5E5752]">
           Thank you for considering a practical donation.{" "}
         </p>
-        <p className="leading-8 text-[#5E5752]">
+        {/* <p className="leading-8 text-[#5E5752]">
           Our team will let you know what items are currently most needed and
           help arrange a convenient time for delivery or collection.
-        </p>
+        </p> */}
       </div>
       {/* WhatsApp card */}
       <button
@@ -37,9 +37,9 @@ export function ContactMethodStep({
       >
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-start gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#25D366] text-white">
+            {/* <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#25D366] text-white">
               <MessageCircle className="h-7 w-7" />
-            </div>
+            </div> */}
 
             <div className="space-y-2">
               <div className="flex items-center gap-2">
@@ -47,9 +47,9 @@ export function ContactMethodStep({
                   Chat on WhatsApp
                 </h3>
 
-                <span className="rounded-full bg-[#E8F8EE] px-2.5 py-1 text-xs font-semibold text-[#1F8F4C]">
+                {/* <span className="rounded-full bg-[#E8F8EE] px-2.5 py-1 text-xs font-semibold text-[#1F8F4C]">
                   Fastest option
-                </span>
+                </span> */}
               </div>
 
               <p className="leading-7 text-[#5E5752]">
@@ -57,10 +57,10 @@ export function ContactMethodStep({
                 answer questions, and coordinate delivery or collection.
               </p>
 
-              <div className="flex items-center gap-2 pt-1 text-sm text-[#1F8F4C]">
+              {/* <div className="flex items-center gap-2 pt-1 text-sm text-[#1F8F4C]">
                 <Clock className="h-4 w-4" />
                 <span>Quick responses during the day</span>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -74,9 +74,9 @@ export function ContactMethodStep({
       >
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-start gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#43206F] text-white">
+            {/* <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#43206F] text-white">
               <Phone className="h-7 w-7" />
-            </div>
+            </div> */}
 
             <div className="space-y-2">
               <h3 className="font-serif text-2xl font-semibold text-[#2F1B69]">
@@ -88,10 +88,10 @@ export function ContactMethodStep({
                 donation, ask questions, and arrange the best way to help.
               </p>
 
-              <div className="flex items-center gap-2 pt-1 text-sm text-[#43206F]">
+              {/* <div className="flex items-center gap-2 pt-1 text-sm text-[#43206F]">
                 <Clock className="h-4 w-4" />
                 <span>Available during support hours</span>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -101,9 +101,9 @@ export function ContactMethodStep({
       {/* Reassurance panel */}
       <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6">
         <div className="flex items-start gap-4">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E8F3EC]">
+          {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E8F3EC]">
             <ShieldCheck className="h-5 w-5 text-[#2E7D32]" />
-          </div>
+          </div> */}
 
           <div className="space-y-2">
             <h4 className="font-semibold text-[#2F1B69]">
@@ -119,13 +119,13 @@ export function ContactMethodStep({
         </div>
       </div>
       {/* Contact note */}
-      <div className="rounded-2xl border border-[#F0D6D6] bg-[#FFF7F7] p-5 text-center">
+      {/* <div className="rounded-2xl border border-[#F0D6D6] bg-[#FFF7F7] p-5 text-center">
         <p className="text-sm leading-6 text-[#5E5752]">
           If you're donating a large quantity of items, furniture, appliances,
           or specialised supplies, please contact us first so we can prepare and
           coordinate the most helpful arrangement.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }

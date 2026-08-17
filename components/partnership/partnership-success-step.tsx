@@ -29,19 +29,19 @@ export function PartnershipSuccessStep({
         >
           {" "}
           <div className="absolute inset-0 rounded-full bg-[#2E7D32]/15 blur-xl" />
-          <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-[#E8F3EC]">
+          {/* <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-[#E8F3EC]">
             <CheckCircle2 className="h-12 w-12 text-[#2E7D32]" />
-          </div>
+          </div> */}
         </motion.div>
       </div>
       {/* Thank you message */}
       <div className="space-y-4">
-        <div className="inline-flex items-center gap-2 rounded-full bg-[#F3E8FF] px-4 py-2">
+        {/* <div className="inline-flex items-center gap-2 rounded-full bg-[#F3E8FF] px-4 py-2">
           <Building2 className="h-4 w-4 text-[#43206F]" />
           <span className="text-sm font-semibold text-[#43206F]">
             Partnership enquiry received
           </span>
-        </div>
+        </div> */}
 
         <h3 className="font-serif text-3xl font-semibold text-[#2F1B69]">
           Thank you for reaching out
@@ -56,9 +56,9 @@ export function PartnershipSuccessStep({
       {/* What happens next */}
       <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
         <div className="flex items-start gap-4">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
+          {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
             <Mail className="h-5 w-5 text-[#43206F]" />
-          </div>
+          </div> */}
 
           <div className="space-y-3">
             <h4 className="font-semibold text-[#2F1B69]">What happens next</h4>
@@ -68,7 +68,8 @@ export function PartnershipSuccessStep({
                 • Our partnership team will review your enquiry carefully.
               </li>
               <li>
-                • We'll contact your organization within a few business days.
+                • We'll contact your organization using your preferred contact
+                method.
               </li>
               <li>
                 • We'll explore partnership opportunities that align with your
@@ -83,7 +84,7 @@ export function PartnershipSuccessStep({
         </div>
       </div>
       {/* Partnership message */}
-      <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6 text-left">
+      {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6 text-left">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#43206F] text-white">
             <Building2 className="h-5 w-5" />
@@ -102,7 +103,7 @@ export function PartnershipSuccessStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* CTA */}
       <button
         onClick={onClose}

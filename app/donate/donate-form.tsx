@@ -31,12 +31,18 @@ export function DonateForm() {
   const [processing, setProcessing] = useState(false);
   const [done, setDone] = useState(false);
 
-  const bankDetailsSet = Boolean(BANK_NAME && BANK_ACCOUNT && BANK_ACCOUNT_NAME);
+  const bankDetailsSet = Boolean(
+    BANK_NAME && BANK_ACCOUNT && BANK_ACCOUNT_NAME,
+  );
   const formatNaira = (value: number) => `₦${value.toLocaleString("en-NG")}`;
 
   useEffect(() => {
     if (method !== "card" || !PAYSTACK_KEY) return;
-    if (typeof window === "undefined" || (window as unknown as { PaystackPop?: PaystackPop }).PaystackPop) return;
+    if (
+      typeof window === "undefined" ||
+      (window as unknown as { PaystackPop?: PaystackPop }).PaystackPop
+    )
+      return;
 
     const script = document.createElement("script");
     script.src = "https://js.paystack.co/v1/inline.js";
@@ -48,7 +54,8 @@ export function DonateForm() {
   }, [method]);
 
   const handleCardDonate = () => {
-    const paystack = (window as unknown as { PaystackPop?: PaystackPop }).PaystackPop;
+    const paystack = (window as unknown as { PaystackPop?: PaystackPop })
+      .PaystackPop;
     if (!paystack || !PAYSTACK_KEY) return;
     setProcessing(true);
     paystack.setup({
@@ -75,15 +82,18 @@ export function DonateForm() {
   if (done) {
     return (
       <div className="rounded-2xl border border-night-200 bg-white p-10 text-center shadow-sm">
-        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold-100 text-gold-700">
+        {/* <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold-100 text-gold-700">
           <CheckIcon className="h-7 w-7" />
-        </span>
+        </span> */}
         <h2 className="mt-5 font-display text-2xl font-semibold text-gold-700">
-          {method === "card" ? "Thank you for your gift!" : "Thank you for choosing to give!"}
+          {method === "card"
+            ? "Thank you for your gift!"
+            : "Thank you for choosing to give!"}
         </h2>
         {method === "card" ? (
           <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-night-600">
-            Your {amount ? formatNaira(amount) : "donation"} is being processed. You will receive a receipt by email.
+            Your {amount ? formatNaira(amount) : "donation"} is being processed.
+            You will receive a receipt by email.
           </p>
         ) : bankDetailsSet ? (
           <div className="mx-auto mt-5 max-w-sm space-y-1 rounded-xl bg-cream-100 p-4 text-left text-sm leading-6 text-night-900">
@@ -95,16 +105,21 @@ export function DonateForm() {
               Account: <span className="font-semibold">{BANK_ACCOUNT}</span>
             </p>
             <p>
-              Account name: <span className="font-semibold">{BANK_ACCOUNT_NAME}</span>
+              Account name:{" "}
+              <span className="font-semibold">{BANK_ACCOUNT_NAME}</span>
             </p>
             <p className="mt-2 text-xs text-night-600/80">
-              Then send your name to 0802 777 5001 on WhatsApp so we can acknowledge your gift.
+              Then send your name to 0802 777 5001 on WhatsApp so we can
+              acknowledge your gift.
             </p>
           </div>
         ) : (
           <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-night-600">
             Please call or WhatsApp us on{" "}
-            <a href="tel:+2348027775001" className="font-semibold text-gold-700 underline underline-offset-2">
+            <a
+              href="tel:+2348027775001"
+              className="font-semibold text-gold-700 underline underline-offset-2"
+            >
               0802 777 5001
             </a>{" "}
             for our bank details, and we will acknowledge your gift personally.
@@ -123,7 +138,9 @@ export function DonateForm() {
 
   return (
     <div className="rounded-2xl border border-night-100 bg-white p-8 shadow-sm">
-      <h2 className="font-display text-xl font-semibold text-gold-700">Make a donation</h2>
+      <h2 className="font-display text-xl font-semibold text-gold-700">
+        Make a donation
+      </h2>
       <p className="mt-1 text-sm text-night-600/80">Choose an amount to give</p>
 
       <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -144,7 +161,9 @@ export function DonateForm() {
       </div>
 
       <label className="mt-4 block">
-        <span className="text-xs font-semibold uppercase tracking-wider text-gold-600">Or enter a custom amount</span>
+        <span className="text-xs font-semibold uppercase tracking-wider text-gold-600">
+          Or enter a custom amount
+        </span>
         <div className="mt-2 flex items-center gap-2 rounded-xl border border-night-200 bg-cream-50 px-4 py-3 focus-within:border-night-500">
           <NairaIcon className="h-5 w-5 text-gold-600" />
           <input
@@ -153,7 +172,9 @@ export function DonateForm() {
             inputMode="numeric"
             placeholder="e.g. 75000"
             value={amount === "" ? "" : amount}
-            onChange={(e) => setAmount(e.target.value === "" ? "" : Number(e.target.value))}
+            onChange={(e) =>
+              setAmount(e.target.value === "" ? "" : Number(e.target.value))
+            }
             className="w-full bg-transparent text-sm font-semibold text-night-900 outline-none placeholder:font-normal placeholder:text-gold-400"
           />
         </div>
@@ -161,7 +182,9 @@ export function DonateForm() {
 
       {PAYSTACK_KEY && (
         <>
-          <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-gold-600">Payment method</p>
+          <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-gold-600">
+            Payment method
+          </p>
           <div className="mt-2 grid grid-cols-2 gap-3">
             <button
               type="button"
@@ -202,17 +225,22 @@ export function DonateForm() {
                 Account: <span className="font-semibold">{BANK_ACCOUNT}</span>
               </p>
               <p>
-                Account name: <span className="font-semibold">{BANK_ACCOUNT_NAME}</span>
+                Account name:{" "}
+                <span className="font-semibold">{BANK_ACCOUNT_NAME}</span>
               </p>
               <p className="mt-2 text-xs text-night-600/80">
-                Then send your name to <span className="font-semibold">0802 777 5001</span> on WhatsApp so we can
-                acknowledge your gift.
+                Then send your name to{" "}
+                <span className="font-semibold">0802 777 5001</span> on WhatsApp
+                so we can acknowledge your gift.
               </p>
             </>
           ) : (
             <p>
               For our bank details, please call or WhatsApp us on{" "}
-              <a href="tel:+2348027775001" className="font-semibold text-gold-700 underline underline-offset-2">
+              <a
+                href="tel:+2348027775001"
+                className="font-semibold text-gold-700 underline underline-offset-2"
+              >
                 0802 777 5001
               </a>
               . We will confirm and acknowledge your gift personally.
@@ -242,7 +270,9 @@ export function DonateForm() {
         onClick={handleSubmit}
         className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-gold-600 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {processing ? "Processing..." : `Donate ${amount ? formatNaira(amount) : "now"}`}
+        {processing
+          ? "Processing..."
+          : `Donate ${amount ? formatNaira(amount) : "now"}`}
       </button>
       <p className="mt-3 text-center text-xs leading-5 text-night-600/70">
         {PAYSTACK_KEY

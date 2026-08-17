@@ -28,21 +28,14 @@ export function MonthlySuccessStep({
           {/* Soft glow */}
           <div className="absolute inset-0 rounded-full bg-[#2E7D32]/15 blur-xl" />
 
-          <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-[#E8F3EC]">
+          {/* <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-[#E8F3EC]">
             <CheckCircle2 className="h-12 w-12 text-[#2E7D32]" />
-          </div>
+          </div> */}
         </motion.div>
       </div>
 
       {/* Thank you message */}
       <div className="space-y-4">
-        <div className="inline-flex items-center gap-2 rounded-full bg-[#FCE8E8] px-4 py-2">
-          <Heart className="h-4 w-4 text-[#B31312]" />
-          <span className="text-sm font-semibold text-[#B31312]">
-            Monthly supporter
-          </span>
-        </div>
-
         <h3 className="font-serif text-3xl font-semibold text-[#2F1B69]">
           Thank you for your monthly commitment!
         </h3>
@@ -54,7 +47,7 @@ export function MonthlySuccessStep({
       </div>
 
       {/* Email confirmation */}
-      <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
+      {/* <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
             <CheckCircle2 className="h-5 w-5 text-[#43206F]" />
@@ -75,10 +68,10 @@ export function MonthlySuccessStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Impact statement */}
-      <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6 text-left">
+      {/* <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6 text-left">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FCE8E8]">
             <Heart className="h-5 w-5 text-[#B31312]" />
@@ -96,7 +89,7 @@ export function MonthlySuccessStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Continue button */}
       <button
@@ -108,10 +101,10 @@ export function MonthlySuccessStep({
 
       {/* Security footer */}
       <div className="rounded-2xl border border-[#E5DDD3] bg-white p-4">
-        <div className="flex items-center justify-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8F3EC]">
+        <div className="flex items-center gap-3">
+          {/* <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8F3EC]">
             <ShieldCheck className="h-5 w-5 text-[#2E7D32]" />
-          </div>
+          </div> */}
 
           <div className="text-left">
             <p className="font-semibold text-[#2F1B69]">

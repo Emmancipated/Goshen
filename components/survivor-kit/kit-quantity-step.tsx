@@ -58,9 +58,9 @@ export function KitQuantityStep({
             How many Survivor's Kits would you like to donate?
           </h3>
 
-          <p className="mt-2 text-[#6B6560]">
+          {/* <p className="mt-2 text-[#6B6560]">
             Every kit helps one woman establish a safe new beginning.
-          </p>
+          </p> */}
         </div>
 
         <div className="mt-8 flex items-center justify-center gap-6">
@@ -145,7 +145,7 @@ export function KitQuantityStep({
         </div>
       </div>
       {/* Impact panel */}
-      <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6">
+      {/* <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FCE8E8]">
             <Heart className="h-5 w-5 text-[#B31312]" />
@@ -169,15 +169,15 @@ export function KitQuantityStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Cost note */}
-      <div className="rounded-2xl border border-[#E8DED5] bg-[#F8F4FD] p-5">
+      {/* <div className="rounded-2xl border border-[#E8DED5] bg-[#F8F4FD] p-5">
         <p className="text-sm leading-6 text-[#5E5752]">
           <strong>Please note:</strong> The estimated cost of a Survivor's Kit
           may vary over time. Your donation will be used to provide the most
           essential and current items needed by women leaving the shelter.
         </p>
-      </div>
+      </div> */}
       {/* Continue */}
       <button
         onClick={() => onContinue(quantity)}
@@ -197,7 +197,7 @@ export function KitQuantityStep({
           href="tel:+2348027775001"
           className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#43206F] px-5 py-4 text-sm font-bold text-[#43206F] transition hover:bg-[#43206F] hover:text-white"
         >
-          <Phone className="h-5 w-5" />
+          {/* <Phone className="h-5 w-5" /> */}
           Call us
         </a>
 
@@ -207,7 +207,7 @@ export function KitQuantityStep({
           rel="noreferrer"
           className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#1FA855] px-5 py-4 text-sm font-bold text-[#1FA855] transition hover:bg-[#1FA855] hover:text-white"
         >
-          <MessageCircle className="h-5 w-5" />
+          {/* <MessageCircle className="h-5 w-5" /> */}
           WhatsApp us
         </a>
       </div>

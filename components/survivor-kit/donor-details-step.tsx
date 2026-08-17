@@ -172,7 +172,7 @@ export function DonorDetailsStep({
         </div>
       </div>
       {/* Anonymous option */}
-      <div className="rounded-3xl border border-[#E5DDD3] bg-white p-5">
+      {/* <div className="rounded-3xl border border-[#E5DDD3] bg-white p-5">
         <label className="flex cursor-pointer items-start gap-4">
           <input
             type="checkbox"
@@ -192,9 +192,9 @@ export function DonorDetailsStep({
             </p>
           </div>
         </label>
-      </div>
+      </div> */}
       {/* Privacy panel */}
-      <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-5">
+      {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-5">
         <div className="flex items-start gap-4">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#43206F] text-white">
             <Lock className="h-5 w-5" />
@@ -213,7 +213,7 @@ export function DonorDetailsStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Continue */}
       <button
         type="submit"

@@ -207,7 +207,7 @@ export function PaymentStep({
         </div>
       </div>
       {/* Security panel */}
-      <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-5">
+      {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-5">
         <div className="flex items-start gap-4">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#43206F] text-white">
             <Shield className="h-5 w-5" />
@@ -223,7 +223,7 @@ export function PaymentStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Pay button */}
       <button
         onClick={handlePayment}
