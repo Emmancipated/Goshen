@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +8,7 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { StatCounter } from "@/components/stat-counter";
 import { HelpButton } from "@/components/help-button";
+import { useDonationModal } from "@/components/donation/donation-modal-provider";
 import {
   ArrowRightIcon,
   BriefcaseIcon,
@@ -209,6 +212,8 @@ const LOOKING_AHEAD = [
 ];
 
 export default function AboutPage() {
+  const { openDonation } = useDonationModal();
+
   return (
     <>
       <PageHeader
@@ -506,13 +511,14 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/donate"
+              <button
+                type="button"
+                onClick={openDonation}
                 className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:bg-gold-600"
               >
                 Help make this vision possible
                 <ArrowRightIcon className="h-4 w-4" />
-              </Link>
+              </button>
             </div>
           </Reveal>
         </div>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/logo";
 import { useHelpModal } from "@/components/help-modal-provider";
+import { useDonationModal } from "@/components/donation/donation-modal-provider";
 import { MenuIcon, CloseIcon } from "@/components/icons";
 
 const NAV_ITEMS = [
@@ -20,6 +21,7 @@ const NAV_ITEMS = [
 export function SiteHeader() {
   const pathname = usePathname();
   const { openHelpModal } = useHelpModal();
+  const { openDonation } = useDonationModal();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -70,12 +72,13 @@ export function SiteHeader() {
           >
             Get Help
           </button>
-          <Link
-            href="/donate"
+          <button
+            type="button"
+            onClick={openDonation}
             className="hidden rounded-full bg-gold-500 px-5 py-2 text-sm font-bold text-white transition-all hover:bg-gold-600 active:scale-95 sm:inline-block"
           >
             Donate
-          </Link>
+          </button>
           <a
             href="https://www.google.com/"
             target="_blank"
@@ -131,12 +134,16 @@ export function SiteHeader() {
               >
                 Get Help
               </button>
-              <Link
-                href="/donate"
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  openDonation();
+                }}
                 className="flex-1 rounded-full bg-gold-500 px-5 py-2.5 text-center text-sm font-bold text-white"
               >
                 Donate
-              </Link>
+              </button>
             </div>
             <a
               href="tel:+2348027775001"

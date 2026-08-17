@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useMemo, useState } from "react";
+import { forwardRef, useImperativeHandle, ReactNode, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Heart } from "lucide-react";
 
@@ -23,6 +23,10 @@ type Direction = 1 | -1;
 
 type GiveMoneyJourneyProps = {
   children: ReactNode;
+};
+
+type GiveMoneyJourneyHandle = {
+  open: () => void;
 };
 
 const variants = {
@@ -48,7 +52,8 @@ const variants = {
   }),
 };
 
-export function GiveMoneyJourney({ children }: GiveMoneyJourneyProps) {
+export const GiveMoneyJourney = forwardRef<GiveMoneyJourneyHandle, GiveMoneyJourneyProps>(
+  function GiveMoneyJourney({ children }, ref) {
   const [open, setOpen] = useState(false);
 
   const [step, setStep] = useState<DonationStep>(INITIAL_DONATION_STATE.step);
@@ -84,6 +89,10 @@ export function GiveMoneyJourney({ children }: GiveMoneyJourneyProps) {
     setStep("give-money");
     setOpen(true);
   };
+
+  useImperativeHandle(ref, () => ({
+    open: openJourney,
+  }));
 
   const closeJourney = () => {
     setOpen(false);
@@ -242,4 +251,4 @@ export function GiveMoneyJourney({ children }: GiveMoneyJourneyProps) {
       </JourneyModal>
     </>
   );
-}
+  });

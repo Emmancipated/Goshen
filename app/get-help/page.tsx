@@ -1,9 +1,12 @@
+"use client";
+
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
+import { useDonationModal } from "@/components/donation/donation-modal-provider";
 import {
   AlertIcon,
   ArrowRightIcon,
@@ -71,6 +74,8 @@ const SIGNS = [
 ];
 
 export default function GetHelpPage() {
+  const { openDonation } = useDonationModal();
+
   return (
     <>
       <PageHeader
@@ -404,13 +409,14 @@ export default function GetHelpPage() {
             </a>{" "}
             at any time.
           </p>
-          <Link
-            href="/donate"
+          <button
+            type="button"
+            onClick={openDonation}
             className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-gold-600"
           >
             Help others find safety
             <ArrowRightIcon className="h-4 w-4" />
-          </Link>
+          </button>
         </Reveal>
       </section>
     </>
