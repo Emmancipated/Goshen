@@ -14,7 +14,7 @@ type JourneyModalProps = {
     current: number;
     total: number;
   };
-  icon: ReactNode;
+  icon?: ReactNode;
   onClose: () => void;
   onBack?: () => void;
   canGoBack?: boolean;
@@ -40,32 +40,6 @@ export function JourneyModal({
   children,
   size = "md",
 }: JourneyModalProps) {
-  //   const [mounted, setMounted] = useState(false);
-
-  //   useEffect(() => {
-  //     setMounted(true);
-  //   }, []);
-
-  //   if (!mounted) return null;
-
-  //   useEffect(() => {
-  //     if (!open) return;
-
-  //     const previousOverflow = document.body.style.overflow;
-  //     document.body.style.overflow = "hidden";
-
-  //     const handleKeyDown = (e: KeyboardEvent) => {
-  //       if (e.key === "Escape") onClose();
-  //     };
-
-  //     document.addEventListener("keydown", handleKeyDown);
-
-  //     return () => {
-  //       document.body.style.overflow = previousOverflow;
-  //       document.removeEventListener("keydown", handleKeyDown);
-  //     };
-  //   }, [open, onClose]);
-
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -102,7 +76,7 @@ export function JourneyModal({
       {open && (
         <>
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4"
             onClick={onClose}
           >
             {/* Backdrop */}
@@ -144,7 +118,7 @@ export function JourneyModal({
 
                 {/* Sticky header */}
                 <div className="sticky top-0 z-20 border-b border-[#E8DED5] bg-[#F7F3EC]/95 backdrop-blur-md">
-                  <div className="px-6 pb-5 pt-5 sm:px-8 sm:pb-6 sm:pt-7">
+                  <div className="px-6 pb-3 pt-3 sm:px-8 sm:pb-4 sm:pt-5">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex min-w-0 flex-1 items-start gap-4">
                         {/* Back button */}
@@ -161,12 +135,12 @@ export function JourneyModal({
                         )}
 
                         {/* Shared animated icon */}
-                        <motion.div
+                        {/* <motion.div
                           layoutId="journey-icon"
                           className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]"
                         >
                           {icon}
-                        </motion.div>
+                        </motion.div> */}
 
                         {/* Shared animated title */}
                         <div className="min-w-0">
@@ -205,7 +179,7 @@ export function JourneyModal({
 
                     {/* Progress */}
                     {progress && (
-                      <div className="mt-6">
+                      <div className="mt-4">
                         <div className="mb-2 flex items-center justify-between">
                           <motion.span
                             layoutId="journey-progress-label"
@@ -235,9 +209,6 @@ export function JourneyModal({
                 </div>
 
                 {/* Scrollable body */}
-                {/* <div className="flex-1 overflow-y-auto px-6 py-6 sm:px-8 sm:py-8">
-                {children}
-              </div> */}
                 <motion.div
                   layout
                   transition={{
@@ -246,7 +217,7 @@ export function JourneyModal({
                       ease: [0.22, 1, 0.36, 1],
                     },
                   }}
-                  className="flex-1 overflow-y-auto px-6 py-6 sm:px-8 sm:py-8"
+                  className="flex-1 overflow-y-auto px-6 py-4 sm:px-8 sm:py-4"
                 >
                   {children}
                 </motion.div>

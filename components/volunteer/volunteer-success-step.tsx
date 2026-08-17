@@ -29,19 +29,19 @@ export function VolunteerSuccessStep({
         >
           {" "}
           <div className="absolute inset-0 rounded-full bg-[#2E7D32]/15 blur-xl" />
-          <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-[#E8F3EC]">
+          {/* <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-[#E8F3EC]">
             <CheckCircle2 className="h-12 w-12 text-[#2E7D32]" />
-          </div>
+          </div> */}
         </motion.div>
       </div>
       {/* Thank you message */}
       <div className="space-y-4">
-        <div className="inline-flex items-center gap-2 rounded-full bg-[#F3E8FF] px-4 py-2">
+        {/* <div className="inline-flex items-center gap-2 rounded-full bg-[#F3E8FF] px-4 py-2">
           <HeartHandshake className="h-4 w-4 text-[#43206F]" />
           <span className="text-sm font-semibold text-[#43206F]">
             Volunteer enquiry received
           </span>
-        </div>
+        </div> */}
 
         <h3 className="font-serif text-3xl font-semibold text-[#2F1B69]">
           Thank you, {firstName}!
@@ -55,9 +55,9 @@ export function VolunteerSuccessStep({
       {/* What happens next */}
       <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
         <div className="flex items-start gap-4">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
+          {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
             <Mail className="h-5 w-5 text-[#43206F]" />
-          </div>
+          </div> */}
 
           <div className="space-y-3">
             <h4 className="font-semibold text-[#2F1B69]">What happens next</h4>
@@ -74,7 +74,7 @@ export function VolunteerSuccessStep({
         </div>
       </div>
       {/* Encouragement */}
-      <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6 text-left">
+      {/* <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6 text-left">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FCE8E8]">
             <HeartHandshake className="h-5 w-5 text-[#B31312]" />
@@ -92,7 +92,7 @@ export function VolunteerSuccessStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* CTA */}
       <button
         onClick={onClose}

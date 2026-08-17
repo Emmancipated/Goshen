@@ -172,10 +172,10 @@ export function GiveMoneyJourney({ children }: GiveMoneyJourneyProps) {
         onBack={goBack}
         canGoBack={history.length > 0}
         title={title}
-        subtitle={subtitle}
+        // subtitle={subtitle}
         progress={progress}
         size="md"
-        icon={<Heart className="h-6 w-6" />}
+        // icon={<Heart className="h-6 w-6" />}
       >
         <motion.div
           layout

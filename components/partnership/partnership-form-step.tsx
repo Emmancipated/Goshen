@@ -11,6 +11,7 @@ export type PartnershipFormData = {
   organizationType: string;
   partnershipInterest: string;
   message: string;
+  preferredContact: "email" | "phone" | "whatsapp";
 };
 
 type PartnershipFormStepProps = {
@@ -30,14 +31,12 @@ const organizationTypes = [
 ];
 
 const partnershipInterests = [
-  "Corporate Social Responsibility (CSR)",
-  "Skills & empowerment programs",
-  "Employment & mentorship support",
+  "Corporate Social Responsibility (CSR) initiatives",
+  "Skills acquisition programmes",
+  "Employment opportunities for survivors",
   "Healthcare support",
   "Educational support",
-  "Fundraising partnership",
-  "Infrastructure / facility support",
-  "Long-term strategic partnership",
+  "Sustainable support for Goshen's services",
   "Other",
 ];
 
@@ -288,8 +287,43 @@ export function PartnershipFormStep({
           <p className="text-sm text-red-600">{errors.message}</p>
         )}
       </div>
+      {/* Preferred contact method */}
+      <div className="space-y-3">
+        <p className="text-sm font-semibold text-[#2F1B69]">
+          Preferred way for us to contact you
+        </p>
+
+        <div className="flex flex-col gap-3 sm:flex-row">
+          {[
+            { value: "email", label: "Email" },
+            { value: "phone", label: "Phone" },
+            { value: "whatsapp", label: "WhatsApp" },
+          ].map((option) => (
+            <label
+              key={option.value}
+              className="flex flex-1 cursor-pointer items-center gap-3 rounded-2xl border border-[#E5DDD3] bg-white px-4 py-3 transition-all hover:border-[#43206F]"
+            >
+              <input
+                type="radio"
+                name="preferredContact"
+                value={option.value}
+                checked={form.preferredContact === option.value}
+                onChange={() =>
+                  update(
+                    "preferredContact",
+                    option.value as PartnershipFormData["preferredContact"],
+                  )
+                }
+                className="h-4 w-4 text-[#43206F]"
+              />
+
+              <span className="text-[#4E4742]">{option.label}</span>
+            </label>
+          ))}
+        </div>
+      </div>
       {/* Privacy panel */}
-      <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-5">
+      {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-5">
         <div className="flex items-start gap-4">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#43206F] text-white">
             <Lock className="h-5 w-5" />
@@ -306,7 +340,7 @@ export function PartnershipFormStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Submit */}
       <button
         type="submit"

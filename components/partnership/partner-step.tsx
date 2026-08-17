@@ -17,38 +17,32 @@ const partnershipAreas = [
   {
     icon: <Building2 className="h-5 w-5" />,
     title: "Corporate Social Responsibility",
-    description:
-      "Support Goshen through your organization's CSR initiatives, employee engagement, or community investment programs.",
+    description: "Corporate Social Responsibility (CSR) initiatives",
   },
   {
     icon: <GraduationCap className="h-5 w-5" />,
     title: "Skills & Empowerment",
-    description:
-      "Support vocational training, digital skills, entrepreneurship, and educational opportunities for women rebuilding their lives.",
+    description: "Skills acquisition programmes",
   },
   {
     icon: <Briefcase className="h-5 w-5" />,
     title: "Employment Support",
-    description:
-      "Create pathways to employment, internships, mentorship, and economic independence for survivors.",
+    description: "Employment opportunities for survivors",
   },
   {
     icon: <HeartPulse className="h-5 w-5" />,
     title: "Healthcare Support",
-    description:
-      "Help provide medical care, mental health support, maternal care, and essential health services.",
+    description: "Healthcare support",
   },
   {
     icon: <GraduationCap className="h-5 w-5" />,
     title: "Educational Support",
-    description:
-      "Support children staying at Goshen through school supplies, scholarships, tutoring, and educational partnerships.",
+    description: "Educational support",
   },
   {
     icon: <Shield className="h-5 w-5" />,
     title: "Sustainable Support",
-    description:
-      "Partner with us through long-term funding, infrastructure support, capacity building, or strategic collaboration.",
+    description: "Sustainable support for Goshen's services",
   },
 ];
 
@@ -59,12 +53,7 @@ export function PartnerStep({ onContinue }: PartnerStepProps) {
       <div className="space-y-4">
         {" "}
         <p className="text-[1.05rem] leading-8 text-[#5E5752]">
-          Together, we can create lasting change for women and children.{" "}
-        </p>
-        <p className="leading-8 text-[#5E5752]">
-          Goshen welcomes organizations that want to support women and children
-          affected by domestic and sexual violence and contribute to their
-          journey toward safety, healing, and independence.
+          Learn how your organisation can support Goshen through partnership.
         </p>
       </div>
       {/* Partnership opportunities */}
@@ -77,15 +66,15 @@ export function PartnerStep({ onContinue }: PartnerStepProps) {
           {partnershipAreas.map((area) => (
             <div
               key={area.title}
-              className="rounded-3xl border border-[#E8DED5] bg-white p-5 transition-all duration-200 hover:border-[#43206F] hover:shadow-sm"
+              className="rounded-3xl border border-[#E8DED5] bg-white p-2 transition-all duration-200 hover:border-[#43206F] hover:shadow-sm"
             >
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
+                {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
                   {area.icon}
-                </div>
+                </div> */}
 
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-[#2F1B69]">{area.title}</h4>
+                  {/* <h4 className="font-semibold text-[#2F1B69]">{area.title}</h4> */}
 
                   <p className="leading-7 text-[#5E5752]">{area.description}</p>
                 </div>
@@ -95,7 +84,7 @@ export function PartnerStep({ onContinue }: PartnerStepProps) {
         </div>
       </div>
       {/* Partnership panel */}
-      <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6">
+      {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#43206F] text-white">
             <HeartHandshake className="h-5 w-5" />
@@ -112,7 +101,7 @@ export function PartnerStep({ onContinue }: PartnerStepProps) {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* CTA */}
       <button
         onClick={onContinue}

@@ -4,7 +4,13 @@ import { useState } from "react";
 import { Modal } from "@/components/modal";
 import { ContactOptions } from "@/components/contact-options";
 import { DonateForm } from "@/app/donate/donate-form";
-import { ArrowRightIcon, BankIcon, CalendarIcon, CheckIcon, GiftIcon } from "@/components/icons";
+import {
+  ArrowRightIcon,
+  BankIcon,
+  CalendarIcon,
+  CheckIcon,
+  GiftIcon,
+} from "@/components/icons";
 
 const BANK_NAME = process.env.NEXT_PUBLIC_BANK_NAME ?? "";
 const BANK_ACCOUNT = process.env.NEXT_PUBLIC_BANK_ACCOUNT ?? "";
@@ -36,19 +42,27 @@ export function DonateModal({ open, onClose }: DonateModalProps) {
   };
 
   return (
-    <Modal open={open} onClose={handleClose} labelledBy="donate-modal-title" maxWidth="max-w-2xl">
+    <Modal
+      open={open}
+      onClose={handleClose}
+      labelledBy="donate-modal-title"
+      maxWidth="max-w-2xl"
+    >
       <div className="p-6 sm:p-8">
         {!frequency && (
           <>
             <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 text-white">
               <GiftIcon className="h-6 w-6" />
             </span>
-            <h2 id="donate-modal-title" className="mt-4 font-display text-2xl font-semibold text-gold-700">
+            <h2
+              id="donate-modal-title"
+              className="mt-4 font-display text-2xl font-semibold text-gold-700"
+            >
               Choose Your Donation
             </h2>
             <p className="mt-2 text-sm leading-6 text-night-600">
-              Whether you give once or every month, your gift funds shelter, meals, healthcare, education and skills for
-              women and children.
+              Whether you give once or every month, your gift funds shelter,
+              meals, healthcare, education and skills for women and children.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -64,13 +78,19 @@ export function DonateModal({ open, onClose }: DonateModalProps) {
               >
                 <span
                   className={`flex h-11 w-11 items-center justify-center rounded-xl ${
-                    selected === "one-time" ? "bg-night-900 text-gold-400" : "bg-gold-100 text-gold-700"
+                    selected === "one-time"
+                      ? "bg-night-900 text-gold-400"
+                      : "bg-gold-100 text-gold-700"
                   }`}
                 >
                   <GiftIcon className="h-5 w-5" />
                 </span>
-                <span className="mt-4 block font-display text-lg font-semibold">One-Time Donation</span>
-                <span className={`mt-1 block text-sm leading-5 ${selected === "one-time" ? "text-night-800" : "text-night-600"}`}>
+                <span className="mt-4 block font-display text-lg font-semibold">
+                  One-Time Donation
+                </span>
+                <span
+                  className={`mt-1 block text-sm leading-5 ${selected === "one-time" ? "text-night-800" : "text-night-600"}`}
+                >
                   A single gift that goes straight to work.
                 </span>
               </button>
@@ -86,13 +106,19 @@ export function DonateModal({ open, onClose }: DonateModalProps) {
               >
                 <span
                   className={`flex h-11 w-11 items-center justify-center rounded-xl ${
-                    selected === "monthly" ? "bg-night-900 text-gold-400" : "bg-gold-100 text-gold-700"
+                    selected === "monthly"
+                      ? "bg-night-900 text-gold-400"
+                      : "bg-gold-100 text-gold-700"
                   }`}
                 >
                   <CalendarIcon className="h-5 w-5" />
                 </span>
-                <span className="mt-4 block font-display text-lg font-semibold">Monthly Donation</span>
-                <span className={`mt-1 block text-sm leading-5 ${selected === "monthly" ? "text-night-800" : "text-night-600"}`}>
+                <span className="mt-4 block font-display text-lg font-semibold">
+                  Monthly Donation
+                </span>
+                <span
+                  className={`mt-1 block text-sm leading-5 ${selected === "monthly" ? "text-night-800" : "text-night-600"}`}
+                >
                   Reliable, lasting support every month.
                 </span>
               </button>
@@ -113,7 +139,10 @@ export function DonateModal({ open, onClose }: DonateModalProps) {
         {frequency === "one-time" && (
           <div>
             <div className="mb-5 flex items-center justify-between">
-              <h2 id="donate-modal-title" className="font-display text-xl font-semibold text-gold-700">
+              <h2
+                id="donate-modal-title"
+                className="font-display text-xl font-semibold text-gold-700"
+              >
                 Make a Donation
               </h2>
               <button
@@ -131,7 +160,10 @@ export function DonateModal({ open, onClose }: DonateModalProps) {
         {frequency === "monthly" && !confirmed && (
           <div>
             <div className="mb-5 flex items-center justify-between">
-              <h2 id="donate-modal-title" className="font-display text-xl font-semibold text-gold-700">
+              <h2
+                id="donate-modal-title"
+                className="font-display text-xl font-semibold text-gold-700"
+              >
                 Monthly Giving
               </h2>
               <button
@@ -143,14 +175,15 @@ export function DonateModal({ open, onClose }: DonateModalProps) {
               </button>
             </div>
             <p className="text-sm leading-6 text-night-600">
-              Thank you for choosing to stand with survivors every month. Your monthly gift keeps a bed ready, a
-              helpline answered and meals served — all year round.
+              Thank you for choosing to stand with survivors every month. Your
+              monthly gift keeps a bed ready, a helpline answered and meals
+              served — all year round.
             </p>
 
             {BANK_NAME && BANK_ACCOUNT && BANK_ACCOUNT_NAME && (
               <div className="mt-5 rounded-xl border border-night-100 bg-cream-50 p-4 text-sm leading-6 text-night-900">
                 <p className="flex items-center gap-2 font-semibold text-gold-700">
-                  <BankIcon className="h-4 w-4" />
+                  {/* <BankIcon className="h-4 w-4" /> */}
                   Set up a monthly standing order:
                 </p>
                 <p className="mt-2">
@@ -160,7 +193,8 @@ export function DonateModal({ open, onClose }: DonateModalProps) {
                   Account: <span className="font-semibold">{BANK_ACCOUNT}</span>
                 </p>
                 <p>
-                  Account name: <span className="font-semibold">{BANK_ACCOUNT_NAME}</span>
+                  Account name:{" "}
+                  <span className="font-semibold">{BANK_ACCOUNT_NAME}</span>
                 </p>
               </div>
             )}
@@ -194,23 +228,29 @@ export function DonateModal({ open, onClose }: DonateModalProps) {
               </button>
             </form>
             <p className="mt-4 text-xs leading-5 text-night-600/80">
-              We will email you a secure link each month to complete your gift — and remind you before each payment, so
-              you are never caught off guard.
+              We will email you a secure link each month to complete your gift —
+              and remind you before each payment, so you are never caught off
+              guard.
             </p>
           </div>
         )}
 
         {frequency === "monthly" && confirmed && (
           <div className="text-center">
-            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold-100 text-gold-700">
+            {/* <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold-100 text-gold-700">
               <CheckIcon className="h-7 w-7" />
-            </span>
-            <h2 id="donate-modal-title" className="mt-5 font-display text-2xl font-semibold text-gold-700">
+            </span> */}
+            <h2
+              id="donate-modal-title"
+              className="mt-5 font-display text-2xl font-semibold text-gold-700"
+            >
               Thank you for your monthly commitment
             </h2>
             <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-night-600">
-              We will send your first reminder to <span className="font-semibold">{email || "your email"}</span>. If
-              you would like help setting up a standing order, we are one call away.
+              We will send your first reminder to{" "}
+              <span className="font-semibold">{email || "your email"}</span>. If
+              you would like help setting up a standing order, we are one call
+              away.
             </p>
             <ContactOptions compact className="mt-6" />
             <button

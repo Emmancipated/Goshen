@@ -11,12 +11,15 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded-2xl border border-night-200 bg-white p-10 text-center shadow-sm">
-        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold-100 text-gold-700">
+        {/* <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold-100 text-gold-700">
           <CheckIcon className="h-7 w-7" />
-        </span>
-        <h2 className="mt-5 font-display text-2xl font-semibold text-gold-700">Message received</h2>
+        </span> */}
+        <h2 className="mt-5 font-display text-2xl font-semibold text-gold-700">
+          Message received
+        </h2>
         <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-night-600">
-          Thank you for reaching out. A member of our team will reply as soon as possible — usually within 24 hours.
+          Thank you for reaching out. A member of our team will reply as soon as
+          possible — usually within 24 hours.
         </p>
       </div>
     );
@@ -45,7 +48,10 @@ export function ContactForm() {
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="text-sm font-semibold text-night-900">
+          <label
+            htmlFor="name"
+            className="text-sm font-semibold text-night-900"
+          >
             Full name
           </label>
           <input
@@ -58,7 +64,10 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="phone" className="text-sm font-semibold text-night-900">
+          <label
+            htmlFor="phone"
+            className="text-sm font-semibold text-night-900"
+          >
             Phone / WhatsApp
           </label>
           <input
@@ -70,7 +79,10 @@ export function ContactForm() {
           />
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="email" className="text-sm font-semibold text-night-900">
+          <label
+            htmlFor="email"
+            className="text-sm font-semibold text-night-900"
+          >
             Email address
           </label>
           <input
@@ -83,7 +95,10 @@ export function ContactForm() {
           />
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="subject" className="text-sm font-semibold text-night-900">
+          <label
+            htmlFor="subject"
+            className="text-sm font-semibold text-night-900"
+          >
             What is this about?
           </label>
           <select
@@ -100,7 +115,10 @@ export function ContactForm() {
           </select>
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="message" className="text-sm font-semibold text-night-900">
+          <label
+            htmlFor="message"
+            className="text-sm font-semibold text-night-900"
+          >
             Your message
           </label>
           <textarea
@@ -122,8 +140,12 @@ export function ContactForm() {
       </button>
       {status === "error" && (
         <p className="mt-4 rounded-xl bg-cream-100 p-3 text-xs leading-5 text-night-900">
-          Something went wrong and your message could not be sent. Please try again, or call us on{" "}
-          <a href="tel:+2348027775001" className="font-semibold text-gold-700 underline underline-offset-2">
+          Something went wrong and your message could not be sent. Please try
+          again, or call us on{" "}
+          <a
+            href="tel:+2348027775001"
+            className="font-semibold text-gold-700 underline underline-offset-2"
+          >
             0802 777 5001
           </a>
           .
@@ -131,11 +153,15 @@ export function ContactForm() {
       )}
       <p className="mt-4 rounded-xl bg-cream-100 p-3 text-xs leading-5 text-night-600">
         If it is not safe for you to use this form, please call{" "}
-        <a href="tel:+2348027775001" className="font-semibold text-gold-700 underline underline-offset-2">
+        <a
+          href="tel:+2348027775001"
+          className="font-semibold text-gold-700 underline underline-offset-2"
+        >
           0802 777 5001
         </a>{" "}
         instead, or press the{" "}
-        <span className="font-semibold text-night-900">Exit</span> button and contact us later.
+        <span className="font-semibold text-night-900">Exit</span> button and
+        contact us later.
       </p>
     </form>
   );

@@ -83,16 +83,16 @@ export function PaymentOptionsStep({
           <button
             key={option.method}
             onClick={() => onSelect(option.method)}
-            className="group rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-[#43206F] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#43206F]/20"
+            className="group rounded-3xl border border-[#E5DDD3] bg-white p-2 text-left transition-all duration-300 hover:-translate-y-1 hover:border-[#43206F] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#43206F]/20"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-4">
-                <div
+                {/* <div
                   className="flex h-12 w-12 items-center justify-center rounded-2xl text-white"
                   style={{ backgroundColor: option.accent }}
                 >
                   {option.icon}
-                </div>
+                </div> */}
 
                 <div className="space-y-2">
                   <div className="flex flex-wrap items-center gap-2">
@@ -100,23 +100,23 @@ export function PaymentOptionsStep({
                       {option.title}
                     </h4>
 
-                    {option.badge && (
+                    {/* {option.badge && (
                       <span
                         className="rounded-full px-2.5 py-1 text-xs font-semibold text-white"
                         style={{ backgroundColor: option.accent }}
                       >
                         {option.badge}
                       </span>
-                    )}
+                    )} */}
                   </div>
 
-                  <p className="text-sm font-medium text-[#6B6560]">
+                  {/* <p className="text-sm font-medium text-[#6B6560]">
                     {option.subtitle}
                   </p>
 
                   <p className="text-sm leading-6 text-[#5E5752]">
                     {option.description}
-                  </p>
+                  </p> */}
                 </div>
               </div>
 
@@ -128,9 +128,9 @@ export function PaymentOptionsStep({
       {/* Security panel */}
       <div className="rounded-3xl border border-[#E5DDD3] bg-white p-5">
         <div className="flex items-start gap-4">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E8F3EC]">
+          {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E8F3EC]">
             <Lock className="h-5 w-5 text-[#2E7D32]" />
-          </div>
+          </div> */}
 
           <div className="space-y-2">
             <h4 className="font-semibold text-[#2F1B69]">
