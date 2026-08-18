@@ -117,7 +117,10 @@ export default function SupportPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Partner With Us */}
-        <section className="mt-10 overflow-hidden rounded-[28px] bg-[#EFE7E3]">
+        <section
+          className="mt-10 overflow-hidden rounded-[28px] bg-[#EFE7E3]"
+          id="partner"
+        >
           <div className="grid items-center lg:grid-cols-[0.9fr_1.1fr]">
             {/* Text content */}
             <div className="relative  p-8 md:p-10 lg:pr-12">
@@ -194,7 +197,10 @@ export default function SupportPage() {
         </section>
 
         {/* Survivor Kit */}
-        <section className="mt-8 overflow-hidden rounded-[28px] bg-[#F1EAE4]">
+        <section
+          className="mt-8 overflow-hidden rounded-[28px] bg-[#F1EAE4]"
+          id="survivors-kit"
+        >
           <div className="grid items-center lg:grid-cols-[0.9fr_1.1fr]">
             <div className="p-8 md:p-10">
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8B6A3D]">

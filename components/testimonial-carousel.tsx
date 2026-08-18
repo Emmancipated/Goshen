@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { QuoteIcon, ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
+import {
+  QuoteIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@/components/icons";
 
 const TESTIMONIALS = [
   {
@@ -25,7 +29,8 @@ export function TestimonialCarousel() {
   const [index, setIndex] = useState(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const goTo = (next: number) => setIndex((next + TESTIMONIALS.length) % TESTIMONIALS.length);
+  const goTo = (next: number) =>
+    setIndex((next + TESTIMONIALS.length) % TESTIMONIALS.length);
 
   useEffect(() => {
     timer.current = setInterval(() => {
@@ -40,7 +45,7 @@ export function TestimonialCarousel() {
     <div className="relative mx-auto max-w-3xl">
       <QuoteIcon className="mx-auto h-10 w-10 text-gold-500/40" />
 
-      <div className="mt-6 min-h-[14rem] sm:min-h-[11rem]">
+      <div className="relative mt-6 min-h-[16rem] overflow-hidden pb-4 sm:min-h-[14rem]">
         {TESTIMONIALS.map((t, i) => (
           <figure
             key={i}
@@ -49,10 +54,12 @@ export function TestimonialCarousel() {
               i === index ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
           >
-            <blockquote className="max-w-2xl font-display text-xl font-medium leading-9 text-cream-50 sm:text-2xl">
+            <blockquote className="max-w-2xl font-display text-xl font-medium leading-9  sm:text-2xl">
               &ldquo;{t.quote}&rdquo;
             </blockquote>
-            <figcaption className="mt-5 text-xs uppercase tracking-[0.18em] text-gold-400">{t.note}</figcaption>
+            <figcaption className="mt-5 text-xs uppercase tracking-[0.18em] text-gold-400">
+              {t.note}
+            </figcaption>
           </figure>
         ))}
       </div>
@@ -62,11 +69,15 @@ export function TestimonialCarousel() {
           type="button"
           onClick={() => goTo(index - 1)}
           aria-label="Previous testimonial"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-night-600 text-white/80 transition-colors hover:border-gold-500 hover:bg-gold-500 hover:text-white"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-night-600 transition-colors hover:border-gold-500 hover:bg-gold-500 hover:text-white"
         >
           <ChevronLeftIcon className="h-5 w-5" />
         </button>
-        <div className="flex items-center gap-2.5" role="tablist" aria-label="Testimonials">
+        <div
+          className="flex items-center gap-2.5"
+          role="tablist"
+          aria-label="Testimonials"
+        >
           {TESTIMONIALS.map((_, i) => (
             <button
               key={i}
@@ -76,7 +87,9 @@ export function TestimonialCarousel() {
               aria-label={`Go to testimonial ${i + 1}`}
               onClick={() => goTo(i)}
               className={`h-2.5 rounded-full transition-all ${
-                i === index ? "w-7 bg-gold-500" : "w-2.5 bg-night-600 hover:bg-night-500"
+                i === index
+                  ? "w-7 bg-gold-500"
+                  : "w-2.5 bg-night-600 hover:bg-night-500"
               }`}
             />
           ))}
@@ -85,7 +98,7 @@ export function TestimonialCarousel() {
           type="button"
           onClick={() => goTo(index + 1)}
           aria-label="Next testimonial"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-night-600 text-white/80 transition-colors hover:border-gold-500 hover:bg-gold-500 hover:text-white"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-night-600  transition-colors hover:border-gold-500 hover:bg-gold-500 hover:text-white"
         >
           <ChevronRightIcon className="h-5 w-5" />
         </button>
