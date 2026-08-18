@@ -11,11 +11,11 @@ import { MenuIcon, CloseIcon } from "@/components/icons";
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/services", label: "Our Services" },
+  { href: "/services", label: "Our Work" },
   { href: "/impact", label: "Impact" },
   { href: "/support", label: "Support Goshen" },
   // { href: "/media", label: "Media" },
-  // { href: "/contact", label: "Contact Us" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export function SiteHeader() {
@@ -65,13 +65,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <button
+          {/* <button
             type="button"
             onClick={() => openHelpModal()}
             className="hidden items-center gap-2 rounded-full border border-gold-500 px-4 py-2 text-sm font-bold text-gold-700 transition-all hover:bg-gold-500 hover:text-white md:flex"
           >
             Get Help
-          </button>
+          </button> */}
           <button
             type="button"
             onClick={openDonation}

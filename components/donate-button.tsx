@@ -1,11 +1,7 @@
 "use client";
 
 import { useDonationModal } from "@/components/donation/donation-modal-provider";
-import {
-  ArrowRightIcon,
-  HeartIcon,
-  UserPlusIcon,
-} from "@/components/icons";
+import { ArrowRightIcon, HeartIcon, UserPlusIcon } from "@/components/icons";
 
 type DonateButtonProps = {
   label?: string;
@@ -29,13 +25,9 @@ export function DonateButton({
   const { openDonation } = useDonationModal();
 
   return (
-    <button
-      type="button"
-      onClick={openDonation}
-      className={className}
-    >
+    <button type="button" onClick={openDonation} className={className}>
       {children || label}
-      {iconMap[icon]}
+      {/* {iconMap[icon]} */}
     </button>
   );
 }

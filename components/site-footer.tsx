@@ -15,11 +15,11 @@ import {
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/services", label: "Our Services" },
+  { href: "/services", label: "Our Work" },
   { href: "/impact", label: "Impact" },
   { href: "/support", label: "Support Goshen" },
   // { href: "/media", label: "Media" },
-  // { href: "/contact", label: "Contact Us" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export function SiteFooter() {
@@ -40,6 +40,21 @@ export function SiteFooter() {
             Goshen was the place of refuge where a family was kept safe and given room to thrive — that is what we offer
             every woman and child who walks through our doors.
           </p> */}
+          <div className="mt-8 rounded-2xl border border-night-800 bg-night-900 p-5">
+            <p className="text-sm font-semibold text-cream-50">Donate</p>
+            <p className="mt-1 text-xs leading-5 text-white/60">
+              Every gift funds shelter, meals, healthcare, education and skills
+              for women and children.
+            </p>
+            <button
+              type="button"
+              onClick={openDonation}
+              className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-gold-500 px-5 py-2 text-xs font-bold uppercase tracking-wider text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
+            >
+              Donate
+              <ArrowRightIcon className="h-3.5 w-3.5" />
+            </button>
+          </div>
         </div>
 
         <nav aria-label="Quick links">
@@ -115,22 +130,6 @@ export function SiteFooter() {
           >
             Get Help Now
           </button>
-
-          <div className="mt-8 rounded-2xl border border-night-800 bg-night-900 p-5">
-            <p className="text-sm font-semibold text-cream-50">Donate</p>
-            <p className="mt-1 text-xs leading-5 text-white/60">
-              Every gift funds shelter, meals, healthcare, education and skills
-              for women and children.
-            </p>
-            <button
-              type="button"
-              onClick={openDonation}
-              className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-gold-500 px-5 py-2 text-xs font-bold uppercase tracking-wider text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
-            >
-              Donate
-              <ArrowRightIcon className="h-3.5 w-3.5" />
-            </button>
-          </div>
         </div>
       </div>
 

@@ -19,7 +19,7 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Our Work",
   description:
     "From temporary shelter and counselling to skills training, education and reintegration — the services Goshen Shelters provides for women and children.",
 };
@@ -113,8 +113,12 @@ export default function ServicesPage() {
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-all group-hover:scale-105 group-hover:bg-gold-500 group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-night-600">{body}</p>
+                  <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-night-600">
+                    {body}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -125,13 +129,16 @@ export default function ServicesPage() {
       <section className="bg-night-950 text-cream-50">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2">
           <Reveal>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">The journey of restoration</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
+              The journey of restoration
+            </p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
               From fear to freedom, step by step
             </h2>
             <p className="mt-5 max-w-lg text-base leading-7 text-white/70">
-              Most women stay with us for three to six months, and up to a year where needed. Every journey is
-              different — and every one is walked with you, at your pace.
+              Most women stay with us for three to six months, and up to a year
+              where needed. Every journey is different — and every one is walked
+              with you, at your pace.
             </p>
             <HelpButton
               title="Get Help Now"
@@ -161,8 +168,12 @@ export default function ServicesPage() {
           {JOURNEY.map(({ step, title, body }, i) => (
             <Reveal key={step} delay={i * 90}>
               <div className="h-full rounded-2xl border border-night-700 bg-night-900 p-6 transition-colors hover:border-gold-500/50">
-                <span className="font-display text-3xl font-semibold text-gold-500/50">{step}</span>
-                <h3 className="mt-3 font-display text-lg font-semibold text-cream-50">{title}</h3>
+                <span className="font-display text-3xl font-semibold text-gold-500/50">
+                  {step}
+                </span>
+                <h3 className="mt-3 font-display text-lg font-semibold text-cream-50">
+                  {title}
+                </h3>
                 <p className="mt-2 text-sm leading-6 text-white/60">{body}</p>
               </div>
             </Reveal>
@@ -173,11 +184,16 @@ export default function ServicesPage() {
       <section className="bg-cream-100">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 py-16 text-center sm:px-6 lg:flex-row lg:text-left">
           <div className="max-w-xl">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-600">Not sure what you need?</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight">We will listen without judgement</h2>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-600">
+              Not sure what you need?
+            </p>
+            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight">
+              We will listen without judgement
+            </h2>
             <p className="mt-3 text-base leading-7 text-night-600">
-              A confidential call with us can help you make sense of what is happening and plan your next step — whether
-              that is shelter, counselling, legal help or simply someone to listen.
+              A confidential call with us can help you make sense of what is
+              happening and plan your next step — whether that is shelter,
+              counselling, legal help or simply someone to listen.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -202,9 +218,12 @@ export default function ServicesPage() {
         <Reveal className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <div className="flex flex-col items-start justify-between gap-5 rounded-3xl border border-gold-500/40 bg-night-950 p-8 text-cream-50 sm:flex-row sm:items-center sm:p-10">
             <div>
-              <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">Help another woman find safety</h2>
+              <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                Help another woman find safety
+              </h2>
               <p className="mt-2 max-w-xl text-sm leading-6 text-white/70">
-                Your support funds shelter, meals, counselling, education and skills — every gift changes a story.
+                Your support funds shelter, meals, counselling, education and
+                skills — every gift changes a story.
               </p>
             </div>
             <DonateButton
