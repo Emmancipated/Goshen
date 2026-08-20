@@ -1,7 +1,14 @@
 "use client";
 
-import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
-import { Modal } from "@/components/modal";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
+import { JourneyModal } from "@/components/journey/journey-modal";
 import { ContactOptions } from "@/components/contact-options";
 import { ShieldIcon } from "@/components/icons";
 
@@ -18,43 +25,47 @@ export function HelpModalProvider({ children }: { children: ReactNode }) {
     "A trained member of our team is here for you — 24 hours a day, 7 days a week. Choose how you would like to reach us. Everything is confidential.",
   );
 
-  const openHelpModal = useCallback((nextTitle?: string, nextIntro?: string) => {
-    if (nextTitle) setTitle(nextTitle);
-    if (nextIntro) setIntro(nextIntro);
-    setOpen(true);
-  }, []);
+  const openHelpModal = useCallback(
+    (nextTitle?: string, nextIntro?: string) => {
+      if (nextTitle) setTitle(nextTitle);
+      if (nextIntro) setIntro(nextIntro);
+      setOpen(true);
+    },
+    [],
+  );
 
   const value = useMemo(() => ({ openHelpModal }), [openHelpModal]);
 
   return (
     <HelpModalContext.Provider value={value}>
       {children}
-      <Modal open={open} onClose={() => setOpen(false)} labelledBy="help-modal-title">
-        <div className="p-6 sm:p-8">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 text-white">
-            <ShieldIcon className="h-6 w-6" />
-          </span>
-          <h2 id="help-modal-title" className="mt-4 font-display text-2xl font-semibold text-gold-700">
-            {title}
-          </h2>
-          <p className="mt-2 text-sm leading-6 text-night-600">{intro}</p>
-          <ContactOptions className="mt-6" />
-          <p className="mt-5 rounded-xl bg-cream-100 p-3 text-xs leading-5 text-night-600">
-            In an emergency, call <span className="font-bold text-night-900">112</span> — it is free from any network.
+      <JourneyModal
+        open={open}
+        onClose={() => setOpen(false)}
+        title={title}
+        subtitle={intro}
+        icon={<ShieldIcon className="h-6 w-6" />}
+        size="md"
+      >
+        <div className="space-y-6">
+          <ContactOptions />
+          <div className="rounded-xl bg-[#F7F3EC] p-4 text-sm text-[#5E5752]">
+            In an emergency, call <span className="font-bold text-[#2F1B69]">112</span> — it is free from any network.
             If it is not safe to browse, use the{" "}
-            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-gold-700 underline underline-offset-2">
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-[#43206F] underline underline-offset-2">
               Exit
             </a>{" "}
             button and reach out from a safer device.
-          </p>
+          </div>
         </div>
-      </Modal>
+      </JourneyModal>
     </HelpModalContext.Provider>
   );
 }
 
 export function useHelpModal() {
   const ctx = useContext(HelpModalContext);
-  if (!ctx) throw new Error("useHelpModal must be used within HelpModalProvider");
+  if (!ctx)
+    throw new Error("useHelpModal must be used within HelpModalProvider");
   return ctx;
 }

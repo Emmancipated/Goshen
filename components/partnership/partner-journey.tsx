@@ -143,7 +143,20 @@ export function PartnerJourney({ children }: PartnerJourneyProps) {
   return (
     <>
       {" "}
-      <div onClick={openJourney}>{children} </div>
+      <div
+        onClick={openJourney}
+        className="cursor-pointer"
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openJourney();
+          }
+        }}
+      >
+        {children}{" "}
+      </div>
       <JourneyModal
         open={open}
         onClose={closeJourney}

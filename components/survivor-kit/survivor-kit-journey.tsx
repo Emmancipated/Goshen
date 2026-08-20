@@ -174,7 +174,18 @@ export function SurvivorKitJourney({ children }: SurvivorKitJourneyProps) {
   return (
     <>
       {" "}
-      <div onClick={openJourney} className="cursor-pointer">
+      <div
+        onClick={openJourney}
+        className="cursor-pointer"
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openJourney();
+          }
+        }}
+      >
         {children}{" "}
       </div>
       <JourneyModal

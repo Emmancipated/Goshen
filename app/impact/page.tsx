@@ -1408,7 +1408,7 @@ export const metadata: Metadata = {
  * Keep this configurable so the dedicated Survivor's Kit page can be
  * moved later without changing the structure of this page.
  */
-const SURVIVORS_KIT_HREF = "/survivors-kit";
+const SURVIVORS_KIT_HREF = "/support#survivors-kit";
 
 const IMPACT_FIGURES = [
   {
@@ -1515,7 +1515,7 @@ export default function ImpactPage() {
       <section className="relative isolate overflow-hidden bg-[#F7F3EC]">
         <div className="grid items-stretch lg:grid-cols-[55%_45%]">
           {/* Image */}
-          <div className="relative min-h-[380px] sm:min-h-[480px] lg:min-h-[620px]">
+          <div className="relative min-h-95 sm:min-h-120 lg:min-h-155">
             <Image
               src="/images/impacts.jpg"
               alt="A woman and child representing the women and children supported by Goshen Shelters"
@@ -1605,7 +1605,7 @@ export default function ImpactPage() {
                 {IMPACT_FIGURES.map((stat, index) => (
                   <div
                     key={stat.label}
-                    className={`min-h-[145px] border-b border-[#D9CFC5] py-7 pr-5 sm:min-h-[165px] sm:py-8 ${
+                    className={`min-h-36.25 border-b border-[#D9CFC5] py-7 pr-5 sm:min-h-41.25 sm:py-8 ${
                       index % 2 !== 0 ? "pl-5 sm:border-l sm:pl-6" : "pl-0"
                     } ${index >= 2 ? "sm:border-l sm:pl-6" : ""}`}
                   >
@@ -1613,7 +1613,7 @@ export default function ImpactPage() {
                       <StatCounter value={stat.value} />
                     </p>
 
-                    <p className="mt-3 max-w-[150px] text-sm font-medium leading-5 text-[#5E5752]">
+                    <p className="mt-3 max-w-37.5 text-sm font-medium leading-5 text-[#5E5752]">
                       {stat.label}
                     </p>
 
@@ -1636,17 +1636,17 @@ export default function ImpactPage() {
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
             <Reveal>
-              <div className="relative overflow-hidden rounded-[2rem]">
-                <div className="relative aspect-[4/3]">
+              <div className="relative overflow-hidden rounded-4xl">
+                <div className="relative aspect-4/3">
                   <Image
-                    src="/images/impact.jpg"
+                    src="/images/love.jpg"
                     alt="A woman representing the journey from shelter and support toward independence"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover object-center"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2F1B69]/55 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#2F1B69]/55 via-transparent to-transparent" />
                 </div>
               </div>
             </Reveal>
@@ -1960,7 +1960,7 @@ export default function ImpactPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <Reveal>
-            <div className="grid gap-8 rounded-[2rem] bg-[#2F1B69] p-8 text-white sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center lg:p-12">
+            <div className="grid gap-8 rounded-4xl bg-[#2F1B69] p-8 text-white sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center lg:p-12">
               <div className="max-w-2xl">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#E0C45A]">
                   The journey continues
@@ -2011,7 +2011,7 @@ export default function ImpactPage() {
 
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
-                href="/support-goshen"
+                href="/support"
                 className="inline-flex items-center justify-center rounded-full bg-[#43206F] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-[#351858] focus:outline-none focus:ring-2 focus:ring-[#43206F] focus:ring-offset-2 active:translate-y-0"
               >
                 Support Goshen

@@ -1,5 +1,3 @@
-import { MailIcon, PhoneIcon, WhatsAppIcon } from "@/components/icons";
-
 const HELP_PHONE = "+2348027775001";
 const HELP_PHONE_DISPLAY = "0802 777 5001";
 const HELP_EMAIL = "goshenshelters2026@gmail.com";
@@ -10,47 +8,83 @@ type ContactOptionsProps = {
   compact?: boolean;
 };
 
-export function ContactOptions({ className = "", compact = false }: ContactOptionsProps) {
-  const iconClass = compact ? "h-4 w-4" : "h-5 w-5";
-  const base = compact
-    ? "inline-flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition-all active:scale-[0.98]"
-    : "group flex flex-col items-center gap-3 rounded-2xl border p-6 text-center transition-all hover:-translate-y-1";
+export function ContactOptions({
+  className = "",
+  compact = false,
+}: ContactOptionsProps) {
+  const cardBase =
+    "rounded-2xl border border-[#E8DED5] bg-white transition-all duration-300";
+
+  const hoverClass = compact
+    ? "hover:border-[#43206F] hover:bg-[#F9F7FD]"
+    : "hover:-translate-y-1 hover:border-[#43206F] hover:shadow-lg";
+
+  if (compact) {
+    return (
+      <div className={`grid grid-cols-3 gap-3 ${className}`}>
+        <a
+          href={`tel:${HELP_PHONE}`}
+          className={`${cardBase} ${hoverClass} flex flex-1 flex-col items-center justify-center gap-2 px-4 py-3 text-center`}
+        >
+          <span className="text-sm font-semibold text-[#2F1B69]">Call</span>
+          <span className="text-xs text-[#5E5752]">{HELP_PHONE_DISPLAY}</span>
+        </a>
+        <a
+          href={HELP_WHATSAPP}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${cardBase} ${hoverClass} flex flex-1 flex-col items-center justify-center gap-2 px-4 py-3 text-center`}
+        >
+          <span className="text-sm font-semibold text-[#2F1B69]">WhatsApp</span>
+          <span className="text-xs text-[#5E5752]">Message us</span>
+        </a>
+        <a
+          href={`mailto:${HELP_EMAIL}`}
+          className={`${cardBase} ${hoverClass} flex flex-1 flex-col items-center justify-center gap-2 px-4 py-3 text-center`}
+        >
+          <span className="text-sm font-semibold text-[#2F1B69]">Email</span>
+          <span className="text-xs text-[#5E5752]">Send message</span>
+        </a>
+      </div>
+    );
+  }
+
   return (
-    <div className={`grid gap-3 ${compact ? "grid-cols-3" : "grid-cols-1 sm:grid-cols-3"} ${className}`}>
+    <div className={`grid gap-3 sm:grid-cols-3 ${className}`}>
       <a
         href={`tel:${HELP_PHONE}`}
-        className={`${base} border-night-200 bg-cream-50 text-white hover:border-gold-500 hover:bg-gold-500 hover:text-white`}
+        className={`${cardBase} ${hoverClass} p-6 text-left`}
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-100 text-gold-700 transition-colors group-hover:bg-night-900 group-hover:text-gold-400">
-          <PhoneIcon className={iconClass} />
-        </span>
-        {!compact && <span className="text-xs font-bold uppercase tracking-wider text-gold-600 group-hover:text-night-700">Call</span>}
-        {!compact && <span className="text-sm font-semibold leading-5">{HELP_PHONE_DISPLAY}</span>}
-        {compact && <span>Call</span>}
+        <p className="text-xs font-bold uppercase tracking-wider text-[#8B6A3D]">
+          Call
+        </p>
+        <p className="mt-1 text-sm font-semibold leading-5 text-[#2F1B69]">
+          {HELP_PHONE_DISPLAY}
+        </p>
       </a>
       <a
         href={HELP_WHATSAPP}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${base} border-night-200 bg-cream-50 text-white hover:border-gold-500 hover:bg-gold-500 hover:text-white`}
+        className={`${cardBase} ${hoverClass} p-6 text-left`}
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-100 text-gold-700 transition-colors group-hover:bg-night-900 group-hover:text-gold-400">
-          <WhatsAppIcon className={iconClass} />
-        </span>
-        {!compact && <span className="text-xs font-bold uppercase tracking-wider text-gold-600 group-hover:text-night-700">Chat on WhatsApp</span>}
-        {!compact && <span className="text-sm font-semibold leading-5">Message us privately</span>}
-        {compact && <span>WhatsApp</span>}
+        <p className="text-xs font-bold uppercase tracking-wider text-[#8B6A3D]">
+          Chat on WhatsApp
+        </p>
+        <p className="mt-1 text-sm font-semibold leading-5 text-[#2F1B69]">
+          Message us privately
+        </p>
       </a>
       <a
         href={`mailto:${HELP_EMAIL}`}
-        className={`${base} border-night-200 bg-cream-50 text-white hover:border-gold-500 hover:bg-gold-500 hover:text-white`}
+        className={`${cardBase} ${hoverClass} p-6`}
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-100 text-gold-700 transition-colors group-hover:bg-night-900 group-hover:text-gold-400">
-          <MailIcon className={iconClass} />
-        </span>
-        {!compact && <span className="text-xs font-bold uppercase tracking-wider text-gold-600 group-hover:text-night-700">Email</span>}
-        {!compact && <span className="text-sm font-semibold leading-5">{HELP_EMAIL}</span>}
-        {compact && <span>Email</span>}
+        <p className="text-xs font-bold uppercase tracking-wider text-[#8B6A3D]">
+          Email
+        </p>
+        <p className="mt-1 wrap-break-word text-sm font-semibold leading-5 text-[#2F1B69]">
+          {HELP_EMAIL}
+        </p>
       </a>
     </div>
   );
