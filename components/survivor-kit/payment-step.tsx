@@ -81,8 +81,13 @@ export function PaymentStep({
     }
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await handlePayment();
+  };
+
   return (
-    <div className="space-y-8">
+    <form onSubmit={handleSubmit} className="space-y-8">
       {/* Intro */}{" "}
       <div className="space-y-3">
         {" "}
@@ -226,7 +231,7 @@ export function PaymentStep({
       </div> */}
       {/* Pay button */}
       <button
-        onClick={handlePayment}
+        type="submit"
         disabled={!selected || processing}
         className={`w-full rounded-2xl px-6 py-4 text-base font-bold uppercase tracking-wide transition-all ${
           !selected || processing
@@ -238,6 +243,6 @@ export function PaymentStep({
           ? "Processing donation..."
           : `Donate ${formatCurrency(total)}`}
       </button>
-    </div>
+    </form>
   );
 }

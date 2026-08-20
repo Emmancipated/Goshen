@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import type { Transition } from "framer-motion";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useRef, useSyncExternalStore } from "react";
 import { ArrowLeft, X } from "lucide-react";
 import { createPortal } from "react-dom";
 
@@ -40,29 +40,68 @@ export function JourneyModal({
   children,
   size = "md",
 }: JourneyModalProps) {
-  const [mounted, setMounted] = useState(false);
-
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+  const modalRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
+  const onCloseRef = useRef(onClose);
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    onCloseRef.current = onClose;
+  }, [onClose]);
 
   useEffect(() => {
     if (!open) return;
 
+    triggerRef.current = document.activeElement as HTMLElement | null;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") onCloseRef.current();
+
+      if (e.key !== "Tab" || !modalRef.current) return;
+
+      const focusable = Array.from(
+        modalRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      );
+
+      if (focusable.length === 0) {
+        e.preventDefault();
+        modalRef.current.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
 
     document.addEventListener("keydown", handleKeyDown);
+    requestAnimationFrame(() => {
+      const firstFocusable = modalRef.current?.querySelector<HTMLElement>(
+        "button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href]",
+      );
+      (firstFocusable ?? modalRef.current)?.focus();
+    });
 
     return () => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleKeyDown);
+      triggerRef.current?.focus();
     };
-  }, [open, onClose]);
+  }, [open]);
 
   if (!mounted) return null;
 
@@ -91,6 +130,8 @@ export function JourneyModal({
             {/* Modal container */}
             <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6">
               <motion.div
+                ref={modalRef}
+                tabIndex={-1}
                 initial={{ opacity: 0, scale: 0.96, y: 18 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.96, y: 18 }}
@@ -124,6 +165,7 @@ export function JourneyModal({
                         {/* Back button */}
                         {canGoBack ? (
                           <button
+                            type="button"
                             onClick={onBack}
                             className="mt-1 rounded-full p-2 text-[#6F6A65] transition hover:bg-black/5"
                             aria-label="Go back"
@@ -169,6 +211,7 @@ export function JourneyModal({
 
                       {/* Close button */}
                       <button
+                        type="button"
                         onClick={onClose}
                         className="rounded-full p-2 text-[#6F6A65] transition hover:bg-black/5"
                         aria-label="Close"
