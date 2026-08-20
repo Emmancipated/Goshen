@@ -8,6 +8,7 @@ type AmountStepProps = {
   paymentMethod: PaymentMethod | null;
   amount: string;
   onAmountChange: (value: string) => void;
+  onContinue: () => void;
 };
 
 const NAIRA_PRESETS = ["5000", "10000", "25000", "50000", "100000"];
@@ -40,6 +41,7 @@ export function AmountStep({
   paymentMethod,
   amount,
   onAmountChange,
+  onContinue,
 }: AmountStepProps) {
   const isUSD =
     paymentMethod === "usd-card" || paymentMethod === "usd-transfer";
@@ -73,7 +75,13 @@ export function AmountStep({
   const formattedAmount = formatAmount(amount, currency);
 
   return (
-    <div className="space-y-8 pb-5">
+    <form
+      className="space-y-8 pb-5"
+      onSubmit={(event) => {
+        event.preventDefault();
+        onContinue();
+      }}
+    >
       {/* Intro */}{" "}
       <div className="space-y-3">
         {" "}
@@ -193,6 +201,7 @@ export function AmountStep({
       </div>
       {/* Continue button */}
       <button
+        type="submit"
         disabled={!amount}
         className={`w-full rounded-2xl px-6 py-4 text-base font-bold transition-all ${
           amount
@@ -218,6 +227,6 @@ export function AmountStep({
           </div>
         </div>
       </div> */}
-    </div>
+    </form>
   );
 }

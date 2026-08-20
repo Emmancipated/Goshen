@@ -1,6 +1,12 @@
 "use client";
 
-import { forwardRef, useImperativeHandle, ReactNode, useMemo, useState } from "react";
+import {
+  forwardRef,
+  useImperativeHandle,
+  ReactNode,
+  useMemo,
+  useState,
+} from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Heart } from "lucide-react";
 
@@ -52,8 +58,10 @@ const variants = {
   }),
 };
 
-export const GiveMoneyJourney = forwardRef<GiveMoneyJourneyHandle, GiveMoneyJourneyProps>(
-  function GiveMoneyJourney({ children }, ref) {
+export const GiveMoneyJourney = forwardRef<
+  GiveMoneyJourneyHandle,
+  GiveMoneyJourneyProps
+>(function GiveMoneyJourney({ children }, ref) {
   const [open, setOpen] = useState(false);
 
   const [step, setStep] = useState<DonationStep>(INITIAL_DONATION_STATE.step);
@@ -139,6 +147,10 @@ export const GiveMoneyJourney = forwardRef<GiveMoneyJourneyHandle, GiveMoneyJour
     goTo("amount");
   };
 
+  const handleAmountContinue = () => {
+    if (amount) goTo("payment-options");
+  };
+
   const title = (() => {
     switch (step) {
       case "give-money":
@@ -172,7 +184,18 @@ export const GiveMoneyJourney = forwardRef<GiveMoneyJourneyHandle, GiveMoneyJour
   return (
     <>
       {" "}
-      <div onClick={openJourney} className="cursor-pointer">
+      <div
+        onClick={openJourney}
+        className="cursor-pointer"
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openJourney();
+          }
+        }}
+      >
         {children}{" "}
       </div>
       <JourneyModal
@@ -243,6 +266,7 @@ export const GiveMoneyJourney = forwardRef<GiveMoneyJourneyHandle, GiveMoneyJour
                   paymentMethod={paymentMethod}
                   amount={amount}
                   onAmountChange={setAmount}
+                  onContinue={handleAmountContinue}
                 />
               )}
             </motion.div>
@@ -251,4 +275,4 @@ export const GiveMoneyJourney = forwardRef<GiveMoneyJourneyHandle, GiveMoneyJour
       </JourneyModal>
     </>
   );
-  });
+});

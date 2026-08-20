@@ -15,8 +15,8 @@ import {
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/services", label: "Our Work" },
-  { href: "/impact", label: "Impact" },
+  { href: "/our-work", label: "Our Work" },
+  { href: "/impact", label: "Our Impact" },
   { href: "/support", label: "Support Goshen" },
   // { href: "/media", label: "Media" },
   { href: "/contact", label: "Contact Us" },

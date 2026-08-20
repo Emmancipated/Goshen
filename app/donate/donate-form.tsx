@@ -71,7 +71,9 @@ export function DonateForm() {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
     if (method === "card") {
       handleCardDonate();
     } else {
@@ -82,9 +84,6 @@ export function DonateForm() {
   if (done) {
     return (
       <div className="rounded-2xl border border-night-200 bg-white p-10 text-center shadow-sm">
-        {/* <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold-100 text-gold-700">
-          <CheckIcon className="h-7 w-7" />
-        </span> */}
         <h2 className="mt-5 font-display text-2xl font-semibold text-gold-700">
           {method === "card"
             ? "Thank you for your gift!"
@@ -109,8 +108,16 @@ export function DonateForm() {
               <span className="font-semibold">{BANK_ACCOUNT_NAME}</span>
             </p>
             <p className="mt-2 text-xs text-night-600/80">
-              Then send your name to 0802 777 5001 on WhatsApp so we can
-              acknowledge your gift.
+              Then send your name to{" "}
+              <a
+                href="https://wa.me/2348027775001"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-gold-700 underline underline-offset-2"
+              >
+                0802 777 5001
+              </a>{" "}
+              on WhatsApp so we can acknowledge your gift.
             </p>
           </div>
         ) : (
@@ -137,7 +144,7 @@ export function DonateForm() {
   }
 
   return (
-    <div className="rounded-2xl border border-night-100 bg-white p-8 shadow-sm">
+    <form onSubmit={handleSubmit} className="rounded-2xl border border-night-100 bg-white p-8 shadow-sm">
       <h2 className="font-display text-xl font-semibold text-gold-700">
         Make a donation
       </h2>
@@ -230,8 +237,15 @@ export function DonateForm() {
               </p>
               <p className="mt-2 text-xs text-night-600/80">
                 Then send your name to{" "}
-                <span className="font-semibold">0802 777 5001</span> on WhatsApp
-                so we can acknowledge your gift.
+                <a
+                  href="https://wa.me/2348027775001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-gold-700 underline underline-offset-2"
+                >
+                  0802 777 5001
+                </a>{" "}
+                on WhatsApp so we can acknowledge your gift.
               </p>
             </>
           ) : (
@@ -265,9 +279,8 @@ export function DonateForm() {
       )}
 
       <button
-        type="button"
+        type="submit"
         disabled={processing}
-        onClick={handleSubmit}
         className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-gold-600 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {processing
@@ -279,6 +292,6 @@ export function DonateForm() {
           ? "Secure online payments via Paystack · direct bank transfer also available."
           : "Bank transfer directly to the foundation · your gift funds shelter, meals, healthcare and skills support."}
       </p>
-    </div>
-  );
-}
+      </form>
+    );
+  }

@@ -22,7 +22,14 @@ export function MonthlyEmailStep({
   const canContinue = isValidEmail;
 
   return (
-    <div className="space-y-8 pb-5">
+    <form
+      className="space-y-8 pb-5"
+      onSubmit={(event) => {
+        event.preventDefault();
+        setTouched(true);
+        if (canContinue) onContinue(email);
+      }}
+    >
       {/* Intro */}
       <div className="space-y-4">
         <div className="flex items-center gap-3">
@@ -83,8 +90,8 @@ export function MonthlyEmailStep({
         )}
 
         <p className="text-sm leading-6 text-[#6B6560]">
-          We'll use this email to send your donation receipt and monthly giving
-          confirmation.
+          We&apos;ll use this email to send your donation receipt and monthly
+          giving confirmation.
         </p>
       </div>
 
@@ -112,10 +119,7 @@ export function MonthlyEmailStep({
 
       {/* Continue button */}
       <button
-        onClick={() => {
-          setTouched(true);
-          if (canContinue) onContinue(email);
-        }}
+        type="submit"
         disabled={!canContinue}
         className={`w-full rounded-2xl px-6 py-4 text-base font-bold transition-all ${
           canContinue
@@ -144,6 +148,6 @@ export function MonthlyEmailStep({
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
