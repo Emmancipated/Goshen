@@ -12,6 +12,26 @@ export const metadata: Metadata = {
   title: "Media",
   description:
     "Watch our founder's messages and browse photographs from our programmes, events, empowerment activities and outreach.",
+  openGraph: {
+    title: "Media",
+    description:
+      "Watch our founder's messages and browse photographs from our programmes, events, empowerment activities and outreach.",
+    images: [
+      {
+        url: "/images/founder.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Media — founder's messages and programme photographs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Media",
+    description:
+      "Watch our founder's messages and browse photographs from our programmes, events, empowerment activities and outreach.",
+    images: ["/images/founder.jpg"],
+  },
 };
 
 const VIDEOS = [

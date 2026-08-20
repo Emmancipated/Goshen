@@ -1402,6 +1402,26 @@ export const metadata: Metadata = {
   title: "Our Impact",
   description:
     "Discover how Goshen Shelters has supported women and children affected by domestic and sexual violence through safety, healing, education, skills development, employment and reintegration.",
+  openGraph: {
+    title: "Our Impact",
+    description:
+      "Discover how Goshen Shelters has supported women and children affected by domestic and sexual violence through safety, healing, education, skills development, employment and reintegration.",
+    images: [
+      {
+        url: "/images/impact.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Our Impact at Goshen Shelters — supporting women and children",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Impact",
+    description:
+      "Discover how Goshen Shelters has supported women and children affected by domestic and sexual violence through safety, healing, education, skills development, employment and reintegration.",
+    images: ["/images/impact.jpg"],
+  },
 };
 
 /**

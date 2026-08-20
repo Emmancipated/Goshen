@@ -143,9 +143,29 @@ import { HelpButton } from "@/components/help-button";
 import { ContactForm } from "@/app/contact/contact-form";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Goshen Shelters",
+  title: "Contact Us",
   description:
     "Contact Goshen Shelters for confidential support, referrals, volunteering or partnership enquiries.",
+  openGraph: {
+    title: "Contact Us",
+    description:
+      "Contact Goshen Shelters for confidential support, referrals, volunteering or partnership enquiries.",
+    images: [
+      {
+        url: "/images/help.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Goshen Shelters — we are here for you",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us",
+    description:
+      "Contact Goshen Shelters for confidential support, referrals, volunteering or partnership enquiries.",
+    images: ["/images/help.jpg"],
+  },
 };
 
 const CONTACT_CHANNELS = [

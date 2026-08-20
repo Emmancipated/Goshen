@@ -243,9 +243,29 @@ import type { Metadata } from "next";
 
 import { OurWorkClient } from "@/components/our-work/our-work-client";
 export const metadata: Metadata = {
-  title: "Our Work | God's Home for Women Foundation",
+  title: "Our Work",
   description:
     "Discover how God's Home for Women Foundation provides shelter, healing, practical support and opportunities for women and children affected by violence and abuse.",
+  openGraph: {
+    title: "Our Work",
+    description:
+      "Discover how God's Home for Women Foundation provides shelter, healing, practical support and opportunities for women and children affected by violence and abuse.",
+    images: [
+      {
+        url: "/images/together.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Our Work at Goshen Shelters — shelter, healing and practical support",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Work",
+    description:
+      "Discover how God's Home for Women Foundation provides shelter, healing, practical support and opportunities for women and children affected by violence and abuse.",
+    images: ["/images/together.jpg"],
+  },
 };
 
 export default function OurWorkPage() {
