@@ -160,3 +160,23 @@ body {
     transition: none;
   }
 }
+
+@keyframes stat-pulse {
+  0%,
+  100% {
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(161, 75, 58, 0.5);
+  }
+}
+
+.stat-pulse {
+  animation: stat-pulse 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-pulse {
+    animation: none;
+  }
+}

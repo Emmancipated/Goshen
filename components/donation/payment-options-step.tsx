@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, Building2, CreditCard, Lock, Wallet } from "lucide-react";
-import { PaymentMethod, DonationType } from "./types";
+import { PaymentMethod, DonationType, ENABLE_USD } from "./types";
 
 type PaymentOptionsStepProps = {
   donationType: DonationType;
@@ -33,15 +33,6 @@ export function PaymentOptionsStep({
       badge: "Recommended",
     },
     {
-      method: "usd-card",
-      title: "Pay in Dollars",
-      subtitle: "Card payment (USD)",
-      description: "Donate internationally using a USD debit or credit card.",
-      icon: <Wallet className="h-6 w-6" />,
-      accent: "#0B6E4F",
-      badge: "International",
-    },
-    {
       method: "naira-transfer",
       title: "Transfer in Naira",
       subtitle: "Bank transfer (₦)",
@@ -49,16 +40,30 @@ export function PaymentOptionsStep({
       icon: <Building2 className="h-6 w-6" />,
       accent: "#8B6A3D",
     },
-    {
-      method: "usd-transfer",
-      title: "Transfer in Dollars",
-      subtitle: "Bank transfer (USD)",
-      description:
-        "Send a USD bank transfer from your local or international bank.",
-      icon: <Building2 className="h-6 w-6" />,
-      accent: "#2563EB",
-    },
   ];
+
+  if (ENABLE_USD) {
+    options.push(
+      {
+        method: "usd-card",
+        title: "Pay in Dollars",
+        subtitle: "Card payment (USD)",
+        description: "Donate internationally using a USD debit or credit card.",
+        icon: <Wallet className="h-6 w-6" />,
+        accent: "#0B6E4F",
+        badge: "International",
+      },
+      {
+        method: "usd-transfer",
+        title: "Transfer in Dollars",
+        subtitle: "Bank transfer (USD)",
+        description:
+          "Send a USD bank transfer from your local or international bank.",
+        icon: <Building2 className="h-6 w-6" />,
+        accent: "#2563EB",
+      },
+    );
+  }
 
   return (
     <div className="space-y-8 pb-5">

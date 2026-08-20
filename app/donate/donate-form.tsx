@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { BankIcon, CheckIcon, NairaIcon } from "@/components/icons";
+import { usePaystack } from "@/hooks/use-paystack";
 
 const PRESET_AMOUNTS = [5000, 10000, 25000, 50000];
 
@@ -11,18 +12,6 @@ const BANK_ACCOUNT_NAME = process.env.NEXT_PUBLIC_BANK_ACCOUNT_NAME ?? "";
 const PAYSTACK_KEY = process.env.NEXT_PUBLIC_PAYSTACK_KEY ?? "";
 
 type Method = "card" | "bank";
-
-type PaystackPop = {
-  setup: (opts: {
-    key: string;
-    email: string;
-    amount: number;
-    currency: string;
-    ref?: string;
-    callback: (response: { reference?: string; status?: string }) => void;
-    onClose: () => void;
-  }) => void;
-};
 
 export function DonateForm() {
   const [amount, setAmount] = useState<number | "">(25000);
@@ -36,39 +25,21 @@ export function DonateForm() {
   );
   const formatNaira = (value: number) => `₦${value.toLocaleString("en-NG")}`;
 
-  useEffect(() => {
-    if (method !== "card" || !PAYSTACK_KEY) return;
-    if (
-      typeof window === "undefined" ||
-      (window as unknown as { PaystackPop?: PaystackPop }).PaystackPop
-    )
-      return;
-
-    const script = document.createElement("script");
-    script.src = "https://js.paystack.co/v1/inline.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, [method]);
+  const { ready, processing: paystackProcessing, pay } = usePaystack({
+    email: email || "donor@goshenshelters.org",
+    amount: Number(amount || 0) * 100,
+    currency: "NGN",
+    onSuccess: () => {
+      setProcessing(false);
+      setDone(true);
+    },
+    onClose: () => setProcessing(false),
+  });
 
   const handleCardDonate = () => {
-    const paystack = (window as unknown as { PaystackPop?: PaystackPop })
-      .PaystackPop;
-    if (!paystack || !PAYSTACK_KEY) return;
+    if (!ready || !PAYSTACK_KEY) return;
     setProcessing(true);
-    paystack.setup({
-      key: PAYSTACK_KEY,
-      email: email || "donor@goshenshelters.org",
-      amount: Number(amount || 0) * 100,
-      currency: "NGN",
-      callback: () => {
-        setProcessing(false);
-        setDone(true);
-      },
-      onClose: () => setProcessing(false),
-    });
+    pay();
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -280,10 +251,10 @@ export function DonateForm() {
 
       <button
         type="submit"
-        disabled={processing}
+        disabled={processing || paystackProcessing || !ready}
         className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-gold-600 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {processing
+        {processing || paystackProcessing
           ? "Processing..."
           : `Donate ${amount ? formatNaira(amount) : "now"}`}
       </button>

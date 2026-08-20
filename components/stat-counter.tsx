@@ -10,6 +10,7 @@ type StatCounterProps = {
   className?: string;
   delay?: number;
   speed?: number;
+  animateWhileInView?: boolean;
 };
 
 export function StatCounter({
@@ -18,10 +19,12 @@ export function StatCounter({
   className = "",
   delay = 0,
   speed = 1,
+  animateWhileInView = false,
 }: StatCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
   const [isActive, setIsActive] = useState(false);
+  const [shouldPulse, setShouldPulse] = useState(false);
   const [reducedMotion] = useState(
     () =>
       typeof window !== "undefined" &&
@@ -59,17 +62,36 @@ export function StatCounter({
 
   const chars = useMemo(() => value.toLocaleString("en-NG").split(""), [value]);
 
+  useEffect(() => {
+    if (!isActive || !animateWhileInView) return;
+
+    const odometerDuration = (1.1 + chars.length * 0.06) / speed;
+    const totalDelay = delay + odometerDuration * 1000;
+
+    const timer = window.setTimeout(() => {
+      setShouldPulse(true);
+    }, totalDelay);
+
+    return () => window.clearTimeout(timer);
+  }, [isActive, animateWhileInView, speed, delay, chars.length]);
+
   return (
-    <span ref={ref} className={`inline-flex tabular-nums ${className}`}>
+    <span
+      ref={ref}
+      className={`inline-flex tabular-nums ${className}`}
+    >
       {chars.map((char, i) =>
         char === "," ? (
-          <span key={i} className="opacity-60">
+          <span
+            key={i}
+            className={`opacity-60 ${shouldPulse && animateWhileInView ? "stat-pulse" : ""}`}
+          >
             ,
           </span>
         ) : (
           <span
             key={i}
-            className="relative inline-block overflow-hidden"
+            className={`relative inline-block overflow-hidden ${shouldPulse && animateWhileInView ? "stat-pulse" : ""}`}
             style={{ height: "1em" }}
           >
             <span
@@ -93,7 +115,11 @@ export function StatCounter({
           </span>
         ),
       )}
-      {suffix}
+      {suffix && (
+        <span className={shouldPulse && animateWhileInView ? "stat-pulse" : ""}>
+          {suffix}
+        </span>
+      )}
     </span>
   );
 }

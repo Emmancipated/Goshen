@@ -9,6 +9,8 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { DonorDetails } from "./donor-details-step";
+import { usePaystack } from "@/hooks/use-paystack";
+import { ENABLE_USD } from "@/components/donation/types";
 
 export type PaymentMethod =
   | "paystack-card"
@@ -50,12 +52,16 @@ const methods: {
     description: "Pay via bank transfer or bank app through Paystack",
     icon: <Landmark className="h-5 w-5" />,
   },
-  {
-    id: "stripe-international",
-    title: "International Card (USD)",
-    description: "For donors outside Nigeria using Stripe",
-    icon: <Globe className="h-5 w-5" />,
-  },
+  ...(ENABLE_USD
+    ? [
+        {
+          id: "stripe-international" as PaymentMethod,
+          title: "International Card (USD)",
+          description: "For donors outside Nigeria using Stripe",
+          icon: <Globe className="h-5 w-5" />,
+        },
+      ]
+    : []),
 ];
 
 export function PaymentStep({
@@ -69,14 +75,34 @@ export function PaymentStep({
   const [selected, setSelected] = useState<PaymentMethod | null>(paymentMethod);
   const [processing, setProcessing] = useState(false);
 
+  const isPaystack = selected === "paystack-card" || selected === "paystack-bank";
+  const currency =
+    ENABLE_USD && selected === "stripe-international" ? "USD" : "NGN";
+  const paystackAmount = (Number(total) || 0) * 100;
+
+  const { ready, processing: paystackProcessing, pay } = usePaystack({
+    email: donor.email,
+    amount: paystackAmount,
+    currency,
+    onSuccess: async (response) => {
+      await onPayment(selected!);
+      setProcessing(false);
+    },
+    onClose: () => setProcessing(false),
+  });
+
   const handlePayment = async () => {
     if (!selected) return;
 
-    setProcessing(true);
+    if (isPaystack && ready) {
+      setProcessing(true);
+      pay();
+      return;
+    }
 
-    try {
+    if (selected === "stripe-international") {
+      setProcessing(true);
       await onPayment(selected);
-    } finally {
       setProcessing(false);
     }
   };
@@ -232,14 +258,14 @@ export function PaymentStep({
       {/* Pay button */}
       <button
         type="submit"
-        disabled={!selected || processing}
+        disabled={!selected || processing || paystackProcessing}
         className={`w-full rounded-2xl px-6 py-4 text-base font-bold uppercase tracking-wide transition-all ${
-          !selected || processing
+          !selected || processing || paystackProcessing
             ? "cursor-not-allowed bg-[#C9B8E3] text-white"
             : "bg-[#43206F] text-white hover:bg-[#341857] active:scale-[0.99]"
         }`}
       >
-        {processing
+        {processing || paystackProcessing
           ? "Processing donation..."
           : `Donate ${formatCurrency(total)}`}
       </button>

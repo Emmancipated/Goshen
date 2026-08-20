@@ -1,7 +1,7 @@
 "use client";
 
 import { Heart, Lock, CreditCard, Building2 } from "lucide-react";
-import { DonationType, PaymentMethod } from "./types";
+import { DonationType, PaymentMethod, ENABLE_USD } from "./types";
 
 type AmountStepProps = {
   donationType: DonationType;
@@ -44,7 +44,8 @@ export function AmountStep({
   onContinue,
 }: AmountStepProps) {
   const isUSD =
-    paymentMethod === "usd-card" || paymentMethod === "usd-transfer";
+    ENABLE_USD &&
+    (paymentMethod === "usd-card" || paymentMethod === "usd-transfer");
 
   const currency = isUSD ? "USD" : "NGN";
   const symbol = isUSD ? "$" : "₦";

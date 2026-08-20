@@ -43,7 +43,7 @@ export function TestimonialCarousel() {
 
   return (
     <div className="relative mx-auto max-w-3xl">
-      <QuoteIcon className="mx-auto h-10 w-10 text-gold-500/40" />
+      {/* <QuoteIcon className="mx-auto h-10 w-10 text-gold-500/40" /> */}
 
       <div className="relative mt-6 min-h-[16rem] overflow-hidden pb-4 sm:min-h-[14rem]">
         {TESTIMONIALS.map((t, i) => (
@@ -64,7 +64,7 @@ export function TestimonialCarousel() {
         ))}
       </div>
 
-      <div className="mt-2 flex items-center justify-center gap-6">
+      {/* <div className="mt-2 flex items-center justify-center gap-6">
         <button
           type="button"
           onClick={() => goTo(index - 1)}
@@ -102,7 +102,7 @@ export function TestimonialCarousel() {
         >
           <ChevronRightIcon className="h-5 w-5" />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

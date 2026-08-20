@@ -114,11 +114,23 @@ export default function GetHelpPage() {
                   </h2>
                   <p className="mt-2 text-sm leading-6 text-white/80">
                     If you are in immediate danger, call{" "}
-                    <a href="tel:112" className="font-bold text-gold-400 underline underline-offset-2">112</a> — it is
-                    free from any network and connects you to the police. If you cannot speak, call 112 and{" "}
-                    <span className="font-semibold">cough, tap or press any button</span> so the operator knows you need
-                    help, then leave the line open. Or call Goshen on{" "}
-                    <a href="tel:+2348027775001" className="font-bold text-gold-400 underline underline-offset-2">
+                    <a
+                      href="tel:112"
+                      className="font-bold text-gold-400 underline underline-offset-2"
+                    >
+                      112
+                    </a>{" "}
+                    — it is free from any network and connects you to the
+                    police. If you cannot speak, call 112 and{" "}
+                    <span className="font-semibold">
+                      cough, tap or press any button
+                    </span>{" "}
+                    so the operator knows you need help, then leave the line
+                    open. Or call Goshen on{" "}
+                    <a
+                      href="tel:+2348027775001"
+                      className="font-bold text-gold-400 underline underline-offset-2"
+                    >
                       0802 777 5001
                     </a>{" "}
                     — confidential, 24/7.
@@ -138,14 +150,14 @@ export default function GetHelpPage() {
                       <PhoneIcon className="h-4 w-4" />
                       0802 777 5001
                     </a>
-                    <a
+                    {/* <a
                       href="https://www.google.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-full border border-night-500 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-night-700"
                     >
                       Exit site
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>
@@ -163,7 +175,8 @@ export default function GetHelpPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-night-950/70 via-night-950/30 to-transparent" />
             <div className="absolute inset-0 flex items-center">
               <p className="max-w-sm px-8 font-display text-xl font-semibold leading-8 text-cream-50">
-                Wherever you are in this journey, there is a kind voice waiting on the other end of the line.
+                Wherever you are in this journey, there is a kind voice waiting
+                on the other end of the line.
               </p>
             </div>
           </Reveal>
@@ -185,11 +198,19 @@ export default function GetHelpPage() {
                         : "border-night-100 bg-white text-night-900"
                     }`}
                   >
-                    <p className={`text-xs font-bold uppercase tracking-wider ${primary ? "text-night-700" : "text-gold-600"}`}>
+                    <p
+                      className={`text-xs font-bold uppercase tracking-wider ${primary ? "text-night-700" : "text-gold-600"}`}
+                    >
                       {name}
                     </p>
-                    <p className="mt-2 font-display text-2xl font-semibold">{number}</p>
-                    <p className={`mt-2 text-xs leading-5 ${primary ? "text-night-700/80" : "text-night-600/80"}`}>{note}</p>
+                    <p className="mt-2 font-display text-2xl font-semibold">
+                      {number}
+                    </p>
+                    <p
+                      className={`mt-2 text-xs leading-5 ${primary ? "text-night-700/80" : "text-night-600/80"}`}
+                    >
+                      {note}
+                    </p>
                   </a>
                 </Reveal>
               ))}
@@ -209,8 +230,12 @@ export default function GetHelpPage() {
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-100 font-display text-base font-semibold text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-white">
                       {title.split(" ")[0]}
                     </span>
-                    <h3 className="mt-4 font-display text-lg font-semibold text-gold-700">{title.split(" · ")[1]}</h3>
-                    <p className="mt-2 text-sm leading-6 text-night-600">{body}</p>
+                    <h3 className="mt-4 font-display text-lg font-semibold text-gold-700">
+                      {title.split(" · ")[1]}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-night-600">
+                      {body}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -260,10 +285,16 @@ export default function GetHelpPage() {
                   What you can do
                 </h3>
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-night-600">
-                  <li>· Let them know you believe them and it is not their fault</li>
+                  <li>
+                    · Let them know you believe them and it is not their fault
+                  </li>
                   <li>· Ask gently, in private, and listen without judging</li>
-                  <li>· Offer to look up numbers and go with them if they want</li>
-                  <li>· Respect their decisions — leaving takes time and planning</li>
+                  <li>
+                    · Offer to look up numbers and go with them if they want
+                  </li>
+                  <li>
+                    · Respect their decisions — leaving takes time and planning
+                  </li>
                   <li>· Keep supporting them even if they stay for now</li>
                 </ul>
               </div>
@@ -277,11 +308,19 @@ export default function GetHelpPage() {
                   What to avoid
                 </h3>
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-night-600">
-                  <li>· Don&rsquo;t confront the abuser — it can put her at greater risk</li>
+                  <li>
+                    · Don&rsquo;t confront the abuser — it can put her at
+                    greater risk
+                  </li>
                   <li>· Don&rsquo;t blame or question her choices</li>
-                  <li>· Don&rsquo;t share details on social media or with others</li>
+                  <li>
+                    · Don&rsquo;t share details on social media or with others
+                  </li>
                   <li>· Don&rsquo;t promise secrecy if someone is in danger</li>
-                  <li>· Don&rsquo;t try to handle it alone — call a helpline for advice</li>
+                  <li>
+                    · Don&rsquo;t try to handle it alone — call a helpline for
+                    advice
+                  </li>
                 </ul>
               </div>
             </Reveal>
@@ -289,7 +328,8 @@ export default function GetHelpPage() {
           <Reveal delay={120}>
             <div className="mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl bg-night-900 p-7 text-cream-50 sm:flex-row">
               <p className="max-w-xl text-sm leading-6 text-white/70">
-                Not sure what to say? Call us and a trained advisor can talk you through it before you reach out to them.
+                Not sure what to say? Call us and a trained advisor can talk you
+                through it before you reach out to them.
               </p>
               <a
                 href="tel:+2348027775001"
@@ -325,24 +365,33 @@ export default function GetHelpPage() {
         </div>
       </section>
 
-      <section id="referral" className="scroll-mt-24 bg-night-900 text-cream-50">
+      <section
+        id="referral"
+        className="scroll-mt-24 bg-night-900 text-cream-50"
+      >
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
             <Reveal>
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">For professionals</p>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
+                  For professionals
+                </p>
                 <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight">
                   I want to make a referral
                 </h2>
                 <p className="mt-4 text-base leading-7 text-white/70">
-                  Health workers, teachers, police officers, faith leaders and social workers can refer women and children
-                  in danger to our refuge. Our team will assess the situation and find the right support.
+                  Health workers, teachers, police officers, faith leaders and
+                  social workers can refer women and children in danger to our
+                  refuge. Our team will assess the situation and find the right
+                  support.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={120}>
               <div className="rounded-2xl border border-night-700 bg-night-800/60 p-7">
-                <p className="text-sm font-semibold text-cream-50">To make a referral:</p>
+                <p className="text-sm font-semibold text-cream-50">
+                  To make a referral:
+                </p>
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                   <li className="flex items-start gap-3">
                     <ShieldIcon className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" />
@@ -351,13 +400,17 @@ export default function GetHelpPage() {
                   <li className="flex items-start gap-3">
                     <LockIcon className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" />
                     Or use the{" "}
-                    <Link href="/contact" className="font-semibold text-gold-400 underline underline-offset-2">
+                    <Link
+                      href="/contact"
+                      className="font-semibold text-gold-400 underline underline-offset-2"
+                    >
                       referral form
                     </Link>
                   </li>
                 </ul>
                 <p className="mt-5 rounded-xl bg-night-900/60 p-3 text-xs leading-5 text-white/60">
-                  We only proceed with a survivor&rsquo;s consent unless a life is in danger.
+                  We only proceed with a survivor&rsquo;s consent unless a life
+                  is in danger.
                 </p>
               </div>
             </Reveal>
@@ -395,22 +448,29 @@ export default function GetHelpPage() {
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-100 text-gold-700 transition-colors group-hover:bg-gold-500 group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-night-600">{body}</p>
+                  <h3 className="mt-5 font-display text-lg font-semibold text-gold-700">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-night-600">
+                    {body}
+                  </p>
                 </div>
               </Reveal>
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-night-600/80">
             If it is safer, skip the internet and call us:{" "}
-            <a href="tel:+2348027775001" className="font-bold text-gold-700 underline underline-offset-4">
+            <a
+              href="tel:+2348027775001"
+              className="font-bold text-gold-700 underline underline-offset-4"
+            >
               0802 777 5001
             </a>
           </p>
         </div>
       </section>
 
-      <section className="bg-white">
+      {/* <section className="bg-white">
         <Reveal className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-4 py-14 text-center sm:px-6">
           <p className="flex items-center gap-2 text-sm text-night-600">
             <EyeIcon className="h-4 w-4 text-gold-600" />
@@ -432,7 +492,7 @@ export default function GetHelpPage() {
             Help others find safety
           </DonateButton>
         </Reveal>
-      </section>
+      </section> */}
     </>
   );
 }

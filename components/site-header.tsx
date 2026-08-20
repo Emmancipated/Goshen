@@ -79,14 +79,14 @@ export function SiteHeader() {
           >
             Donate
           </button>
-          <a
+          {/* <a
             href="https://www.google.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border border-night-900 bg-night-900 px-3 py-2 text-xs font-bold uppercase tracking-wider text-gold-400 transition-all hover:border-gold-500 hover:bg-gold-500 hover:text-white active:scale-95"
           >
             Exit
-          </a>
+          </a> */}
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}

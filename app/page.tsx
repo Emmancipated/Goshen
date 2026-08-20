@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { StatCounter } from "@/components/stat-counter";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
-import { FounderVideo } from "@/components/founder-video";
+// import { FounderVideo } from "@/components/founder-video";
 import { HelpButton } from "@/components/help-button";
 import { useDonationModal } from "@/components/donation/donation-modal-provider";
 import {
@@ -17,6 +17,10 @@ import {
   SparklesIcon,
   UserPlusIcon,
 } from "@/components/icons";
+import { FounderVideo } from "@/components/about/founder-video";
+
+const FOUNDER_NAME = "Ajibola Hassan-Odukale";
+const FOUNDER_VIDEO_SRC = "/videos/founder-message.mp4";
 
 const SITE = {
   helplineDisplay: "0802 777 5001",
@@ -61,9 +65,11 @@ const IMPACT_SUPPORTING = [
 ];
 
 const PARTNERS = [
+  { name: "Warif", src: "/images/warif.jpeg" },
   { name: "LeadWay Assurance", src: "/images/leadway.jpeg" },
   { name: "Little Saint Orphanage", src: "/images/littlesaint.png" },
   { name: "Dsvrt", src: "/images/dsvrt.jpeg" },
+  { name: "Warif1", src: "/images/warif.jpeg" },
   { name: "LeadWay Assurance1", src: "/images/leadway.jpeg" },
   { name: "Little Saint Orphanage1", src: "/images/littlesaint.png" },
   { name: "Dsvrt1", src: "/images/dsvrt.jpeg" },
@@ -168,13 +174,13 @@ function SiteHeader() {
           >
             Donate
           </button>
-          <a
+          {/* <a
             href={SITE.exitUrl}
             className="rounded-full border border-night-200 px-3 py-2 text-xs font-bold uppercase tracking-wider text-night-700 hover:bg-cream-50"
             data-analytics="exit-site"
           >
             Exit
-          </a>
+          </a> */}
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-night-200 lg:hidden"
@@ -325,14 +331,14 @@ function Hero() {
                 </a>
               </div>
             </div>
-            <a
+            {/* <a
               href="https://www.google.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-gold-400 px-5 py-2.5 text-sm font-bold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
             >
               Exit site
-            </a>
+            </a> */}
           </div>
 
           <div
@@ -370,7 +376,7 @@ function QuickActions() {
           <HelpButton
             title="I Need Help"
             intro={HELP_INTRO}
-            className="group flex h-full w-full flex-col rounded-2xl border border-night-100 bg-white p-8 text-left shadow-sm transition hover:-translate-y-1 hover:border-night-300 hover:shadow-lg"
+            className="group flex h-full w-full flex-col rounded-2xl border border-night-100 bg-orange-50 p-8 text-left shadow-sm transition hover:-translate-y-1 hover:border-night-300 hover:shadow-lg"
             data-analytics="pathway-need-help"
           >
             {/* <span className="flex h-12 w-12 items-center justify-center rounded-full bg-night-950 text-white">
@@ -393,7 +399,7 @@ function QuickActions() {
         <Reveal delay={80}>
           <Link
             href="/support"
-            className="group flex h-full flex-col rounded-2xl border border-night-100 bg-white p-8 text-left shadow-sm transition hover:-translate-y-1 hover:border-night-300 hover:shadow-lg"
+            className="group flex h-full flex-col rounded-2xl border border-night-100 bg-orange-50 p-8 text-left shadow-sm transition hover:-translate-y-1 hover:border-night-300 hover:shadow-lg"
             data-analytics="pathway-support"
           >
             {/* <span className="flex h-12 w-12 items-center justify-center rounded-full bg-night-950 text-white">
@@ -416,7 +422,7 @@ function QuickActions() {
         <Reveal delay={80}>
           <Link
             href="/support#partner"
-            className="group flex h-full flex-col rounded-2xl border border-night-100 bg-white p-8 text-left shadow-sm transition hover:-translate-y-1 hover:border-night-300 hover:shadow-lg"
+            className="group flex h-full flex-col rounded-2xl border border-night-100 bg-orange-50 p-8 text-left shadow-sm transition hover:-translate-y-1 hover:border-night-300 hover:shadow-lg"
             data-analytics="pathway-support"
           >
             {/* <span className="flex h-12 w-12 items-center justify-center rounded-full bg-night-950 text-white">
@@ -455,7 +461,18 @@ function Impact() {
           {IMPACT_HEADLINE.map(({ value, label }) => (
             <div key={label}>
               <p className="font-display text-5xl font-semibold text-white sm:text-6xl">
-                <StatCounter value={value} delay={50} speed={0.4} />
+                {/* <StatCounter
+                  value={value}
+                  delay={50}
+                  speed={0.4}
+                  animateWhileInView
+                /> */}
+                <StatCounter
+                  value={value}
+                  delay={50}
+                  speed={0.4}
+                  animateWhileInView
+                />
               </p>
               <p className="mt-2 text-sm uppercase tracking-wider text-cream-50/80">
                 {label}
@@ -499,9 +516,16 @@ function FounderAndSurvivor() {
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-night-950 sm:text-4xl">
             Why Goshen exists
           </h2>
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <FounderVideo />
-          </div>
+          </div> */}
+          <Reveal delay={140} className="mt-8">
+            <FounderVideo
+              founderName={FOUNDER_NAME}
+              videoSrc={FOUNDER_VIDEO_SRC}
+              posterSrc="/images/about.jpg"
+            />
+          </Reveal>
           <p className="mt-5 max-w-lg text-sm leading-7 text-night-600">
             Hear the story and vision behind God&rsquo;s Home for Women
             Foundation and Goshen Shelters.
@@ -523,19 +547,19 @@ function FounderAndSurvivor() {
             From fear to freedom
           </h2>
           <div className="relative mt-8 rounded-2xl bg-white p-8 shadow-sm">
-            <span
+            {/* <span
               aria-hidden="true"
               className="font-display text-6xl leading-none text-night-950/50"
             >
               &ldquo;
-            </span>
+            </span> */}
             <div className="mt-2">
               <TestimonialCarousel />
             </div>
-            <p className="mt-8 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-night-600">
+            {/* <p className="mt-8 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-night-600">
               <ShieldIcon className="h-4 w-4 text-night-950" />
               Shared with consent — details anonymised
-            </p>
+            </p> */}
           </div>
         </Reveal>
       </div>
@@ -574,10 +598,10 @@ function Partners() {
 
         <div
           className="relative mt-12 overflow-hidden"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocusCapture={() => setPaused(true)}
-          onBlurCapture={() => setPaused(false)}
+          // onMouseEnter={() => setPaused(true)}
+          // onMouseLeave={() => setPaused(false)}
+          // onFocusCapture={() => setPaused(true)}
+          // onBlurCapture={() => setPaused(false)}
         >
           <div
             className="flex w-max items-center gap-16 pr-16"
@@ -591,21 +615,21 @@ function Partners() {
             {logos.map((partner, i) => (
               <div
                 key={`${partner.name}-${i}`}
-                className="flex h-16 w-36 shrink-0 items-center justify-center"
+                className="flex h-30 w-48 shrink-0 items-center justify-center"
               >
                 <Image
                   src={partner.src}
                   alt={partner.name}
-                  width={300}
+                  width={400}
                   height={200}
-                  className="max-h-12 w-auto object-contain"
+                  className="max-h-30 max-w-44 w-auto object-contain"
                 />
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-6 flex justify-center gap-3">
+        {/* <div className="mt-6 flex justify-center gap-3">
           <button
             type="button"
             onClick={() => setPaused((v) => !v)}
@@ -614,7 +638,7 @@ function Partners() {
           >
             {paused || reduceMotion ? "Play logos" : "Pause logos"}
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -749,7 +773,7 @@ function ContactDock({
       <button
         type="button"
         onClick={onOpen}
-        className="fixed bottom-5 right-5 z-50 rounded-full bg-night-950 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg"
+        className="fixed bottom-20 right-5 z-50 rounded-full bg-night-950 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg"
         data-analytics="contact-fab"
       >
         Contact Us
