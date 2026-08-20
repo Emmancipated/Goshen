@@ -351,7 +351,7 @@ export default function ContactPage() {
                 help, always call us instead of using this form.
               </p>
 
-              <div className="mt-8 space-y-4 border-t border-cream-200 pt-8">
+              {/* <div className="mt-8 space-y-4 border-t border-cream-200 pt-8">
                 <p className="font-display text-xl leading-8 text-night-900">
                   If it is not safe to use this form right now, call us
                   directly.
@@ -361,7 +361,7 @@ export default function ContactPage() {
                   <span className="font-semibold text-night-900">Exit</span>{" "}
                   button and contact us later when it is safer.
                 </p>
-              </div>
+              </div> */}
             </Reveal>
 
             <Reveal delay={100}>

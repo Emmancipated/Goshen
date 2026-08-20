@@ -2,6 +2,10 @@ export type DonationType = "once" | "monthly";
 
 export type Currency = "NGN" | "USD";
 
+export const ENABLE_USD =
+  process.env.NEXT_PUBLIC_ENABLE_USD === "1" ||
+  process.env.NEXT_PUBLIC_ENABLE_USD === "true";
+
 export type PaymentMethod =
   | "naira-card"
   | "usd-card"
@@ -13,7 +17,8 @@ export type DonationStep =
   | "monthly-email"
   | "monthly-success"
   | "payment-options"
-  | "amount";
+  | "amount"
+  | "payment-success";
 
 export type PaymentMethodMeta = {
   method: PaymentMethod;
@@ -24,21 +29,12 @@ export type PaymentMethodMeta = {
   isTransfer: boolean;
 };
 
-export const PAYMENT_METHODS: Record<PaymentMethod, PaymentMethodMeta> = {
+export const PAYMENT_METHODS: Record<string, PaymentMethodMeta> = {
   "naira-card": {
     method: "naira-card",
     currency: "NGN",
     label: "Pay in Naira",
     description: "Secure card payment in Nigerian Naira",
-    isCard: true,
-    isTransfer: false,
-  },
-
-  "usd-card": {
-    method: "usd-card",
-    currency: "USD",
-    label: "Pay in Dollars",
-    description: "International card payment in US Dollars",
     isCard: true,
     isTransfer: false,
   },
@@ -51,16 +47,27 @@ export const PAYMENT_METHODS: Record<PaymentMethod, PaymentMethodMeta> = {
     isCard: false,
     isTransfer: true,
   },
+};
 
-  "usd-transfer": {
+if (ENABLE_USD) {
+  PAYMENT_METHODS["usd-card"] = {
+    method: "usd-card",
+    currency: "USD",
+    label: "Pay in Dollars",
+    description: "International card payment in US Dollars",
+    isCard: true,
+    isTransfer: false,
+  };
+
+  PAYMENT_METHODS["usd-transfer"] = {
     method: "usd-transfer",
     currency: "USD",
     label: "Transfer in Dollars",
     description: "Direct bank transfer in US Dollars",
     isCard: false,
     isTransfer: true,
-  },
-};
+  };
+}
 
 export const NAIRA_PRESETS = [5000, 10000, 25000, 50000, 100000];
 
@@ -105,27 +112,31 @@ export function getProgress(
   if (donationType === "monthly") {
     switch (step) {
       case "give-money":
-        return { current: 1, total: 5 };
+        return { current: 1, total: 6 };
       case "monthly-email":
-        return { current: 2, total: 5 };
+        return { current: 2, total: 6 };
       case "monthly-success":
-        return { current: 3, total: 5 };
+        return { current: 3, total: 6 };
       case "payment-options":
-        return { current: 4, total: 5 };
+        return { current: 4, total: 6 };
       case "amount":
-        return { current: 5, total: 5 };
+        return { current: 5, total: 6 };
+      case "payment-success":
+        return { current: 6, total: 6 };
     }
   }
 
   switch (step) {
     case "give-money":
-      return { current: 1, total: 3 };
+      return { current: 1, total: 4 };
     case "payment-options":
-      return { current: 2, total: 3 };
+      return { current: 2, total: 4 };
     case "amount":
-      return { current: 3, total: 3 };
+      return { current: 3, total: 4 };
+    case "payment-success":
+      return { current: 4, total: 4 };
     default:
-      return { current: 1, total: 3 };
+      return { current: 1, total: 4 };
   }
 }
 
