@@ -113,8 +113,7 @@ export default function AboutPage() {
                   Why Goshen exists
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-[#2F1B69]">
-                  Every woman and child deserves to live in safety, dignity and
-                  hope.
+                  Safety, dignity and hope for all.
                 </h2>
                 <div className="mt-5 space-y-4 text-base leading-7 text-night-600">
                   <p>
@@ -139,7 +138,6 @@ export default function AboutPage() {
                 </div>
               </article>
             </Reveal>
-
             <div className="grid gap-6">
               <Reveal delay={80}>
                 <article className="rounded-4xl bg-night-50 p-8 sm:p-10">
@@ -188,7 +186,6 @@ export default function AboutPage() {
                 />
               </Reveal> */}
             </div>
-
             <Reveal delay={100}>
               <article className="h-full rounded-4xl bg-cream-100 p-8 sm:p-10">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold-600">
@@ -220,7 +217,6 @@ export default function AboutPage() {
                 </div>
               </article>
             </Reveal>
-
             <Reveal delay={160}>
               <article className="h-full rounded-4xl bg-gold-50 p-8 sm:p-10">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold-600">

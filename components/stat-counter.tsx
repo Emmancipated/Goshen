@@ -11,6 +11,7 @@ type StatCounterProps = {
   delay?: number;
   speed?: number;
   animateWhileInView?: boolean;
+  pulseStyle?: "glow" | "sequential";
 };
 
 export function StatCounter({
@@ -20,6 +21,7 @@ export function StatCounter({
   delay = 0,
   speed = 1,
   animateWhileInView = false,
+  pulseStyle = "glow",
 }: StatCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
@@ -75,6 +77,14 @@ export function StatCounter({
     return () => window.clearTimeout(timer);
   }, [isActive, animateWhileInView, speed, delay, chars.length]);
 
+  const isSequential = pulseStyle === "sequential";
+  const sequentialDuration = isSequential ? 2.4 : 0;
+
+  const sequentialDelay = (index: number) => {
+    if (!isSequential || chars.length <= 1) return 0;
+    return (index * sequentialDuration) / chars.length;
+  };
+
   return (
     <span
       ref={ref}
@@ -84,15 +94,23 @@ export function StatCounter({
         char === "," ? (
           <span
             key={i}
-            className={`opacity-60 ${shouldPulse && animateWhileInView ? "stat-pulse" : ""}`}
+            className={`opacity-60 ${shouldPulse && animateWhileInView && isSequential ? "stat-sequential" : ""} ${shouldPulse && animateWhileInView && !isSequential ? "stat-pulse" : ""}`}
+            style={
+              isSequential
+                ? { animationDelay: `${sequentialDelay(i)}s` }
+                : undefined
+            }
           >
             ,
           </span>
         ) : (
           <span
             key={i}
-            className={`relative inline-block overflow-hidden ${shouldPulse && animateWhileInView ? "stat-pulse" : ""}`}
-            style={{ height: "1em" }}
+            className={`relative inline-block overflow-hidden ${shouldPulse && animateWhileInView && isSequential ? "stat-sequential" : ""} ${shouldPulse && animateWhileInView && !isSequential ? "stat-pulse" : ""}`}
+            style={{
+              height: "1em",
+              ...(isSequential ? { animationDelay: `${sequentialDelay(i)}s` } : {}),
+            }}
           >
             <span
               className="flex flex-col leading-none"
@@ -116,7 +134,7 @@ export function StatCounter({
         ),
       )}
       {suffix && (
-        <span className={shouldPulse && animateWhileInView ? "stat-pulse" : ""}>
+        <span className={shouldPulse && animateWhileInView && !isSequential ? "stat-pulse" : ""}>
           {suffix}
         </span>
       )}
