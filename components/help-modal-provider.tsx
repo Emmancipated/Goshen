@@ -50,12 +50,14 @@ export function HelpModalProvider({ children }: { children: ReactNode }) {
         <div className="space-y-6">
           <ContactOptions />
           <div className="rounded-xl bg-[#F7F3EC] p-4 text-sm text-[#5E5752]">
-            In an emergency, call <span className="font-bold text-[#2F1B69]">112</span> — it is free from any network.
-            If it is not safe to browse, use the{" "}
+            In an emergency, call{" "}
+            <span className="font-bold text-[#2F1B69]">112</span> — it is free
+            from any network.
+            {/* If it is not safe to browse, use the{" "}
             <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-[#43206F] underline underline-offset-2">
               Exit
             </a>{" "}
-            button and reach out from a safer device.
+            button and reach out from a safer device. */}
           </div>
         </div>
       </JourneyModal>

@@ -151,7 +151,7 @@ export function ContactForm() {
           .
         </p>
       )}
-      <p className="mt-4 rounded-xl bg-cream-100 p-3 text-xs leading-5 text-night-600">
+      {/* <p className="mt-4 rounded-xl bg-cream-100 p-3 text-xs leading-5 text-night-600">
         If it is not safe for you to use this form, please call{" "}
         <a
           href="tel:+2348027775001"
@@ -162,7 +162,7 @@ export function ContactForm() {
         instead, or press the{" "}
         <span className="font-semibold text-night-900">Exit</span> button and
         contact us later.
-      </p>
+      </p> */}
     </form>
   );
 }

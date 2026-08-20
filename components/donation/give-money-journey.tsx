@@ -16,6 +16,8 @@ import { MonthlyEmailStep } from "./monthly-email-step";
 import { MonthlySuccessStep } from "./monthly-success-step";
 import { PaymentOptionsStep } from "./payment-options-step";
 import { AmountStep } from "./amount-step";
+import { PaymentSuccessStep } from "./payment-success-step";
+import { usePaystack } from "@/hooks/use-paystack";
 
 import {
   DonationStep,
@@ -23,6 +25,7 @@ import {
   PaymentMethod,
   INITIAL_DONATION_STATE,
   getProgress,
+  ENABLE_USD,
 } from "./types";
 
 type Direction = 1 | -1;
@@ -82,6 +85,8 @@ export const GiveMoneyJourney = forwardRef<
 
   const [amount, setAmount] = useState(INITIAL_DONATION_STATE.amount);
 
+  const [processingPayment, setProcessingPayment] = useState(false);
+
   const progress = useMemo(
     () => getProgress(step, donationType),
     [step, donationType],
@@ -92,6 +97,7 @@ export const GiveMoneyJourney = forwardRef<
     setEmail("");
     setPaymentMethod(null);
     setAmount("");
+    setProcessingPayment(false);
     setHistory([]);
     setDirection(1);
     setStep("give-money");
@@ -147,8 +153,33 @@ export const GiveMoneyJourney = forwardRef<
     goTo("amount");
   };
 
-  const handleAmountContinue = () => {
-    if (amount) goTo("payment-options");
+  const paystackCurrency =
+    ENABLE_USD &&
+    (paymentMethod === "usd-card" || paymentMethod === "usd-transfer")
+      ? "USD"
+      : "NGN";
+
+  const paystackAmountInKobo = (Number(amount) || 0) * 100;
+
+  const { ready, processing: paystackProcessing, pay } = usePaystack({
+    email: email || "donor@goshenshelters.org",
+    amount: paystackAmountInKobo,
+    currency: paystackCurrency,
+    onSuccess: () => {
+      setProcessingPayment(false);
+      goTo("payment-success");
+    },
+    onClose: () => setProcessingPayment(false),
+  });
+
+  const handleAmountContinue = async () => {
+    if (!amount || !paymentMethod) return;
+
+    if (ready) {
+      setProcessingPayment(true);
+      pay();
+      return;
+    }
   };
 
   const title = (() => {
@@ -163,6 +194,8 @@ export const GiveMoneyJourney = forwardRef<
         return "Choose a Payment Option";
       case "amount":
         return "Complete Your Donation";
+      case "payment-success":
+        return "Donation Complete";
     }
   })();
 
@@ -178,6 +211,8 @@ export const GiveMoneyJourney = forwardRef<
         return "Choose your preferred payment method";
       case "amount":
         return "Select the amount you would like to give";
+      case "payment-success":
+        return "Your generosity makes a real difference";
     }
   })();
 
@@ -267,6 +302,14 @@ export const GiveMoneyJourney = forwardRef<
                   amount={amount}
                   onAmountChange={setAmount}
                   onContinue={handleAmountContinue}
+                />
+              )}
+
+              {step === "payment-success" && (
+                <PaymentSuccessStep
+                  donationType={donationType}
+                  amount={amount}
+                  onContinue={closeJourney}
                 />
               )}
             </motion.div>
