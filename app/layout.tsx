@@ -55,6 +55,21 @@ export const metadata: Metadata = {
     url: "https://goshenshelters.org",
     siteName: "God's Home for Women Foundation",
     type: "website",
+    images: [
+      {
+        url: "/images/steps.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Goshen Shelters — A safe place. A new beginning.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Goshen Shelters — A safe place. A new beginning.",
+    description:
+      "Hope, shelter, healing and practical support for women escaping domestic violence. Confidential help 24/7 on 0802 777 5001.",
+    images: ["/images/steps.jpg"],
   },
 };
 
