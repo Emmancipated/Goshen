@@ -472,6 +472,7 @@ function Impact() {
                   delay={50}
                   speed={0.4}
                   animateWhileInView
+                  pulseStyle="sequential"
                 />
               </p>
               <p className="mt-2 text-sm uppercase tracking-wider text-cream-50/80">
@@ -526,17 +527,17 @@ function FounderAndSurvivor() {
               posterSrc="/images/about.jpg"
             />
           </Reveal>
-          <p className="mt-5 max-w-lg text-sm leading-7 text-night-600">
+          {/* <p className="mt-5 max-w-lg text-sm leading-7 text-night-600">
             Hear the story and vision behind God&rsquo;s Home for Women
             Foundation and Goshen Shelters.
-          </p>
-          <Link
+          </p> */}
+          {/* <Link
             href="/media"
             className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold uppercase tracking-wider text-night-950 hover:text-gold-700"
           >
             Watch video
             <ArrowRightIcon className="h-4 w-4" />
-          </Link>
+          </Link> */}
         </Reveal>
 
         <Reveal delay={100}>
