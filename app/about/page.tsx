@@ -566,9 +566,29 @@ import { FounderVideo } from "@/components/about/founder-video";
 import { AboutValues } from "@/components/about/about-values";
 
 export const metadata: Metadata = {
-  title: "About Us | Goshen Shelters",
+  title: "About Us",
   description:
-    "God’s Home for Women Foundation operates Goshen Shelters — a safe, confidential refuge offering hope, healing and restoration for women and children.",
+    "God's Home for Women Foundation operates Goshen Shelters — a safe, confidential refuge offering hope, healing and restoration for women and children.",
+  openGraph: {
+    title: "About Us",
+    description:
+      "God's Home for Women Foundation operates Goshen Shelters — a safe, confidential refuge offering hope, healing and restoration for women and children.",
+    images: [
+      {
+        url: "/images/about.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About Goshen Shelters — a safe, confidential refuge",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us",
+    description:
+      "God's Home for Women Foundation operates Goshen Shelters — a safe, confidential refuge offering hope, healing and restoration for women and children.",
+    images: ["/images/about.jpg"],
+  },
 };
 
 const FOUNDER_NAME = "Ajibola Hassan-Odukale";

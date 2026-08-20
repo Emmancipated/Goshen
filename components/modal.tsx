@@ -64,7 +64,7 @@ export function Modal({
 
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-end justify-center overflow-y-auto p-0 sm:items-center sm:p-6"
+      className="fixed inset-0 z-70 flex items-end justify-center overflow-y-auto p-0 sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby={labelledBy}
