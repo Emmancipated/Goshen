@@ -25,7 +25,7 @@ const supportCards = [
   },
   {
     title: "Give Your Time",
-    description: "Share time, skills and experience to support Goshen.",
+    description: "Your time and skills can help someone rebuild her life.",
     button: "Learn More",
     href: "/contact",
   },
@@ -129,8 +129,7 @@ export default function SupportPageClient() {
               </h2>
 
               <p className="mt-4 text-lg leading-8 text-[#5E5752]">
-                Organisations and groups can strengthen support through
-                meaningful partnerships.
+                Together, we can create lasting change for women and children.
               </p>
 
               <PartnerJourney>
@@ -167,8 +166,7 @@ export default function SupportPageClient() {
                 Fundraise for Goshen
               </h2>
               <p className="mt-4 text-lg leading-8 text-[#5E5752]">
-                Bring a community, church, school or organisation together to
-                support Goshen.
+                Turn your energy into support for women and children.
               </p>
 
               <FundraisingJourney>
@@ -203,16 +201,16 @@ export default function SupportPageClient() {
         >
           <div className="grid items-center lg:grid-cols-[0.9fr_1.1fr]">
             <div className="p-8 md:p-10">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8B6A3D]">
+              {/* <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8B6A3D]">
                 Survivor's Kit
-              </p>
+              </p> */}
 
               <h2 className="mt-3 font-serif text-4xl font-semibold text-[#2F1B69]">
-                Help a survivor start again.
+                {/* Help a survivor start again. */}Survivor's Kit
               </h2>
 
               <p className="mt-4 text-lg leading-8 text-[#5E5752]">
-                Help a survivor start again with a basic Survivor's Kit.
+                Help a survivor start again.
               </p>
 
               <SurvivorKitJourney>

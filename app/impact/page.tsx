@@ -446,7 +446,7 @@ export default function ImpactPage() {
       ========================================================== */}
       {/* <section className="bg-[#F7F3EC]">
         <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
-          <div className="relative min-h-[420px] lg:min-h-[560px]">
+          <div className="relative min-h-105 lg:min-h-140">
             <Image
               src="/images/impact-sewing.jpg"
               alt="A woman developing practical skills"
@@ -578,7 +578,7 @@ export default function ImpactPage() {
             {OUTCOMES.map((outcome, index) => (
               <Reveal key={outcome.title} delay={index * 90}>
                 <article className="group flex h-full flex-col overflow-hidden border border-[#E5DDD5] bg-[#F7F3EC]">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-4/3 overflow-hidden">
                     <Image
                       src={outcome.image}
                       alt=""

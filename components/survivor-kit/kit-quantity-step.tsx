@@ -45,11 +45,11 @@ export function KitQuantityStep({
           Your support helps a woman set up a safe and stable home as she begins
           again.{" "}
         </p>
-        <p className="leading-8 text-[#5E5752]">
+        {/* <p className="leading-8 text-[#5E5752]">
           Choose how many Survivor's Kits you would like to provide. Each kit
           gives a woman the essential household items she needs to start an
           independent life with dignity.
-        </p>
+        </p> */}
       </div>
       {/* Quantity selector */}
       <div className="rounded-3xl border border-[#E5DDD3] bg-white p-8">

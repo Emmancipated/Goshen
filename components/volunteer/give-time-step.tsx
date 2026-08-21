@@ -36,11 +36,7 @@ const opportunities = [
   },
   {
     icon: <Wrench className="h-5 w-5" />,
-    title: "Driving and practical assistance",
-  },
-  {
-    icon: <Wrench className="h-5 w-5" />,
-    title: "Other appropriate areas where skills can help",
+    title: "Practical support",
   },
 ];
 
@@ -50,13 +46,13 @@ export function GiveTimeStep({ onContinue }: GiveTimeStepProps) {
       {/* Intro */}{" "}
       <div className="space-y-4">
         {" "}
-        <p className="text-[1.05rem] leading-8 text-[#5E5752]">
+        {/* <p className="text-[1.05rem] leading-8 text-[#5E5752]">
           Your time and skills can help someone rebuild her life.{" "}
-        </p>
+        </p> */}
         <p className="leading-8 text-[#5E5752]">
-          Goshen welcomes people who want to contribute their time, skills, and
-          experience to support women and children on their journey to safety,
-          healing, and independence.
+          Goshen welcomes people who want to contribute their time, skills and
+          experience to support women and children on their journey to safety
+          and independence.
         </p>
       </div>
       {/* Opportunities */}
@@ -65,20 +61,44 @@ export function GiveTimeStep({ onContinue }: GiveTimeStepProps) {
           Ways you may be able to support
         </h3>
 
-        <div className="grid gap-3 sm:grid-cols-2">
+        {/* <div className="grid gap-3 sm:grid-cols-2">
           {opportunities.map((item) => (
             <div
               key={item.title}
               className="flex items-start gap-4 rounded-2xl border border-[#E8DED5] bg-white p-2 transition-all duration-200 hover:border-[#43206F] hover:shadow-sm"
             >
-              {/* <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
+              <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
                 {item.icon}
-              </div> */}
+              </div>
 
               <p className="leading-7 text-[#4E4742]">{item.title}</p>
             </div>
           ))}
-        </div>
+        </div> */}
+        <ul className="mt-4 space-y-3">
+          {opportunities.map((item) => (
+            <li
+              key={item.title}
+              className="
+                            relative
+                            pl-5
+                            text-sm
+                            leading-6
+                            text-[#5E5752]
+                            before:absolute
+                            before:left-0
+                            before:top-[0.65rem]
+                            before:h-1.5
+                            before:w-1.5
+                            before:-translate-y-1/2
+                            before:rounded-full
+                            before:bg-[#43206F]
+                          "
+            >
+              {item.title}
+            </li>
+          ))}
+        </ul>
       </div>
       {/* Encouragement panel */}
       {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6">

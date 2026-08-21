@@ -23,7 +23,7 @@ const supportAreas = [
   "Children's educational support",
   "Skills development",
   "Professional support",
-  "Driving and practical assistance",
+  "Practical support",
   "Other appropriate areas where skills can help",
 ];
 
