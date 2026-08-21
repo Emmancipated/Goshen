@@ -47,18 +47,18 @@ export function PartnershipSuccessStep({
           Thank you for reaching out
         </h3>
 
-        <p className="text-lg leading-8 text-[#5E5752]">
+        {/* <p className="text-lg leading-8 text-[#5E5752]">
           We've received the partnership enquiry from{" "}
           <strong>{organization}</strong> and we're grateful for your interest
           in supporting women and children at Goshen.
-        </p>
+        </p> */}
       </div>
       {/* What happens next */}
-      <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
+      {/* <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
         <div className="flex items-start gap-4">
-          {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
             <Mail className="h-5 w-5 text-[#43206F]" />
-          </div> */}
+          </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold text-[#2F1B69]">What happens next</h4>
@@ -82,7 +82,7 @@ export function PartnershipSuccessStep({
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Partnership message */}
       {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6 text-left">
         <div className="flex items-start gap-4">
@@ -109,14 +109,13 @@ export function PartnershipSuccessStep({
         onClick={onClose}
         className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#43206F] px-6 py-4 text-base font-bold text-white transition-all hover:bg-[#341857] active:scale-[0.99]"
       >
-        Continue exploring ways to support
-        <ArrowRight className="h-5 w-5" />
+        Close
       </button>
       {/* Footer note */}
-      <p className="text-sm leading-6 text-[#6B6560]">
+      {/* <p className="text-sm leading-6 text-[#6B6560]">
         If you would like to discuss a time-sensitive partnership opportunity,
         you're welcome to contact our team directly by phone or email.
-      </p>
+      </p> */}
     </div>
   );
 }

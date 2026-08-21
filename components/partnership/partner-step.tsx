@@ -53,7 +53,9 @@ export function PartnerStep({ onContinue }: PartnerStepProps) {
       <div className="space-y-4">
         {" "}
         <p className="text-[1.05rem] leading-8 text-[#5E5752]">
-          Learn how your organisation can support Goshen through partnership.
+          Goshen welcomes organisations that want to support women and children
+          affected by domestic and sexual violence and contribute to their
+          journey towards safety, healing and independence.{" "}
         </p>
       </div>
       {/* Partnership opportunities */}
@@ -62,30 +64,54 @@ export function PartnerStep({ onContinue }: PartnerStepProps) {
           Ways your organization can support Goshen
         </h3>
 
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           {partnershipAreas.map((area) => (
             <div
               key={area.title}
               className="rounded-3xl border border-[#E8DED5] bg-white p-2 transition-all duration-200 hover:border-[#43206F] hover:shadow-sm"
             >
               <div className="flex items-start gap-4">
-                {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
                   {area.icon}
-                </div> */}
+                </div>
 
                 <div className="space-y-2">
-                  {/* <h4 className="font-semibold text-[#2F1B69]">{area.title}</h4> */}
+                  <h4 className="font-semibold text-[#2F1B69]">{area.title}</h4>
 
                   <p className="leading-7 text-[#5E5752]">{area.description}</p>
                 </div>
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
+        <ul className="mt-4 space-y-3">
+          {partnershipAreas.map((item) => (
+            <li
+              key={item.title}
+              className="
+                            relative
+                            pl-5
+                            text-sm
+                            leading-6
+                            text-[#5E5752]
+                            before:absolute
+                            before:left-0
+                            before:top-[0.65rem]
+                            before:h-1.5
+                            before:w-1.5
+                            before:-translate-y-1/2
+                            before:rounded-full
+                            before:bg-[#43206F]
+                          "
+            >
+              {item.title}
+            </li>
+          ))}
+        </ul>
       </div>
       {/* Partnership panel */}
-      {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6">
-        <div className="flex items-start gap-4">
+      <div className="rounded border border-[#E5D7F3] bg-[#F8F4FD] p-2">
+        {/* <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#43206F] text-white">
             <HeartHandshake className="h-5 w-5" />
           </div>
@@ -100,8 +126,11 @@ export function PartnerStep({ onContinue }: PartnerStepProps) {
               work together to create meaningful, sustainable impact.
             </p>
           </div>
-        </div>
-      </div> */}
+        </div> */}
+        <p className="leading-7 text-[#5E5752]">
+          Interested in partnering with Goshen? We'd love to hear from you.
+        </p>
+      </div>
       {/* CTA */}
       <button
         onClick={onContinue}

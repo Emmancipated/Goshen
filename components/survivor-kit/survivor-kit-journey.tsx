@@ -194,7 +194,7 @@ export function SurvivorKitJourney({ children }: SurvivorKitJourneyProps) {
         onBack={goBack}
         canGoBack={history.length > 0}
         title={title}
-        subtitle={subtitle}
+        // subtitle={subtitle}
         progress={progress}
         size="md"
         icon={<Package className="h-6 w-6" />}

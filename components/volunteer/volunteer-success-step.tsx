@@ -48,16 +48,16 @@ export function VolunteerSuccessStep({
         </h3>
 
         <p className="text-lg leading-8 text-[#5E5752]">
-          We've received your volunteer enquiry and we're grateful for your
-          willingness to support women and children at Goshen.
+          We've received your volunteer enquiry and the Goshen team will be in
+          touch with you.
         </p>
       </div>
       {/* What happens next */}
-      <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
+      {/* <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
         <div className="flex items-start gap-4">
-          {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
             <Mail className="h-5 w-5 text-[#43206F]" />
-          </div> */}
+          </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold text-[#2F1B69]">What happens next</h4>
@@ -72,7 +72,7 @@ export function VolunteerSuccessStep({
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Encouragement */}
       {/* <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6 text-left">
         <div className="flex items-start gap-4">
@@ -98,14 +98,15 @@ export function VolunteerSuccessStep({
         onClick={onClose}
         className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#43206F] px-6 py-4 text-base font-bold text-white transition-all hover:bg-[#341857] active:scale-[0.99]"
       >
-        Continue exploring ways to help
-        <ArrowRight className="h-5 w-5" />
+        {/* Continue exploring ways to help
+        <ArrowRight className="h-5 w-5" /> */}
+        Close
       </button>
       {/* Footer note */}
-      <p className="text-sm leading-6 text-[#6B6560]">
+      {/* <p className="text-sm leading-6 text-[#6B6560]">
         If your enquiry is urgent or you have additional information to share,
         you can also contact us directly by phone or WhatsApp.
-      </p>
+      </p> */}
     </div>
   );
 }

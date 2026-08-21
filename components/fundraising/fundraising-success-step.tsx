@@ -47,21 +47,23 @@ export function FundraisingSuccessStep({
         </div> */}
 
         <h3 className="font-serif text-3xl font-semibold text-[#2F1B69]">
-          Thank you, {firstName}!
+          {/* Thank you, {firstName}! */} Thank you for your enquiry
         </h3>
 
         <p className="text-lg leading-8 text-[#5E5752]">
-          We've received your <strong>{type}</strong> fundraising enquiry and
+          {/* We've received your <strong>{type}</strong> fundraising enquiry and
           we're excited that you want to support women and children through
-          Goshen.
+          Goshen. */}
+          We've received your fundraising enquiry. The Goshen team will review
+          it and be in touch with you soon.
         </p>
       </div>
       {/* What happens next */}
-      <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
+      {/* <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left">
         <div className="flex items-start gap-4">
-          {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF]">
             <Mail className="h-5 w-5 text-[#43206F]" />
-          </div> */}
+          </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold text-[#2F1B69]">What happens next</h4>
@@ -79,7 +81,7 @@ export function FundraisingSuccessStep({
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Encouragement panel */}
       {/* <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6 text-left">
         <div className="flex items-start gap-4">
@@ -106,14 +108,15 @@ export function FundraisingSuccessStep({
         onClick={onClose}
         className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#43206F] px-6 py-4 text-base font-bold text-white transition-all hover:bg-[#341857] active:scale-[0.99]"
       >
-        Continue exploring ways to support
-        <ArrowRight className="h-5 w-5" />
+        {/* Continue exploring ways to support
+        <ArrowRight className="h-5 w-5" /> */}
+        Close
       </button>
       {/* Footer note */}
-      <p className="text-sm leading-6 text-[#6B6560]">
+      {/* <p className="text-sm leading-6 text-[#6B6560]">
         If you're planning a time-sensitive fundraiser, you can also contact our
         team directly by phone or WhatsApp.
-      </p>
+      </p> */}
     </div>
   );
 }
