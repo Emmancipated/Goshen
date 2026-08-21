@@ -160,7 +160,7 @@ export function GiveTimeJourney({ children }: GiveTimeJourneyProps) {
         onBack={goBack}
         canGoBack={history.length > 0}
         title={title}
-        subtitle={subtitle}
+        // subtitle={subtitle}
         progress={progress}
         size="md"
         icon={<HeartHandshake className="h-6 w-6" />}

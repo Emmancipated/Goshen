@@ -163,7 +163,7 @@ export function PartnerJourney({ children }: PartnerJourneyProps) {
         onBack={goBack}
         canGoBack={history.length > 0}
         title={title}
-        subtitle={subtitle}
+        // subtitle={subtitle}
         progress={progress}
         size="md"
         icon={<Building2 className="h-6 w-6" />}

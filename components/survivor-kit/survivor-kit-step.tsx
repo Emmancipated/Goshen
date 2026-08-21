@@ -56,35 +56,60 @@ export function SurvivorKitStep({ onContinue }: SurvivorKitStepProps) {
         {" "}
         <p className="leading-8 text-[#5E5752]">
           When a woman leaves Goshen to begin an independent life, she receives
-          a basic Survivor's Kit to help establish her new home.
+          a basic Survivor's Kit to help her establish her new home and start a
+          new chapter with dignity and hope.
         </p>
       </div>
       {/* Kit contents */}
       <div className="space-y-5">
         <h3 className="font-serif text-2xl font-semibold text-[#2F1B69]">
-          The kit includes:
+          The Survivor's Kit includes:
         </h3>
 
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           {kitItems.map((item) => (
             <div
               key={item.title}
               className="rounded-3xl border border-[#E8DED5] bg-white p-2"
             >
               <div className="flex items-start gap-4">
-                {/* <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
                   {item.icon}
-                </div> */}
+                </div>
 
                 <div className="space-y-2">
-                  {/* <h4 className="font-semibold text-[#2F1B69]">{item.title}</h4> */}
+                  <h4 className="font-semibold text-[#2F1B69]">{item.title}</h4>
 
                   <p className="leading-7 text-[#5E5752]">{item.description}</p>
                 </div>
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
+        <ul className="mt-4 space-y-3">
+          {kitItems.map((item) => (
+            <li
+              key={item.title}
+              className="
+                            relative
+                            pl-5
+                            text-sm
+                            leading-6
+                            text-[#5E5752]
+                            before:absolute
+                            before:left-0
+                            before:top-[0.65rem]
+                            before:h-1.5
+                            before:w-1.5
+                            before:-translate-y-1/2
+                            before:rounded-full
+                            before:bg-[#43206F]
+                          "
+            >
+              {item.title}
+            </li>
+          ))}
+        </ul>
       </div>
       {/* Impact panel */}
       {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6">

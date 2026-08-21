@@ -171,7 +171,7 @@ export function FundraisingJourney({ children }: FundraisingJourneyProps) {
         onBack={goBack}
         canGoBack={history.length > 0}
         title={title}
-        subtitle={subtitle}
+        // subtitle={subtitle}
         progress={progress}
         size="md"
         icon={<Heart className="h-6 w-6" />}

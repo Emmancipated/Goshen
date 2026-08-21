@@ -75,12 +75,17 @@ export function PaymentStep({
   const [selected, setSelected] = useState<PaymentMethod | null>(paymentMethod);
   const [processing, setProcessing] = useState(false);
 
-  const isPaystack = selected === "paystack-card" || selected === "paystack-bank";
+  const isPaystack =
+    selected === "paystack-card" || selected === "paystack-bank";
   const currency =
     ENABLE_USD && selected === "stripe-international" ? "USD" : "NGN";
   const paystackAmount = (Number(total) || 0) * 100;
 
-  const { ready, processing: paystackProcessing, pay } = usePaystack({
+  const {
+    ready,
+    processing: paystackProcessing,
+    pay,
+  } = usePaystack({
     email: donor.email,
     amount: paystackAmount,
     currency,
@@ -126,7 +131,7 @@ export function PaymentStep({
         </p>{" "}
       </div>
       {/* Donation summary */}
-      <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6">
+      {/* <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6">
         <h3 className="font-serif text-2xl font-semibold text-[#2F1B69]">
           Donation summary
         </h3>
@@ -157,7 +162,7 @@ export function PaymentStep({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Donor summary */}
       <div className="rounded-3xl border border-[#E5DDD3] bg-[#FFFDF8] p-6">
         <h4 className="font-semibold text-[#2F1B69]">Donor details</h4>
