@@ -98,7 +98,7 @@ export function GiveItemsJourney({ children }: GiveItemsJourneyProps) {
 
   const subtitle =
     step === "give-items"
-      ? "Practical donations that make a real difference"
+      ? "Practical things can make a real difference"
       : "Choose the easiest way to arrange your donation";
 
   return (

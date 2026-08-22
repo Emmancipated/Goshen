@@ -27,11 +27,11 @@ const items = [
     icon: <BookOpen className="h-5 w-5" />,
     title: "Educational materials, including books and stationery",
   },
-  {
-    icon: <BookOpen className="h-5 w-5" />,
-    title:
-      "Household essentials, including bedding, towels and cleaning supplies",
-  },
+  // {
+  //   icon: <BookOpen className="h-5 w-5" />,
+  //   title:
+  //     "Household essentials, including bedding, towels and cleaning supplies",
+  // },
 ];
 
 export function GiveItemsStep({ onContinue }: GiveItemsStepProps) {
@@ -41,8 +41,13 @@ export function GiveItemsStep({ onContinue }: GiveItemsStepProps) {
       <div className="space-y-4">
         {" "}
         <p className="text-[1.05rem] leading-8 text-[#5E5752]">
-          Goshen welcomes practical items that help keep residents safe,
-          comfortable and cared for.
+          Women and children sometimes arrive at Goshen having had to leave
+          their homes suddenly, without being able to take their personal
+          belongings.
+        </p>
+        <p className="text-[1.05rem] leading-8 text-[#5E5752]">
+          Practical donations help meet some of the everyday needs of women and
+          children staying at the shelter.
         </p>
       </div>
       {/* Items list */}
@@ -51,20 +56,30 @@ export function GiveItemsStep({ onContinue }: GiveItemsStepProps) {
           Items we welcome
         </h3>
 
-        <div className="space-y-3">
+        {/* <div className="space-y-3">
           {items.map((item) => (
             <div
               key={item.title}
               className="flex items-start gap-4 rounded-2xl border border-[#E8DED5] bg-white p-2"
             >
-              {/* <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
+              <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-[#43206F]">
                 {item.icon}
-              </div> */}
+              </div>
 
               <p className="leading-7 text-[#4E4742]">{item.title}</p>
             </div>
           ))}
-        </div>
+        </div> */}
+        <ul className="mt-4 space-y-3">
+          {items.map((item) => (
+            <li
+              key={item.title}
+              className="relative pl-5 text-sm leading-6  text-[#5E5752]  before:absolute  before:left-0  before:top-[0.65rem]  before:h-1.5  before:w-1.5  before:-translate-y-1/2  before:rounded-full  before:bg-[#43206F]"
+            >
+              {item.title}
+            </li>
+          ))}
+        </ul>
       </div>
       {/* Confidentiality panel */}
       {/* <div className="rounded-3xl border border-[#E5D7F3] bg-[#F8F4FD] p-6">
@@ -86,6 +101,12 @@ export function GiveItemsStep({ onContinue }: GiveItemsStepProps) {
           </div>
         </div>
       </div> */}
+      <div className="rounded border border-[#E5D7F3] bg-[#F8F4FD] p-2">
+        {" "}
+        For security reasons, Goshen's residential address is kept confidential.
+        Delivery and collection arrangements are made privately with the
+        shelter.
+      </div>
       {/* CTA */}
       <button
         onClick={onContinue}
