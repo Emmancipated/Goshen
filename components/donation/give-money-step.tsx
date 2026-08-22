@@ -11,31 +11,50 @@ export function GiveMoneyStep({
   onGiveOnce,
   onGiveMonthly,
 }: GiveMoneyStepProps) {
+  const GIFT = [
+    "Food and accommodation",
+    "Healthcare and medical expenses, including maternity care and childbirth",
+    "Clothing and personal necessities",
+    "Other essential costs of running and maintaining the shelter",
+  ];
   return (
     <div className="space-y-8 pb-5">
       {/* Intro */}
       <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          {/* <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F3E6E6]">
+        {/* <div className="flex items-center gap-3">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F3E6E6]">
             <Heart className="h-6 w-6 text-[#B31312]" />
-          </div> */}
+          </div>
 
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#8B6A3D]">
               Support women and children
             </p>
-            {/* <p className="text-sm text-[#6B6560]">
+            <p className="text-sm text-[#6B6560]">
               Every gift helps provide safety, shelter and hope.
-            </p> */}
+            </p>
           </div>
-        </div>
+        </div> */}
 
         <p className="text-[1.05rem] leading-8 text-[#5E5752]">
-          Your donation helps provide: food and accommodation; healthcare and
-          medical expenses including maternity care and childbirth; clothing and
-          personal necessities; and other essential costs of running and
-          maintaining the shelter.
+          Your financial support helps Goshen provide a safe place for women and
+          children escaping domestic and sexual violence and support them as
+          they rebuild their lives.
         </p>
+
+        <p className="text-[1.05rem] leading-8 text-[#5E5752]">
+          Funds help meet essential needs including:
+        </p>
+        <ul className="mt-4 space-y-3">
+          {GIFT.map((item) => (
+            <li
+              key={item}
+              className="relative pl-5 text-sm leading-6  text-[#5E5752]  before:absolute  before:left-0  before:top-[0.65rem]  before:h-1.5  before:w-1.5  before:-translate-y-1/2  before:rounded-full  before:bg-[#43206F]"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Choose donation type */}
@@ -46,7 +65,7 @@ export function GiveMoneyStep({
 
         <div className="grid gap-4 md:grid-cols-2">
           {/* Give once */}
-          <button
+          {/* <button
             onClick={onGiveOnce}
             className="group rounded-3xl border border-[#E5DDD3] bg-white p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-[#43206F] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#43206F]/30"
           >
@@ -61,9 +80,9 @@ export function GiveMoneyStep({
                 </p>
               </div>
 
-              {/* <div className="rounded-full bg-[#F3E8FF] p-2 transition-colors group-hover:bg-[#43206F]">
+              <div className="rounded-full bg-[#F3E8FF] p-2 transition-colors group-hover:bg-[#43206F]">
                 <Heart className="h-5 w-5 text-[#43206F] group-hover:text-white" />
-              </div> */}
+              </div>
             </div>
 
             <div className="mt-6 flex items-center justify-between">
@@ -74,10 +93,31 @@ export function GiveMoneyStep({
                 →
               </span>
             </div>
+          </button> */}
+          <button
+            onClick={onGiveOnce}
+            className="group rounded-3xl border border-[#E5DDD3] bg-white p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:border-[#43206F] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#43206F]/30"
+          >
+            <div className="">
+              <div>
+                <h4 className="font-serif text-2xl font-semibold text-[#2F1B69]">
+                  Give Once
+                </h4>
+              </div>
+            </div>
+
+            <div className="mt-4 flex items-center justify-between">
+              <span className="text-sm font-semibold text-[#43206F]">
+                One-time donation
+              </span>
+              <span className="text-[#43206F] transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </div>
           </button>
 
           {/* Give monthly */}
-          <button
+          {/* <button
             onClick={onGiveMonthly}
             className="group rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-[#B31312] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#B31312]/30"
           >
@@ -92,12 +132,34 @@ export function GiveMoneyStep({
                 </p>
               </div>
 
-              {/* <div className="rounded-full bg-[#FCE8E8] p-2 transition-colors group-hover:bg-[#B31312]">
+              <div className="rounded-full bg-[#FCE8E8] p-2 transition-colors group-hover:bg-[#B31312]">
                 <Heart className="h-5 w-5 text-[#B31312] group-hover:text-white" />
-              </div> */}
+              </div>
             </div>
 
             <div className="mt-6 flex items-center justify-between">
+              <span className="text-sm font-semibold text-[#B31312]">
+                Monthly commitment
+              </span>
+              <span className="text-[#B31312] transition-transform group-hover:translate-x-1">
+                →
+              </span>
+            </div>
+          </button> */}
+
+          <button
+            onClick={onGiveMonthly}
+            className="group rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:border-[#B31312] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#B31312]/30"
+          >
+            <div className="flex items-start justify-between">
+              <div>
+                <h4 className="font-serif text-2xl font-semibold text-[#B31312]">
+                  Give Monthly
+                </h4>
+              </div>
+            </div>
+
+            <div className="mt-4 flex items-center justify-between">
               <span className="text-sm font-semibold text-[#B31312]">
                 Monthly commitment
               </span>
@@ -130,11 +192,11 @@ export function GiveMoneyStep({
       </div> */}
 
       {/* Security footer */}
-      <div className="rounded-2xl border border-[#E5DDD3] bg-white p-4">
+      {/* <div className="rounded-2xl border border-[#E5DDD3] bg-white p-4">
         <div className="flex items-center gap-3">
-          {/* <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8F3EC]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E8F3EC]">
             <ShieldCheck className="h-5 w-5 text-[#2E7D32]" />
-          </div> */}
+          </div>
 
           <div>
             <p className="font-semibold text-[#2F1B69]">
@@ -146,7 +208,7 @@ export function GiveMoneyStep({
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
