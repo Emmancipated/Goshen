@@ -82,23 +82,31 @@ export default function AboutPage() {
             className="relative min-h-70 sm:min-h-90 lg:min-h-130"
           >
             <Image
-              src="/images/hope.jpg"
+              src="/images/03_Tablet_Portrait_1200x700.jpg"
               alt="A woman and child"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-center"
+              // sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-center lg:hidden"
+            />
+            <Image
+              src="/images/00_MASTER_1718x916.jpg"
+              alt="A woman and child"
+              fill
+              priority
+              // sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover object-center hidden lg:block"
             />
 
             {/* Desktop curve  */}
-            <div className="absolute inset-y-0 left-0 hidden w-[30%] lg:block">
+            <div className="absolute inset-y-0 left-0 hidden w-[30%] xl:block">
               <div className="absolute inset-0 bg-night-50 [clip-path:ellipse(75%_80%_at_0%_50%)]" />
             </div>
 
             {/* Mobile curve */}
-            <div className="absolute inset-x-0 top-0 h-[30%] lg:hidden">
+            {/* <div className="absolute inset-x-0 top-0 h-[30%] lg:hidden">
               <div className="absolute inset-0 bg-night-50 [clip-path:ellipse(85%_100%_at_50%_0%)]" />
-            </div>
+            </div> */}
           </Reveal>
         </div>
       </section>

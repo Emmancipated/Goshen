@@ -256,6 +256,16 @@ export default function SupportPageClient() {
             </button>
           </div>
         </section>
+
+        <section>
+          <button
+            type="button"
+            onClick={openDonation}
+            className="fixed bottom-20 right-5 z-50 md:hidden rounded-full bg-gold-500 px-5 py-2 text-sm font-bold text-white transition-all hover:bg-gold-600 active:scale-95 sm:inline-block"
+          >
+            Donate
+          </button>
+        </section>
       </div>
     </main>
   );
