@@ -32,128 +32,27 @@ export const metadata: Metadata = {
   },
 };
 
-/**
- * Keep this configurable so the dedicated Survivor's Kit page can be
- * moved later without changing the structure of this page.
- */
-const SURVIVORS_KIT_HREF = "/support#survivors-kit";
-
-const IMPACT_FIGURES = [
-  {
-    value: 174,
-    label: "Women supported",
-    description:
-      "Women have come through Goshen seeking safety, care and a pathway toward a new beginning.",
-  },
-  {
-    value: 265,
-    label: "Children supported",
-    description:
-      "Children have been supported alongside women affected by domestic and sexual violence.",
-  },
-  {
-    value: 23,
-    label: "Teenagers supported",
-    description:
-      "Teenagers have also received support through the shelter's work.",
-    note: "This figure may overlap with the children figure and is not presented as an additional total.",
-  },
-  {
-    value: 22,
-    label: "Rape cases",
-    description:
-      "Goshen has supported survivors of rape with care, confidentiality and practical support.",
-  },
-  {
-    value: 15,
-    label: "Child sexual abuse cases",
-    description:
-      "Children affected by sexual abuse have received support and protection.",
-  },
-  {
-    value: 7,
-    label: "Babies born at Goshen",
-    description:
-      "Seven babies have been born during shelter stays, including one set of twins.",
-  },
-];
-
-const SUPPORT_AREAS = [
-  "Emotional counselling",
-  "Spiritual guidance",
-  "Healthcare and medical support",
-  "Food and daily provisions",
-  "Financial assistance",
-  "Skills acquisition",
-  "Employment support",
-  "Educational support for children",
-];
-
-// const OUTCOMES = [
-//   {
-//     title: "Education restored",
-//     body: "Some women returned to or completed tertiary education after experiences of domestic violence had interrupted their studies.",
-//   },
-//   {
-//     title: "Meaningful employment",
-//     body: "Some survivors secured employment in schools, private companies and government agencies as they rebuilt their independence.",
-//   },
-//   {
-//     title: "Skills and self-sufficiency",
-//     body: "Women have participated in skills-development programmes, including tailoring and culinary training, to strengthen their ability to support themselves.",
-//   },
-//   {
-//     title: "Financial independence",
-//     body: "Support has helped some survivors move toward greater financial independence and establish more stable livelihoods.",
-//   },
-//   {
-//     title: "Businesses and accommodation",
-//     body: "Some survivors received support that helped them start businesses and secure independent accommodation as they transitioned from the shelter.",
-//   },
-//   {
-//     title: "Peaceful reintegration",
-//     body: "Women have been successfully reintegrated into society and are living peaceful lives away from violence.",
-//   },
-// ];
-
 const OUTCOMES = [
   {
-    image: "/images/about.jpg",
+    image: "/images/seamstress.jpg",
     title: "Lives rebuilt. Futures restored.",
     body: "Women have returned to education, secured meaningful employment, developed income-generating skills, become financially independent, established businesses, relocated abroad and rebuilt peaceful lives away from violence. ",
     close:
       "One survivor resumed her education and obtained a Master's degree at the London School of Economics while her children continued their secondary education in the United Kingdom. ",
   },
   {
-    image: "/images/donate.jpg",
+    image: "/images/school_children.jpg",
     title: "Protecting children's futures.",
     body: "Violence disrupts every part of a child's life, including education. About 80% of children arriving at the shelter have had to leave their neighbourhood schools.",
     close:
       "Goshen works to enrol children in new schools as quickly as possible and provides support for their emotional wellbeing, routines and stability.",
   },
   {
-    image: "/images/help.jpg",
+    image: "/images/gavel.jpg",
     title: "Safety and justice.",
     body: "Through collaboration with the DSVRT, the Police, legal professionals and other partners, survivors receive assistance with protection and legal processes.",
     close:
       "Perpetrators have been arrested and charged to court. Child abusers have also been arraigned and imprisoned with the help of our partners. ",
-  },
-];
-const JOURNEY_OUTCOMES = [
-  {
-    value: "90%",
-    label: "chose not to reconcile",
-    body: "Most survivors chose not to return to their partners after considering their circumstances and receiving support.",
-  },
-  {
-    value: "5%",
-    label: "remained separated",
-    body: "Some remained separated while continuing counselling and working through their circumstances.",
-  },
-  {
-    value: "5%",
-    label: "reconciled",
-    body: "Some reconciled with their partners following counselling and intervention.",
   },
 ];
 
@@ -168,12 +67,12 @@ export default function ImpactPage() {
           {/* Image */}
           <div className="relative min-h-95 sm:min-h-120 lg:min-h-155">
             <Image
-              src="/images/impacts.jpg"
+              src="/images/sprouting-leaf.jpg"
               alt="A woman and child representing the women and children supported by Goshen Shelters"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="object-cover object-center"
+              // className="object-fill object-center"
             />
 
             {/* Desktop fade from image into text */}
@@ -216,7 +115,7 @@ export default function ImpactPage() {
       {/* =========================================================
           PEOPLE BEHIND THE IMPACT
       ========================================================== */}
-      <section className="border-y border-[#E6DDD4] bg-[#FBF8F2]">
+      <section className=" bg-[#FBF8F2]">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
             <Reveal>
@@ -260,8 +159,8 @@ export default function ImpactPage() {
               <div className="relative overflow-hidden rounded-4xl">
                 <div className="relative aspect-4/3">
                   <Image
-                    src="/images/steps.jpg"
-                    alt="A woman representing the journey from shelter and support toward independence"
+                    src="/images/mother-and-child.jpg"
+                    alt="A woman and child"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover object-center"
@@ -316,8 +215,8 @@ export default function ImpactPage() {
               <div className="relative overflow-hidden rounded-4xl">
                 <div className="relative aspect-4/3">
                   <Image
-                    src="/images/love.jpg"
-                    alt="A woman representing the journey from shelter and support toward independence"
+                    src="/images/counselling.jpg"
+                    alt="A woman counselling another woman"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover object-center"
@@ -441,118 +340,6 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          MORE THAN A SHELTER
-      ========================================================== */}
-      {/* <section className="bg-[#F7F3EC]">
-        <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
-          <div className="relative min-h-105 lg:min-h-140">
-            <Image
-              src="/images/impact-sewing.jpg"
-              alt="A woman developing practical skills"
-              fill
-              sizes="(max-width: 1023px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-
-          <div className="flex items-center px-6 py-16 sm:px-10 sm:py-20 lg:px-14 xl:px-20">
-            <Reveal delay={100}>
-              <div className="max-w-xl">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#B64A16]">
-                  More than a shelter
-                </p>
-
-                <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-[#2F1B69] sm:text-4xl">
-                  Safety is only the beginning.
-                </h2>
-
-                <p className="mt-6 text-base leading-7 text-[#5E5752]">
-                  Goshen provides holistic support that addresses the needs of
-                  the whole person — mind, body and spirit. Our care includes
-                  emotional counselling, spiritual guidance, healthcare and
-                  medical support, food and daily provisions.
-                </p>
-
-                <p className="mt-5 text-base leading-7 text-[#5E5752]">
-                  Women may also receive financial assistance, skills
-                  acquisition and employment support, while children receive
-                  educational support to help minimise disruption to their
-                  lives.
-                </p>
-
-                <p className="mt-5 text-base leading-7 text-[#5E5752]">
-                  The goal is not simply to provide a place of safety, but to
-                  help survivors heal, regain stability and rebuild independent
-                  lives.
-                </p>
-
-                <div className="mt-8 h-px w-20 bg-[#C9A227]" />
-
-                <p className="mt-5 font-display text-xl leading-7 text-[#2F1B69]">
-                  A safe place today can become the foundation for a stronger
-                  tomorrow.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section> */}
-
-      {/* =========================================================
-          DOCUMENTED OUTCOMES
-      ========================================================= */}
-      {/* <section className="bg-[#EEE8F5]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
-          <Reveal>
-            <div className="max-w-3xl">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B6914]">
-                Documented outcomes
-              </p>
-
-              <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-[#2F1B69] sm:text-5xl">
-                The difference continues after the shelter.
-              </h2>
-
-              <p className="mt-6 text-base leading-7 text-[#5E5752]">
-                The purpose of support is to help survivors move toward safer,
-                more stable and more independent lives. Documented outcomes
-                include education, employment, skills development, financial
-                independence, business development, accommodation and
-                reintegration.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="mt-14 grid gap-x-12 gap-y-0 md:grid-cols-2">
-            {OUTCOMES.map((outcome, index) => (
-              <Reveal key={outcome.title} delay={(index % 2) * 70}>
-                <article className="border-t border-[#CFC3DA] py-7">
-                  <h3 className="font-display text-2xl font-semibold text-[#2F1B69]">
-                    {outcome.title}
-                  </h3>
-
-                  <p className="mt-3 max-w-xl text-sm leading-6 text-[#655F5A]">
-                    {outcome.body}
-                  </p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={120}>
-            <div className="mt-10 border-t border-[#CFC3DA] pt-8">
-              <p className="max-w-3xl text-sm leading-6 text-[#655F5A]">
-                The Executive Brief also documents an example of a survivor who
-                obtained a Master's degree at the London School of Economics
-                while her children were integrated into secondary schools in the
-                United Kingdom.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section> */}
-
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
           {/* <Reveal>
@@ -581,10 +368,10 @@ export default function ImpactPage() {
                   <div className="relative aspect-4/3 overflow-hidden">
                     <Image
                       src={outcome.image}
-                      alt=""
+                      alt={outcome.title}
                       fill
                       sizes="(max-width: 767px) 100vw, (max-width: 1023px) 33vw, 30vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      className=" object-center transition-transform duration-700 group-hover:scale-[1.03]"
                     />
                   </div>
 
@@ -608,41 +395,6 @@ export default function ImpactPage() {
           </div>
         </div>
       </section>
-
-      {/* =========================================================
-          SURVIVOR'S KIT
-      ========================================================= */}
-      {/* <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
-          <Reveal>
-            <div className="grid gap-8 rounded-4xl bg-[#2F1B69] p-8 text-white sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center lg:p-12">
-              <div className="max-w-2xl">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#E0C45A]">
-                  The journey continues
-                </p>
-
-                <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
-                  Preparing for independent living.
-                </h2>
-
-                <p className="mt-4 text-sm leading-6 text-white/75 sm:text-base sm:leading-7">
-                  As a woman prepares to leave Goshen and begin a more
-                  independent life, practical support can help make that
-                  transition more stable. Learn more about the Survivor's Kit
-                  and how it supports the next chapter.
-                </p>
-              </div>
-
-              <Link
-                href={SURVIVORS_KIT_HREF}
-                className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:border-white hover:bg-white hover:text-[#2F1B69] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2F1B69]"
-              >
-                See Survivor's Kit
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section> */}
 
       {/* =========================================================
           CLOSING CTA
