@@ -147,7 +147,7 @@ export function OurWorkClient() {
       <section className="relative overflow-hidden bg-[#2F1B69]">
         <div className="absolute inset-0">
           <Image
-            src="/images/steps.jpg"
+            src="/images/collage.jpg"
             alt=""
             fill
             sizes="100vw"
