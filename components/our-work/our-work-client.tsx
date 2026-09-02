@@ -62,7 +62,7 @@ export function OurWorkClient() {
           {/* Right image */}
           <div className="relative min-h-90 sm:min-h-110 lg:min-h-140">
             <Image
-              src="/images/together.jpg"
+              src="/images/round-sisters.jpg"
               alt="A woman embracing a child in a moment of safety and comfort"
               fill
               priority

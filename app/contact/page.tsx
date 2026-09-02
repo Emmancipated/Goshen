@@ -207,7 +207,8 @@ export default function ContactPage() {
         <div className="grid items-stretch lg:grid-cols-[55%_45%]">
           <div className="relative min-h-95 sm:min-h-120 lg:min-h-155">
             <Image
-              src="/images/about.jpg"
+              // src="/images/about.jpg"
+              src="/images/00_MASTER_Original_1536x1024.jpg"
               alt="A welcoming moment at Goshen Shelters"
               fill
               priority
@@ -240,31 +241,46 @@ export default function ContactPage() {
                   support our work — reach out. Everything is confidential.
                 </p>
 
-                <p className="mt-5 max-w-lg text-sm leading-6 text-night-500">
-                  If you are in immediate danger, call{" "}
-                  <a
-                    href="tel:112"
-                    className="font-semibold text-gold-700 underline underline-offset-2"
-                  >
-                    112
-                  </a>{" "}
-                  or our helpline on{" "}
-                  <a
-                    href="tel:+2348027775001"
-                    className="font-semibold text-gold-700 underline underline-offset-2"
-                  >
-                    0802 777 5001
-                  </a>
-                  .
-                </p>
-              </div>
-            </Reveal>
+                 <p className="mt-5 max-w-lg text-sm leading-6 text-night-500">
+                   If you are in immediate danger, call{" "}
+                   <a
+                     href="tel:112"
+                     className="font-semibold text-gold-700 underline underline-offset-2"
+                   >
+                     112
+                   </a>{" "}
+                   or our helpline on{" "}
+                   <a
+                     href="tel:+2348027775001"
+                     className="font-semibold text-gold-700 underline underline-offset-2"
+                   >
+                     0802 777 5001
+                   </a>
+                   .
+                 </p>
+
+                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                   <a
+                     href="#send-message"
+                     className="inline-flex items-center justify-center rounded-full bg-gold-500 px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-gold-500"
+                   >
+                     Message us
+                   </a>
+                   <a
+                     href="#how-to-reach-us"
+                     className="inline-flex items-center justify-center rounded-full border border-gold-400 px-7 py-3.5 text-sm font-semibold text-gold-700 transition-colors hover:bg-gold-500 hover:text-white focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-gold-500"
+                   >
+                     Contact us
+                   </a>
+                 </div>
+               </div>
+             </Reveal>
           </div>
         </div>
       </section>
 
       {/* CONTACT CHANNELS */}
-      <section className="border-y border-cream-200 bg-white">
+      <section id="how-to-reach-us" className="border-y border-cream-200 bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-20">
             <Reveal>
@@ -334,7 +350,7 @@ export default function ContactPage() {
       </section>
 
       {/* CONTACT FORM */}
-      <section className="bg-cream-50">
+      <section id="send-message" className="bg-cream-50">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
             <Reveal>

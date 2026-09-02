@@ -159,7 +159,7 @@ export default function ImpactPage() {
               <div className="relative overflow-hidden rounded-4xl">
                 <div className="relative aspect-4/3">
                   <Image
-                    src="/images/mother-and-child.jpg"
+                    src="/images/mother-and-children.jpg"
                     alt="A woman and child"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -169,6 +169,17 @@ export default function ImpactPage() {
                   <div className="absolute inset-0 bg-linear-to-t from-[#2F1B69]/55 via-transparent to-transparent" />
                 </div>
               </div>
+              {/* <div className="relative h-87.5 overflow-hidden rounded-4xl">
+                <Image
+                  src="/images/mother-and-children.jpg"
+                  alt="A woman and child"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
+                />
+
+                <div className="absolute inset-0 bg-linear-to-t from-[#2F1B69]/55 via-transparent to-transparent" />
+              </div> */}
             </Reveal>
 
             {/* Editorial figures — deliberately NOT cards */}
