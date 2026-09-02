@@ -57,19 +57,19 @@ export default function SupportPageClient() {
             {/* Right image */}
             <div className="relative min-h-70 sm:min-h-90 lg:min-h-130">
               <Image
-                src="/images/mother-child.jpg"
-                alt="A woman and child"
+                src="/images/support-hero.jpg"
+                alt="A helping hand"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center"
+                className="object-cover object-center "
               />
 
               {/* Desktop fade from left */}
               <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,#F7F3EC_0%,#F7F3EC_2%,rgba(247,243,236,0.85)_14%,rgba(247,243,236,0.35)_26%,transparent_38%)]" />
 
               {/* Mobile fade from top */}
-              <div className="absolute inset-0 lg:hidden bg-[linear-gradient(to_bottom,#F7F3EC_0%,rgba(247,243,236,0.6)_18%,transparent_40%)]" />
+              {/* <div className="absolute inset-0 lg:hidden bg-[linear-gradient(to_bottom,#F7F3EC_0%,rgba(247,243,236,0.6)_18%,transparent_40%)]" /> */}
 
               {/* Bottom fade */}
               <div className="absolute inset-0 bg-linear-to-t from-[#F7F3EC] via-[#F7F3EC]/10 to-transparent" />

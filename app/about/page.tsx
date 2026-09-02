@@ -83,7 +83,8 @@ export default function AboutPage() {
           >
             <Image
               src="/images/03_Tablet_Portrait_1200x700.jpg"
-              alt="A woman and child"
+              // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
+              alt="group of women and children"
               fill
               priority
               // sizes="(max-width: 768px) 100vw, 50vw"
@@ -91,7 +92,8 @@ export default function AboutPage() {
             />
             <Image
               src="/images/00_MASTER_1718x916.jpg"
-              alt="A woman and child"
+              // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
+              alt="group of women and children"
               fill
               priority
               // sizes="(max-width: 1024px) 100vw, 50vw"
@@ -274,7 +276,8 @@ export default function AboutPage() {
             <div className="relative overflow-hidden rounded-4xl border border-night-100 shadow-sm">
               <div className="relative aspect-4/5">
                 <Image
-                  src="/images/impact.jpg"
+                  src="/images/safety-group.jpg"
+                  // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
                   alt="A woman looking towards the light with hope"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
