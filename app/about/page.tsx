@@ -82,8 +82,9 @@ export default function AboutPage() {
             className="relative min-h-70 sm:min-h-90 lg:min-h-130"
           >
             <Image
-              src="/images/03_Tablet_Portrait_1200x700.jpg"
+              // src="/images/03_Tablet_Portrait_1200x700.jpg"
               // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
+              src="/images/goshen_stop_violence_hero.png"
               alt="group of women and children"
               fill
               priority
@@ -91,8 +92,9 @@ export default function AboutPage() {
               className="object-cover object-center lg:hidden"
             />
             <Image
-              src="/images/00_MASTER_1718x916.jpg"
+              // src="/images/00_MASTER_1718x916.jpg"
               // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
+              src="/images/goshen_stop_violence_hero.png"
               alt="group of women and children"
               fill
               priority
@@ -101,9 +103,9 @@ export default function AboutPage() {
             />
 
             {/* Desktop curve  */}
-            <div className="absolute inset-y-0 left-0 hidden w-[30%] xl:block">
+            {/* <div className="absolute inset-y-0 left-0 hidden w-[30%] xl:block">
               <div className="absolute inset-0 bg-night-50 [clip-path:ellipse(75%_80%_at_0%_50%)]" />
-            </div>
+            </div> */}
 
             {/* Mobile curve */}
             {/* <div className="absolute inset-x-0 top-0 h-[30%] lg:hidden">
@@ -339,7 +341,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/our-work"
-                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
+                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white uppercase"
               >
                 Explore our work
               </Link>
@@ -356,7 +358,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/impact"
-                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
+                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white uppercase"
               >
                 See our impact
               </Link>
@@ -373,7 +375,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/support"
-                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
+                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white uppercase"
               >
                 Support Goshen
               </Link>

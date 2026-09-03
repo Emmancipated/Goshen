@@ -126,7 +126,7 @@ export default function SupportPageClient() {
             className="mt-10 overflow-hidden rounded-[28px] bg-[#EFE7E3]"
             id="partner"
           >
-            <div className="grid items-center lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="grid items-center lg:grid-cols-[0.9fr_1.1fr] lg:h-75">
               {/* Text content */}
               <div className="relative  p-8 md:p-10 lg:pr-12">
                 <h2 className="font-serif text-4xl font-semibold text-[#2F1B69]">
@@ -147,10 +147,11 @@ export default function SupportPageClient() {
               {/* Image with fade overlay */}
               <div className="relative aspect-4/2 lg:aspect-auto lg:h-full">
                 <Image
-                  src="/images/partners.jpg"
+                  // src="/images/partners.jpg"
+                  src="/images/partner-with-us-desktop.jpg"
                   alt="Partnership"
                   fill
-                  className="object-cover"
+                  className="object-cover "
                 />
 
                 {/* Desktop fade from left into image */}
@@ -167,7 +168,7 @@ export default function SupportPageClient() {
         {/* Fundraise */}
         <Reveal delay={80}>
           <section className="mt-8 overflow-hidden rounded-[28px] bg-[#F5EFE8]">
-            <div className="grid items-center lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="grid items-center lg:grid-cols-[0.9fr_1.1fr] lg:h-75">
               <div className="relative  p-8 md:p-10 lg:pr-12">
                 <h2 className="font-serif text-4xl font-semibold text-[#2F1B69]">
                   Fundraise for Goshen
@@ -186,7 +187,8 @@ export default function SupportPageClient() {
               {/* Image with fade overlay */}
               <div className="relative aspect-4/2 lg:aspect-auto lg:h-full">
                 <Image
-                  src="/images/fundraiser.jpg"
+                  // src="/images/fundraiser.jpg"
+                  src="/images/fundraise-for-goshen-mobile-landscape.jpg"
                   alt="Partnership"
                   fill
                   className="object-cover"
@@ -207,7 +209,7 @@ export default function SupportPageClient() {
             className="mt-8 overflow-hidden rounded-[28px] bg-[#F1EAE4]"
             id="survivors-kit"
           >
-            <div className="grid items-center lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="grid items-center lg:grid-cols-[0.9fr_1.1fr] lg:h-75">
               <div className="p-8 md:p-10">
                 {/* <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8B6A3D]">
                 Survivor's Kit
@@ -231,7 +233,9 @@ export default function SupportPageClient() {
               {/* Image with fade overlay */}
               <div className="relative aspect-4/2 lg:aspect-auto lg:h-full">
                 <Image
-                  src="/images/empower.jpg"
+                  // src="/images/empower.jpg"
+                  src="/images/survivor-kit-tablet.jpg"
+                  // src="/images/survivor-kit-desktop.jpg"
                   alt="Partnership"
                   fill
                   className="object-cover"

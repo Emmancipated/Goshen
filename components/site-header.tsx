@@ -75,7 +75,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={openDonation}
-            className="hidden rounded-full bg-gold-500 px-5 py-2 text-sm font-bold text-white transition-all hover:bg-gold-600 active:scale-95 sm:inline-block"
+            className="hidden rounded-full bg-gold-500 px-5 py-2 text-sm font-bold text-white transition-all hover:bg-gold-600 active:scale-95 sm:inline-block uppercase"
           >
             Donate
           </button>
