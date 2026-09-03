@@ -126,7 +126,7 @@ export function SiteFooter() {
           <button
             type="button"
             onClick={() => openHelpModal()}
-            className="mt-4 inline-flex items-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:scale-95"
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:scale-95 uppercase"
           >
             Get Help Now
           </button>
