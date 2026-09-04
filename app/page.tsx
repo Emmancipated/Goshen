@@ -241,7 +241,7 @@ function Hero() {
     <section className="relative isolate overflow-hidden bg-night-950 text-cream-50">
       <div aria-hidden="false" className="absolute inset-0">
         <Image
-          src="/images/hero/hero-mobile.webp"
+          src="/images/hero_phone_portrait_lower_women.png"
           alt="A woman walking away from violence towards safety, support and restoration"
           fill
           sizes="100vw"

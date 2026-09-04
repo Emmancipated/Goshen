@@ -57,7 +57,7 @@ export default function SupportPageClient() {
             {/* Right image */}
             <div className="relative min-h-70 sm:min-h-90 lg:min-h-130">
               <Image
-                src="/images/support-hero.jpg"
+                src="/images/support-scene.jpeg"
                 alt="A helping hand"
                 fill
                 priority
@@ -276,7 +276,7 @@ export default function SupportPageClient() {
           <button
             type="button"
             onClick={openDonation}
-            className="fixed bottom-20 right-5 z-50 md:hidden rounded-full bg-gold-500 px-5 py-2 text-sm font-bold text-white transition-all hover:bg-gold-600 active:scale-95 sm:inline-block"
+            className="fixed bottom-20 right-5 z-50 md:hidden rounded-full bg-gold-500 px-5 py-2 text-sm font-bold text-white transition-all hover:bg-gold-600 active:scale-95 sm:inline-block uppercase"
           >
             Donate
           </button>
