@@ -276,10 +276,11 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
             <div className="relative overflow-hidden rounded-4xl border border-night-100 shadow-sm">
-              <div className="relative aspect-4/5">
+              <div className="relative aspect-4/3">
                 <Image
-                  src="/images/safety-group.jpg"
-                  // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
+                  // src="/images/safety-group.jpg"
+                  // src="/images/desktop_1440px.jpg"
+                  src="/images/mobile_768px.jpg"
                   alt="A woman looking towards the light with hope"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
