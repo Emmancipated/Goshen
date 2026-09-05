@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "God's Home for Women Foundation operates Goshen Shelters — a safe, confidential refuge offering hope, healing and restoration for women and children.",
     images: [
       {
-        url: "/images/about.jpg",
+        url: "/images/goshen_stop_violence_hero.png",
         width: 1200,
         height: 630,
         alt: "About Goshen Shelters — a safe, confidential refuge",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "About Us",
     description:
       "God's Home for Women Foundation operates Goshen Shelters — a safe, confidential refuge offering hope, healing and restoration for women and children.",
-    images: ["/images/about.jpg"],
+    images: ["/images/goshen_stop_violence_hero.png"],
   },
 };
 
@@ -194,7 +194,7 @@ export default function AboutPage() {
                 <FounderVideo
                   founderName={FOUNDER_NAME}
                   videoSrc={FOUNDER_VIDEO_SRC}
-                  posterSrc="/images/about.jpg"
+                  posterSrc="/images/goshen_stop_violence_hero.png"
                 />
               </Reveal> */}
             </div>
