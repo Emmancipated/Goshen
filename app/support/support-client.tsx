@@ -55,7 +55,7 @@ export default function SupportPageClient() {
             </div>
 
             {/* Right image */}
-            <div className="relative min-h-70 sm:min-h-90 lg:min-h-130">
+            <div className="relative min-h-70 sm:min-h-140 lg:min-h-140 xl:min-h-160 2xl:min-h-200">
               <Image
                 src="/images/support-scene.jpeg"
                 alt="A helping hand"
@@ -78,7 +78,7 @@ export default function SupportPageClient() {
         </Reveal>
         {/* Support cards INSIDE the hero */}
         <Reveal delay={80}>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3 relative mx-auto max-w-7xl px-4 sm:px-6 py-4">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3 relative mx-auto max-w-7xl px-4 sm:px-6 py-4  xl:-top-40">
             {supportCards.map((card) => (
               <div
                 key={card.title}

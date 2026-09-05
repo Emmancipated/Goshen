@@ -249,7 +249,7 @@ function Hero() {
           className="object-cover md:hidden"
         />
         <Image
-          src="/images/hero/hero-desktop.webp"
+          src="/images/hero_phone_portrait_lower_women.png"
           alt="A woman walking away from violence towards safety, support and restoration"
           fill
           sizes="100vw"
