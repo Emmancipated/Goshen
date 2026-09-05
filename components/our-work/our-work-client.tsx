@@ -268,8 +268,8 @@ export function OurWorkClient() {
             <div className="relative overflow-hidden rounded-4xl bg-[#43206F] px-6 py-10 sm:px-10 sm:py-12 lg:px-14">
               <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
                 <Image
-                  src="/images/donate.jpg"
-                  alt="Women embracing in hope and encouragement"
+                  src="/images/support-hero.jpg"
+                  alt="Donation van"
                   fill
                   sizes="50vw"
                   className="object-cover object-center opacity-80"
