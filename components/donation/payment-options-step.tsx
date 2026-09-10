@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, Building2, CreditCard, Lock, Wallet } from "lucide-react";
-import { PaymentMethod, DonationType, ENABLE_USD } from "./types";
+import { PaymentMethod, DonationType } from "./types";
 
 type PaymentOptionsStepProps = {
   donationType: DonationType;
@@ -40,30 +40,43 @@ export function PaymentOptionsStep({
       icon: <Building2 className="h-6 w-6" />,
       accent: "#8B6A3D",
     },
+    {
+      method: "usd-card",
+      title: "Pay in Dollars",
+      subtitle: "Card payment (USD)",
+      description: "Donate internationally using a USD debit or credit card.",
+      icon: <Wallet className="h-6 w-6" />,
+      accent: "#0B6E4F",
+      badge: "International",
+    },
+    {
+      method: "usd-transfer",
+      title: "Transfer in Dollars",
+      subtitle: "Bank transfer (USD)",
+      description:
+        "Send a USD bank transfer from your local or international bank.",
+      icon: <Building2 className="h-6 w-6" />,
+      accent: "#2563EB",
+    },
+    {
+      method: "gbp-card",
+      title: "Pay in Pounds",
+      subtitle: "Card payment (GBP)",
+      description: "Donate internationally using a GBP debit or credit card.",
+      icon: <Wallet className="h-6 w-6" />,
+      accent: "#7C3AED",
+      badge: "International",
+    },
+    {
+      method: "gbp-transfer",
+      title: "Transfer in Pounds",
+      subtitle: "Bank transfer (GBP)",
+      description:
+        "Send a GBP bank transfer from your local or international bank.",
+      icon: <Building2 className="h-6 w-6" />,
+      accent: "#0E7490",
+    },
   ];
-
-  if (ENABLE_USD) {
-    options.push(
-      {
-        method: "usd-card",
-        title: "Pay in Dollars",
-        subtitle: "Card payment (USD)",
-        description: "Donate internationally using a USD debit or credit card.",
-        icon: <Wallet className="h-6 w-6" />,
-        accent: "#0B6E4F",
-        badge: "International",
-      },
-      {
-        method: "usd-transfer",
-        title: "Transfer in Dollars",
-        subtitle: "Bank transfer (USD)",
-        description:
-          "Send a USD bank transfer from your local or international bank.",
-        icon: <Building2 className="h-6 w-6" />,
-        accent: "#2563EB",
-      },
-    );
-  }
 
   return (
     <div className="space-y-8 pb-5">

@@ -19,7 +19,7 @@ import {
 } from "@/components/icons";
 import { FounderVideo } from "@/components/about/founder-video";
 
-const FOUNDER_NAME = "Ajibola Hassan-Odukale";
+const FOUNDER_NAME = "Mrs. Ajibola Hassan-Odukale";
 const FOUNDER_VIDEO_SRC = "/videos/founder-message.mp4";
 
 const SITE = {
@@ -258,7 +258,7 @@ function Hero() {
       </div>
 
       <div className="absolute inset-0 bg-linear-to-r from-night-950/95 via-night-950/55 to-night-950/10" />
-      <div className="absolute inset-0 bg-linear-to-t from-night-950 via-night-950/10 to-transparent" />
+      {/* <div className="absolute inset-0 bg-linear-to-t from-night-950 via-night-950/10 to-transparent" /> */}
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="animate-float-slow absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gold-500/15 blur-3xl" />

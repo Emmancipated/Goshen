@@ -105,6 +105,15 @@ export function CheckIcon({ className }: IconProps) {
   );
 }
 
+export function CheckCircle2({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
 export function ChevronDownIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">

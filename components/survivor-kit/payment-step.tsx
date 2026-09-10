@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import { DonorDetails } from "./donor-details-step";
 import { usePaystack } from "@/hooks/use-paystack";
-import { ENABLE_USD } from "@/components/donation/types";
 
 export type PaymentMethod =
   | "paystack-card"
@@ -52,16 +51,12 @@ const methods: {
     description: "Pay via bank transfer or bank app through Paystack",
     icon: <Landmark className="h-5 w-5" />,
   },
-  ...(ENABLE_USD
-    ? [
-        {
-          id: "stripe-international" as PaymentMethod,
-          title: "International Card (USD)",
-          description: "For donors outside Nigeria using Stripe",
-          icon: <Globe className="h-5 w-5" />,
-        },
-      ]
-    : []),
+  {
+    id: "stripe-international",
+    title: "International Card (USD)",
+    description: "For donors outside Nigeria using Stripe",
+    icon: <Globe className="h-5 w-5" />,
+  },
 ];
 
 export function PaymentStep({
@@ -78,7 +73,7 @@ export function PaymentStep({
   const isPaystack =
     selected === "paystack-card" || selected === "paystack-bank";
   const currency =
-    ENABLE_USD && selected === "stripe-international" ? "USD" : "NGN";
+    selected === "stripe-international" ? "USD" : "NGN";
   const paystackAmount = (Number(total) || 0) * 100;
 
   const {
