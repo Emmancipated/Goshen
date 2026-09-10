@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/steps.jpg",
+        url: "/images/sprouting-leaf.jpg",
         width: 1200,
         height: 630,
         alt: "Goshen Shelters — A safe place. A new beginning.",

@@ -1,7 +1,7 @@
 "use client";
 
 import { Heart, Lock, CreditCard, Building2 } from "lucide-react";
-import { DonationType, PaymentMethod, ENABLE_USD } from "./types";
+import { DonationType, PaymentMethod } from "./types";
 
 type AmountStepProps = {
   donationType: DonationType;
@@ -13,27 +13,33 @@ type AmountStepProps = {
 
 const NAIRA_PRESETS = ["5000", "10000", "25000", "50000", "100000"];
 const USD_PRESETS = ["25", "50", "100", "250", "500"];
+const GBP_PRESETS = ["10", "25", "50", "100", "250"];
 
-function formatAmount(value: string, currency: "NGN" | "USD") {
-  if (!value) return currency === "NGN" ? "₦0" : "$0";
+type Currency = "NGN" | "USD" | "GBP";
+
+function formatAmount(value: string, currency: Currency) {
+  if (!value) {
+    if (currency === "NGN") return "₦0";
+    if (currency === "USD") return "$0";
+    return "£0";
+  }
 
   const number = Number(value.replace(/,/g, ""));
 
   if (Number.isNaN(number)) {
-    return currency === "NGN" ? `₦${value}` : `$${value}`;
+    if (currency === "NGN") return `₦${value}`;
+    if (currency === "USD") return `$${value}`;
+    return `£${value}`;
   }
 
-  return currency === "NGN"
-    ? new Intl.NumberFormat("en-NG", {
-        style: "currency",
-        currency: "NGN",
-        maximumFractionDigits: 0,
-      }).format(number)
-    : new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-        maximumFractionDigits: 0,
-      }).format(number);
+  const locale =
+    currency === "NGN" ? "en-NG" : currency === "USD" ? "en-US" : "en-GB";
+
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency,
+    maximumFractionDigits: 0,
+  }).format(number);
 }
 
 export function AmountStep({
@@ -44,12 +50,23 @@ export function AmountStep({
   onContinue,
 }: AmountStepProps) {
   const isUSD =
-    ENABLE_USD &&
-    (paymentMethod === "usd-card" || paymentMethod === "usd-transfer");
+    paymentMethod === "usd-card" || paymentMethod === "usd-transfer";
+  const isGBP =
+    paymentMethod === "gbp-card" || paymentMethod === "gbp-transfer";
 
-  const currency = isUSD ? "USD" : "NGN";
-  const symbol = isUSD ? "$" : "₦";
-  const presets = isUSD ? USD_PRESETS : NAIRA_PRESETS;
+  const isTransfer =
+    paymentMethod === "naira-transfer" ||
+    paymentMethod === "usd-transfer" ||
+    paymentMethod === "gbp-transfer";
+
+  const currency: Currency = isUSD ? "USD" : isGBP ? "GBP" : "NGN";
+  const symbol = currency === "NGN" ? "₦" : currency === "USD" ? "$" : "£";
+  const presets =
+    currency === "NGN"
+      ? NAIRA_PRESETS
+      : currency === "USD"
+        ? USD_PRESETS
+        : GBP_PRESETS;
 
   const paymentLabel = (() => {
     switch (paymentMethod) {
@@ -57,17 +74,23 @@ export function AmountStep({
         return "Naira card payment";
       case "usd-card":
         return "USD card payment";
+      case "gbp-card":
+        return "GBP card payment";
       case "naira-transfer":
         return "Naira bank transfer";
       case "usd-transfer":
         return "USD bank transfer";
+      case "gbp-transfer":
+        return "GBP bank transfer";
       default:
         return "Selected payment method";
     }
   })();
 
   const paymentIcon =
-    paymentMethod === "naira-transfer" || paymentMethod === "usd-transfer" ? (
+    paymentMethod === "naira-transfer" ||
+    paymentMethod === "usd-transfer" ||
+    paymentMethod === "gbp-transfer" ? (
       <Building2 className="h-5 w-5 text-[#43206F]" />
     ) : (
       <CreditCard className="h-5 w-5 text-[#43206F]" />
@@ -167,7 +190,9 @@ export function AmountStep({
             onChange={(e) =>
               onAmountChange(e.target.value.replace(/[^0-9]/g, ""))
             }
-            placeholder={isUSD ? "100" : "50000"}
+            placeholder={
+              currency === "USD" ? "100" : currency === "GBP" ? "50" : "50000"
+            }
             className="w-full rounded-2xl border border-[#E5DDD3] bg-white py-4 pl-12 pr-4 text-xl font-semibold text-[#2F1B69] outline-none transition-all focus:border-[#43206F] focus:ring-2 focus:ring-[#43206F]/10"
           />
         </div>
@@ -210,7 +235,7 @@ export function AmountStep({
             : "cursor-not-allowed bg-[#E9E3DE] text-[#9A948E]"
         }`}
       >
-        Continue to secure payment
+        {isTransfer ? "Continue to bank details" : "Continue to secure payment"}
       </button>
       {/* Security footer */}
       {/* <div className="rounded-2xl border border-[#E5DDD3] bg-white p-4">

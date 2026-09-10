@@ -16,6 +16,7 @@ import { MonthlyEmailStep } from "./monthly-email-step";
 import { MonthlySuccessStep } from "./monthly-success-step";
 import { PaymentOptionsStep } from "./payment-options-step";
 import { AmountStep } from "./amount-step";
+import { TransferDetailsStep } from "./transfer-details-step";
 import { PaymentSuccessStep } from "./payment-success-step";
 import { usePaystack } from "@/hooks/use-paystack";
 
@@ -25,7 +26,6 @@ import {
   PaymentMethod,
   INITIAL_DONATION_STATE,
   getProgress,
-  ENABLE_USD,
 } from "./types";
 
 type Direction = 1 | -1;
@@ -150,14 +150,26 @@ export const GiveMoneyJourney = forwardRef<
 
   const handlePaymentMethod = (method: PaymentMethod) => {
     setPaymentMethod(method);
+
+    const isTransfer =
+      method === "naira-transfer" ||
+      method === "usd-transfer" ||
+      method === "gbp-transfer";
+
+    if (isTransfer) {
+      goTo("transfer-details");
+      return;
+    }
+
     goTo("amount");
   };
 
   const paystackCurrency =
-    ENABLE_USD &&
-    (paymentMethod === "usd-card" || paymentMethod === "usd-transfer")
+    paymentMethod === "usd-card" || paymentMethod === "usd-transfer"
       ? "USD"
-      : "NGN";
+      : paymentMethod === "gbp-card" || paymentMethod === "gbp-transfer"
+        ? "GBP"
+        : "NGN";
 
   const paystackAmountInKobo = (Number(amount) || 0) * 100;
 
@@ -172,14 +184,28 @@ export const GiveMoneyJourney = forwardRef<
     onClose: () => setProcessingPayment(false),
   });
 
-  const handleAmountContinue = async () => {
+  const handleAmountContinue = () => {
     if (!amount || !paymentMethod) return;
+
+    const isTransfer =
+      paymentMethod === "naira-transfer" ||
+      paymentMethod === "usd-transfer" ||
+      paymentMethod === "gbp-transfer";
+
+    if (isTransfer) {
+      goTo("transfer-details");
+      return;
+    }
 
     if (ready) {
       setProcessingPayment(true);
       pay();
       return;
     }
+  };
+
+  const handleWhatsAppConfirm = () => {
+    goTo("payment-success");
   };
 
   const title = (() => {
@@ -194,6 +220,8 @@ export const GiveMoneyJourney = forwardRef<
         return "Choose a Payment Option";
       case "amount":
         return "Complete Your Donation";
+      case "transfer-details":
+        return "Bank Transfer Details";
       case "payment-success":
         return "Donation Complete";
     }
@@ -211,6 +239,8 @@ export const GiveMoneyJourney = forwardRef<
         return "Choose your preferred payment method";
       case "amount":
         return "Select the amount you would like to give";
+      case "transfer-details":
+        return "Transfer the amount and let us know when done";
       case "payment-success":
         return "Your generosity makes a real difference";
     }
@@ -305,10 +335,20 @@ export const GiveMoneyJourney = forwardRef<
                 />
               )}
 
+              {step === "transfer-details" && (
+                <TransferDetailsStep
+                  donationType={donationType}
+                  paymentMethod={paymentMethod as PaymentMethod}
+                  onBack={goBack}
+                  onConfirm={handleWhatsAppConfirm}
+                />
+              )}
+
               {step === "payment-success" && (
                 <PaymentSuccessStep
                   donationType={donationType}
                   amount={amount}
+                  paymentMethod={paymentMethod}
                   onContinue={closeJourney}
                 />
               )}
