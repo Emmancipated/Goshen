@@ -1,5 +1,5 @@
 const HELP_PHONE = "+2348027775001";
-const HELP_PHONE_DISPLAY = "0802 777 5001";
+const HELP_PHONE_DISPLAY = "0701 854 9218";
 const HELP_EMAIL = "goshenshelters2026@gmail.com";
 const HELP_WHATSAPP = "https://wa.me/2348027775001";
 

@@ -5,6 +5,7 @@ import { HelpButton } from "@/components/help-button";
 // import { AboutValues } from "@/components/about-values";
 import { FounderVideo } from "@/components/about/founder-video";
 import { AboutValues } from "@/components/about/about-values";
+import { VideoCard } from "@/components/video-card";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -277,14 +278,14 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative overflow-hidden rounded-4xl border border-night-100 shadow-sm">
               <div className="relative aspect-4/3">
-                <Image
-                  // src="/images/safety-group.jpg"
-                  // src="/images/desktop_1440px.jpg"
-                  src="/images/mobile_768px.jpg"
-                  alt="A woman looking towards the light with hope"
+                <VideoCard
+                  src="/march.mp4"
+                  poster="/images/mobile_768px.jpg"
+                  title="A message of hope"
+                  className="absolute inset-0 h-full rounded-none! border-0!"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-cover"
+                  showTitle={false}
+                  inline
                 />
               </div>
             </div>

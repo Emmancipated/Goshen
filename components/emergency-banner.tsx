@@ -18,7 +18,7 @@ export function EmergencyBanner() {
               href="tel:+2348027775001"
               className="hidden font-semibold underline underline-offset-2 hover:text-gold-300 md:inline"
             >
-              0802 777 5001
+              0701 854 9218
             </a>
             <span className="hidden lg:inline"> · confidential, 24/7.</span>
           </span>
