@@ -34,7 +34,10 @@ export default function DonatePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-night-950 text-cream-50">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+        >
           <div className="animate-float-slow absolute -top-32 right-0 h-96 w-96 rounded-full bg-gold-500/10 blur-3xl" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,162,39,0.14),transparent_60%)]" />
         </div>
@@ -59,7 +62,7 @@ export default function DonatePage() {
             style={{ animationDelay: "250ms" }}
           >
             <PhoneIcon className="h-4 w-4 text-gold-400" />
-            Confidential help 24/7 on 0802 777 5001
+            Confidential help 24/7 on 0701 854 9218
           </a>
         </div>
       </section>
@@ -78,9 +81,12 @@ export default function DonatePage() {
                 <LockIcon className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-sm font-bold text-night-900">Secure &amp; confidential</p>
+                <p className="text-sm font-bold text-night-900">
+                  Secure &amp; confidential
+                </p>
                 <p className="mt-1 text-xs leading-5 text-night-600">
-                  Payments are processed securely via Paystack. We never collect or store your card details.
+                  Payments are processed securely via Paystack. We never collect
+                  or store your card details.
                 </p>
               </div>
             </div>
@@ -89,9 +95,12 @@ export default function DonatePage() {
                 <ShieldIcon className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-sm font-bold text-night-900">Every naira counts</p>
+                <p className="text-sm font-bold text-night-900">
+                  Every naira counts
+                </p>
                 <p className="mt-1 text-xs leading-5 text-night-600">
-                  Your gift funds shelter, three meals daily, clothing, healthcare, education and skills support.
+                  Your gift funds shelter, three meals daily, clothing,
+                  healthcare, education and skills support.
                 </p>
               </div>
             </div>
@@ -100,9 +109,12 @@ export default function DonatePage() {
                 <HeartIcon className="h-5 w-5" />
               </span>
               <div>
-                <p className="text-sm font-bold text-night-900">Acknowledgement</p>
+                <p className="text-sm font-bold text-night-900">
+                  Acknowledgement
+                </p>
                 <p className="mt-1 text-xs leading-5 text-night-600">
-                  You will receive a receipt by email, and the Foundation is notified of every successful gift.
+                  You will receive a receipt by email, and the Foundation is
+                  notified of every successful gift.
                 </p>
               </div>
             </div>

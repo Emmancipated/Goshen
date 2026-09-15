@@ -35,14 +35,14 @@ export const metadata: Metadata = {
 const CONTACT_CHANNELS = [
   {
     label: "Helpline (24/7)",
-    lines: ["0802 777 5001", "In an emergency: 112"],
+    lines: ["0701 854 9218", "In an emergency: 112"],
     href: "tel:+2348027775001",
     cta: "Call now",
     external: false,
   },
   {
     label: "WhatsApp",
-    lines: ["0802 777 5001"],
+    lines: ["0701 854 9218"],
     href: "https://wa.me/2348027775001",
     cta: "Message on WhatsApp",
     external: true,
@@ -118,7 +118,7 @@ export default function ContactPage() {
                     href="tel:+2348027775001"
                     className="font-semibold text-gold-700 underline underline-offset-2"
                   >
-                    0802 777 5001
+                    0701 854 9218
                   </a>
                   .
                 </p>
@@ -297,7 +297,7 @@ export default function ContactPage() {
                   href="tel:+2348027775001"
                   className="inline-flex items-center justify-center rounded-full border border-gold-400 px-7 py-3.5 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-gold-500"
                 >
-                  0802 777 5001
+                  0701 854 9218
                 </a>
               </div>
             </div>

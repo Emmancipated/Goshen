@@ -23,7 +23,7 @@ const FOUNDER_NAME = "Mrs. Ajibola Hassan-Odukale";
 const FOUNDER_VIDEO_SRC = "/videos/founder-message.mp4";
 
 const SITE = {
-  helplineDisplay: "0802 777 5001",
+  helplineDisplay: "0701 854 9218",
   helplineTel: "+2348027775001",
   whatsapp: "https://wa.me/2348027775001",
   email: "hello@goshenshelters.org",
@@ -327,7 +327,7 @@ function Hero() {
                   href="tel:+2348027775001"
                   className="font-display text-2xl font-semibold text-white hover:text-gold-300"
                 >
-                  0802 777 5001
+                  0701 854 9218
                 </a>
               </div>
             </div>
@@ -509,7 +509,7 @@ function Impact() {
 function FounderAndSurvivor() {
   return (
     <section className="bg-cream-50">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto md:grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-16">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-700">
             Our founder&rsquo;s message
@@ -547,16 +547,15 @@ function FounderAndSurvivor() {
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-night-950 sm:text-4xl">
             From fear to freedom
           </h2>
-          <div className="relative mt-8 rounded-2xl bg-white p-8 shadow-sm">
+          <div className="relative mt-8 rounded-2xl bg-white p-4 shadow-sm">
             {/* <span
               aria-hidden="true"
               className="font-display text-6xl leading-none text-night-950/50"
             >
               &ldquo;
             </span> */}
-            <div className="mt-2">
-              <TestimonialCarousel />
-            </div>
+            <TestimonialCarousel />
+
             {/* <p className="mt-8 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-night-600">
               <ShieldIcon className="h-4 w-4 text-night-950" />
               Shared with consent — details anonymised

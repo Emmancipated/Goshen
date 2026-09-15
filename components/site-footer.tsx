@@ -83,7 +83,7 @@ export function SiteFooter() {
             <li className="flex items-start gap-2.5">
               <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
               <a href="tel:+2348027775001" className="hover:text-cream-50">
-                0802 777 5001{" "}
+                0701 854 9218{" "}
                 <span className="text-white/50">(24/7 helpline)</span>
               </a>
             </li>

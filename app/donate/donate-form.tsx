@@ -25,7 +25,11 @@ export function DonateForm() {
   );
   const formatNaira = (value: number) => `₦${value.toLocaleString("en-NG")}`;
 
-  const { ready, processing: paystackProcessing, pay } = usePaystack({
+  const {
+    ready,
+    processing: paystackProcessing,
+    pay,
+  } = usePaystack({
     email: email || "donor@goshenshelters.org",
     amount: Number(amount || 0) * 100,
     currency: "NGN",
@@ -86,7 +90,7 @@ export function DonateForm() {
                 rel="noopener noreferrer"
                 className="font-semibold text-gold-700 underline underline-offset-2"
               >
-                0802 777 5001
+                0701 854 9218
               </a>{" "}
               on WhatsApp so we can acknowledge your gift.
             </p>
@@ -98,7 +102,7 @@ export function DonateForm() {
               href="tel:+2348027775001"
               className="font-semibold text-gold-700 underline underline-offset-2"
             >
-              0802 777 5001
+              0701 854 9218
             </a>{" "}
             for our bank details, and we will acknowledge your gift personally.
           </p>
@@ -115,7 +119,10 @@ export function DonateForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl border border-night-100 bg-white p-8 shadow-sm">
+    <form
+      onSubmit={handleSubmit}
+      className="rounded-2xl border border-night-100 bg-white p-8 shadow-sm"
+    >
       <h2 className="font-display text-xl font-semibold text-gold-700">
         Make a donation
       </h2>
@@ -214,7 +221,7 @@ export function DonateForm() {
                   rel="noopener noreferrer"
                   className="font-semibold text-gold-700 underline underline-offset-2"
                 >
-                  0802 777 5001
+                  0701 854 9218
                 </a>{" "}
                 on WhatsApp so we can acknowledge your gift.
               </p>
@@ -226,7 +233,7 @@ export function DonateForm() {
                 href="tel:+2348027775001"
                 className="font-semibold text-gold-700 underline underline-offset-2"
               >
-                0802 777 5001
+                0701 854 9218
               </a>
               . We will confirm and acknowledge your gift personally.
             </p>
@@ -263,6 +270,6 @@ export function DonateForm() {
           ? "Secure online payments via Paystack · direct bank transfer also available."
           : "Bank transfer directly to the foundation · your gift funds shelter, meals, healthcare and skills support."}
       </p>
-      </form>
-    );
-  }
+    </form>
+  );
+}

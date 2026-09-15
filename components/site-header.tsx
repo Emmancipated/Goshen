@@ -149,7 +149,7 @@ export function SiteHeader() {
               href="tel:+2348027775001"
               className="mt-2 rounded-full border border-night-200 px-5 py-2.5 text-center text-sm font-semibold text-night-600"
             >
-              0802 777 5001 (24/7)
+              0701 854 9218 (24/7)
             </a>
           </nav>
         </div>
