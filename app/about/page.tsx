@@ -6,6 +6,7 @@ import { HelpButton } from "@/components/help-button";
 import { FounderVideo } from "@/components/about/founder-video";
 import { AboutValues } from "@/components/about/about-values";
 import { VideoCard } from "@/components/video-card";
+import { ScrollCue } from "@/components/scroll-cue";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -113,11 +114,18 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-night-50 [clip-path:ellipse(85%_100%_at_50%_0%)]" />
             </div> */}
           </Reveal>
+
+          <ScrollCue
+            href="#discover"
+            className="text-white hover:text-night-950 focus-visible:outline-gold-500"
+            iconClassName="text-white"
+            floating
+          />
         </div>
       </section>
 
       {/* Story grid */}
-      <section className="bg-white">
+      <section id="discover" className="scroll-mt-24 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <div className="grid gap-6 lg:grid-cols-2">
             <Reveal>
@@ -275,7 +283,7 @@ export default function AboutPage() {
       {/* Looking ahead */}
       <section className="bg-cream-50">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.95fr_1.05fr]">
-          <Reveal>
+          {/* <Reveal>
             <div className="relative overflow-hidden rounded-4xl border border-night-100 shadow-sm">
               <div className="relative aspect-4/3">
                 <VideoCard
@@ -286,6 +294,19 @@ export default function AboutPage() {
                   fill
                   showTitle={false}
                   inline
+                />
+              </div>
+            </div>
+          </Reveal> */}
+          <Reveal>
+            <div className="relative overflow-hidden rounded-4xl border border-night-100 shadow-sm">
+              <div className="relative aspect-4/3">
+                <Image
+                  src="/images/mobile_768px.jpg"
+                  alt="A woman looking towards the light with hope"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover"
                 />
               </div>
             </div>

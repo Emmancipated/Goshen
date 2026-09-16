@@ -9,6 +9,7 @@ import { TestimonialCarousel } from "@/components/testimonial-carousel";
 // import { FounderVideo } from "@/components/founder-video";
 import { HelpButton } from "@/components/help-button";
 import { useDonationModal } from "@/components/donation/donation-modal-provider";
+import { ScrollCue } from "@/components/scroll-cue";
 import {
   ArrowRightIcon,
   HeartIcon,
@@ -362,6 +363,8 @@ function Hero() {
               </p>
             </div>
           </div>
+
+          <ScrollCue href="#discover" floating />
         </div>
       </div>
     </section>
@@ -370,7 +373,7 @@ function Hero() {
 
 function QuickActions() {
   return (
-    <section className="bg-white">
+    <section id="discover" className="scroll-mt-24 bg-white">
       <div className="mx-auto grid max-w-7xl gap-5 px-4 py-16 sm:px-6 lg:grid-cols-3">
         <Reveal>
           <HelpButton

@@ -136,19 +136,6 @@ export function JourneyModal({
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.96, y: 18 }}
                 transition={modalTransition}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.08}
-                onDragEnd={(_, info) => {
-                  if (
-                    canGoBack &&
-                    onBack &&
-                    info.offset.x > 120 &&
-                    info.velocity.x > 350
-                  ) {
-                    onBack();
-                  }
-                }}
                 className={`flex max-h-[92vh] w-full flex-col overflow-hidden rounded-[34px] bg-[#F7F3EC] shadow-[0_30px_90px_rgba(0,0,0,0.32)] ${widthClass}`}
                 onClick={(e) => e.stopPropagation()}
               >
@@ -265,14 +252,17 @@ export function JourneyModal({
                   {children}
                 </motion.div>
 
-                {/* Mobile swipe hint */}
-                {canGoBack && (
+                {canGoBack && onBack ? (
                   <div className="border-t border-[#E8DED5] px-6 py-3 sm:hidden">
-                    <p className="text-center text-xs text-[#7A746F]">
-                      Swipe right to go back
-                    </p>
+                    <button
+                      type="button"
+                      onClick={onBack}
+                      className="mx-auto block text-xs font-semibold text-[#7A746F] underline underline-offset-2"
+                    >
+                      Go back
+                    </button>
                   </div>
-                )}
+                ) : null}
               </motion.div>
             </div>
           </div>

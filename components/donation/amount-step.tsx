@@ -49,15 +49,10 @@ export function AmountStep({
   onAmountChange,
   onContinue,
 }: AmountStepProps) {
-  const isUSD =
-    paymentMethod === "usd-card" || paymentMethod === "usd-transfer";
-  const isGBP =
-    paymentMethod === "gbp-card" || paymentMethod === "gbp-transfer";
+  const isUSD = paymentMethod === "usd-card";
+  const isGBP = paymentMethod === "gbp-card";
 
-  const isTransfer =
-    paymentMethod === "naira-transfer" ||
-    paymentMethod === "usd-transfer" ||
-    paymentMethod === "gbp-transfer";
+  const isTransfer = paymentMethod === "bank-transfer";
 
   const currency: Currency = isUSD ? "USD" : isGBP ? "GBP" : "NGN";
   const symbol = currency === "NGN" ? "₦" : currency === "USD" ? "$" : "£";
@@ -76,21 +71,15 @@ export function AmountStep({
         return "USD card payment";
       case "gbp-card":
         return "GBP card payment";
-      case "naira-transfer":
-        return "Naira bank transfer";
-      case "usd-transfer":
-        return "USD bank transfer";
-      case "gbp-transfer":
-        return "GBP bank transfer";
+      case "bank-transfer":
+        return "Bank transfer";
       default:
         return "Selected payment method";
     }
   })();
 
   const paymentIcon =
-    paymentMethod === "naira-transfer" ||
-    paymentMethod === "usd-transfer" ||
-    paymentMethod === "gbp-transfer" ? (
+    paymentMethod === "bank-transfer" ? (
       <Building2 className="h-5 w-5 text-[#43206F]" />
     ) : (
       <CreditCard className="h-5 w-5 text-[#43206F]" />

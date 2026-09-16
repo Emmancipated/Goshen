@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { StatCounter } from "@/components/stat-counter";
 import { DonateButton } from "@/components/donate-button";
+import { ScrollCue } from "@/components/scroll-cue";
 
 export const metadata: Metadata = {
   title: "Our Impact",
@@ -109,13 +110,20 @@ export default function ImpactPage() {
               </div>
             </Reveal>
           </div>
+
+          <ScrollCue
+            href="#discover"
+            className="text-white/75 hover:text-white focus-visible:outline-[#D9B94C]"
+            iconClassName="text-[#D9B94C]"
+            floating
+          />
         </div>
       </section>
 
       {/* =========================================================
           PEOPLE BEHIND THE IMPACT
       ========================================================== */}
-      <section className=" bg-[#FBF8F2]">
+      <section id="discover" className="scroll-mt-24 bg-[#FBF8F2]">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
             <Reveal>
