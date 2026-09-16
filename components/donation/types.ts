@@ -2,11 +2,7 @@ export type DonationType = "once" | "monthly";
 
 export type Currency = "NGN" | "USD" | "GBP";
 
-export type PaymentMethod =
-  | "naira-card"
-  | "usd-card"
-  | "gbp-card"
-  | "bank-transfer";
+export type PaymentMethod = "card" | "bank-transfer";
 
 export type DonationStep =
   | "give-money"
@@ -27,29 +23,11 @@ export type PaymentMethodMeta = {
 };
 
 export const PAYMENT_METHODS: Record<string, PaymentMethodMeta> = {
-  "naira-card": {
-    method: "naira-card",
+  card: {
+    method: "card",
     currency: "NGN",
-    label: "Pay in Naira",
-    description: "Secure card payment in Nigerian Naira",
-    isCard: true,
-    isTransfer: false,
-  },
-
-  "usd-card": {
-    method: "usd-card",
-    currency: "USD",
-    label: "Pay in Dollars",
-    description: "International card payment in US Dollars",
-    isCard: true,
-    isTransfer: false,
-  },
-
-  "gbp-card": {
-    method: "gbp-card",
-    currency: "GBP",
-    label: "Pay in Pounds",
-    description: "International card payment in British Pounds",
+    label: "Pay with card",
+    description: "Secure card payment",
     isCard: true,
     isTransfer: false,
   },

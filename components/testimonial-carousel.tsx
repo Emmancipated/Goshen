@@ -21,7 +21,9 @@ const TESTIMONIALS = [
 
 export function TestimonialCarousel() {
   const [index, setIndex] = useState(0);
+  const [contentHeight, setContentHeight] = useState<number | null>(null);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+  const activeFigureRef = useRef<HTMLElement | null>(null);
 
   const goTo = (next: number) =>
     setIndex((next + TESTIMONIALS.length) % TESTIMONIALS.length);
@@ -29,24 +31,40 @@ export function TestimonialCarousel() {
   useEffect(() => {
     timer.current = setInterval(() => {
       setIndex((i) => (i + 1) % TESTIMONIALS.length);
-    }, 7000);
+    }, 4000);
     return () => {
       if (timer.current) clearInterval(timer.current);
     };
   }, []);
 
+  useEffect(() => {
+    const figure = activeFigureRef.current;
+    if (!figure) return;
+
+    const updateHeight = () => setContentHeight(figure.scrollHeight);
+    updateHeight();
+
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(figure);
+    return () => observer.disconnect();
+  }, [index]);
+
   return (
     <div className="relative mx-auto max-w-3xl">
-      <div className="relative  min-h-64 overflow-hidden pb-4 sm:min-h-56">
+      <div
+        className="relative overflow-hidden pb-4 transition-[height] duration-500"
+        style={contentHeight ? { height: `${contentHeight}px` } : undefined}
+      >
         {TESTIMONIALS.map((t, i) => (
           <figure
             key={i}
+            ref={i === index ? activeFigureRef : undefined}
             aria-hidden={i !== index}
             className={`absolute inset-0 flex flex-col items-center px-2 text-center transition-opacity duration-500 ${
               i === index ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
           >
-            <blockquote className="max-w-2xl text-xs font-display font-medium leading-6">
+            <blockquote className="max-w-2xl text-sm font-display font-medium leading-7 sm:text-base sm:leading-8 lg:text-lg lg:leading-9">
               &ldquo;{t.quote}&rdquo;
             </blockquote>
             <figcaption className="mt-5 text-xs uppercase tracking-[0.18em] text-gold-400">
