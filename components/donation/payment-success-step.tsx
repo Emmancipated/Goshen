@@ -15,10 +15,7 @@ export function PaymentSuccessStep({
   paymentMethod,
   onContinue,
 }: PaymentSuccessStepProps) {
-  const isTransfer =
-    paymentMethod === "naira-transfer" ||
-    paymentMethod === "usd-transfer" ||
-    paymentMethod === "gbp-transfer";
+  const isTransfer = paymentMethod === "bank-transfer";
 
   return (
     <div className="space-y-8">
