@@ -149,7 +149,7 @@ export default function ContactPage() {
           </div>
 
           <ScrollCue
-            href="#discover"
+            href="#how-to-reach-us"
             className="text-white/75 hover:text-white focus-visible:outline-[#D9B94C]"
             iconClassName="text-[#D9B94C]"
             floating

@@ -92,7 +92,7 @@ export function TransferDetailsStep({
       </div>
 
       {/* Bank details */}
-      <div className="space-y-2 flex">
+      <div className="space-y-2 md:flex">
         {accounts.map((account) => {
           const copied = copiedCurrency === account.currency;
 

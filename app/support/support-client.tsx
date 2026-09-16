@@ -77,7 +77,7 @@ export default function SupportPageClient() {
             </div>
 
             <ScrollCue
-              href="#discover"
+              href="#partner"
               className="text-white/75 hover:text-white focus-visible:outline-[#D9B94C]"
               iconClassName="text-[#D9B94C]"
               floating
