@@ -6,9 +6,7 @@ export type PaymentMethod =
   | "naira-card"
   | "usd-card"
   | "gbp-card"
-  | "naira-transfer"
-  | "usd-transfer"
-  | "gbp-transfer";
+  | "bank-transfer";
 
 export type DonationStep =
   | "give-money"
@@ -38,15 +36,6 @@ export const PAYMENT_METHODS: Record<string, PaymentMethodMeta> = {
     isTransfer: false,
   },
 
-  "naira-transfer": {
-    method: "naira-transfer",
-    currency: "NGN",
-    label: "Transfer in Naira",
-    description: "Direct bank transfer in Nigerian Naira",
-    isCard: false,
-    isTransfer: true,
-  },
-
   "usd-card": {
     method: "usd-card",
     currency: "USD",
@@ -54,15 +43,6 @@ export const PAYMENT_METHODS: Record<string, PaymentMethodMeta> = {
     description: "International card payment in US Dollars",
     isCard: true,
     isTransfer: false,
-  },
-
-  "usd-transfer": {
-    method: "usd-transfer",
-    currency: "USD",
-    label: "Transfer in Dollars",
-    description: "Direct bank transfer in US Dollars",
-    isCard: false,
-    isTransfer: true,
   },
 
   "gbp-card": {
@@ -74,11 +54,11 @@ export const PAYMENT_METHODS: Record<string, PaymentMethodMeta> = {
     isTransfer: false,
   },
 
-  "gbp-transfer": {
-    method: "gbp-transfer",
-    currency: "GBP",
-    label: "Transfer in Pounds",
-    description: "Direct bank transfer in British Pounds",
+  "bank-transfer": {
+    method: "bank-transfer",
+    currency: "NGN",
+    label: "Bank transfer",
+    description: "View our Naira, Dollar and Pound bank details",
     isCard: false,
     isTransfer: true,
   },

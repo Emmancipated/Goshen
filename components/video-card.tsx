@@ -33,7 +33,9 @@ export function VideoCard({
 
   if (inline && playing) {
     return (
-      <div className={`group relative w-full overflow-hidden bg-night-950 ${className}`}>
+      <div
+        className={`group relative w-full overflow-hidden bg-night-950 ${className}`}
+      >
         <video
           ref={videoRef}
           src={src}

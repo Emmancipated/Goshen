@@ -33,10 +33,11 @@ export function PaymentOptionsStep({
       badge: "Recommended",
     },
     {
-      method: "naira-transfer",
-      title: "Transfer in Naira",
-      subtitle: "Bank transfer (₦)",
-      description: "Transfer directly from your Nigerian bank account.",
+      method: "bank-transfer",
+      title: "Bank transfer",
+      subtitle: "Naira, Dollar or Pound",
+      description:
+        "View all three bank accounts and transfer in your preferred currency.",
       icon: <Building2 className="h-6 w-6" />,
       accent: "#8B6A3D",
     },
@@ -50,15 +51,6 @@ export function PaymentOptionsStep({
       badge: "International",
     },
     {
-      method: "usd-transfer",
-      title: "Transfer in Dollars",
-      subtitle: "Bank transfer (USD)",
-      description:
-        "Send a USD bank transfer from your local or international bank.",
-      icon: <Building2 className="h-6 w-6" />,
-      accent: "#2563EB",
-    },
-    {
       method: "gbp-card",
       title: "Pay in Pounds",
       subtitle: "Card payment (GBP)",
@@ -66,15 +58,6 @@ export function PaymentOptionsStep({
       icon: <Wallet className="h-6 w-6" />,
       accent: "#7C3AED",
       badge: "International",
-    },
-    {
-      method: "gbp-transfer",
-      title: "Transfer in Pounds",
-      subtitle: "Bank transfer (GBP)",
-      description:
-        "Send a GBP bank transfer from your local or international bank.",
-      icon: <Building2 className="h-6 w-6" />,
-      accent: "#0E7490",
     },
   ];
 

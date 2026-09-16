@@ -163,19 +163,6 @@ export function ModalShell({
                 duration: 0.28,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.08}
-              onDragEnd={(_, info) => {
-                if (
-                  canGoBack &&
-                  onBack &&
-                  info.offset.x > 120 &&
-                  info.velocity.x > 300
-                ) {
-                  onBack();
-                }
-              }}
               className="flex pointer-events-auto max-h-[92vh] w-full max-w-2xl flex-col overflow-hidden rounded-4xl bg-[#F7F3EC] shadow-[0_30px_80px_rgba(0,0,0,0.32)]"
               onClick={(e) => e.stopPropagation()}
             >
@@ -227,14 +214,17 @@ export function ModalShell({
                 {children}
               </div>
 
-              {/* Mobile back hint */}
-              {canGoBack && (
+              {canGoBack && onBack ? (
                 <div className="border-t border-[#E5DDD3] px-6 py-3 sm:hidden">
-                  <p className="text-center text-xs text-[#7A746F]">
-                    Swipe right to go back
-                  </p>
+                  <button
+                    type="button"
+                    onClick={onBack}
+                    className="mx-auto block text-xs font-semibold text-[#7A746F] underline underline-offset-2"
+                  >
+                    Go back
+                  </button>
                 </div>
-              )}
+              ) : null}
             </motion.div>
           </div>
         </>

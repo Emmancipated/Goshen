@@ -151,10 +151,7 @@ export const GiveMoneyJourney = forwardRef<
   const handlePaymentMethod = (method: PaymentMethod) => {
     setPaymentMethod(method);
 
-    const isTransfer =
-      method === "naira-transfer" ||
-      method === "usd-transfer" ||
-      method === "gbp-transfer";
+    const isTransfer = method === "bank-transfer";
 
     if (isTransfer) {
       goTo("transfer-details");
@@ -165,15 +162,19 @@ export const GiveMoneyJourney = forwardRef<
   };
 
   const paystackCurrency =
-    paymentMethod === "usd-card" || paymentMethod === "usd-transfer"
+    paymentMethod === "usd-card"
       ? "USD"
-      : paymentMethod === "gbp-card" || paymentMethod === "gbp-transfer"
+      : paymentMethod === "gbp-card"
         ? "GBP"
         : "NGN";
 
   const paystackAmountInKobo = (Number(amount) || 0) * 100;
 
-  const { ready, processing: paystackProcessing, pay } = usePaystack({
+  const {
+    ready,
+    processing: paystackProcessing,
+    pay,
+  } = usePaystack({
     email: email || "donor@goshenshelters.org",
     amount: paystackAmountInKobo,
     currency: paystackCurrency,
@@ -187,10 +188,7 @@ export const GiveMoneyJourney = forwardRef<
   const handleAmountContinue = () => {
     if (!amount || !paymentMethod) return;
 
-    const isTransfer =
-      paymentMethod === "naira-transfer" ||
-      paymentMethod === "usd-transfer" ||
-      paymentMethod === "gbp-transfer";
+    const isTransfer = paymentMethod === "bank-transfer";
 
     if (isTransfer) {
       goTo("transfer-details");
@@ -338,7 +336,6 @@ export const GiveMoneyJourney = forwardRef<
               {step === "transfer-details" && (
                 <TransferDetailsStep
                   donationType={donationType}
-                  paymentMethod={paymentMethod as PaymentMethod}
                   onBack={goBack}
                   onConfirm={handleWhatsAppConfirm}
                 />

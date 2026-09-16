@@ -1,11 +1,12 @@
 "use client";
 
-import { BankIcon, CheckCircle2 } from "@/components/icons";
-import { DonationType, PaymentMethod } from "./types";
+import { Check, Copy } from "lucide-react";
+import { useState } from "react";
+import { DonationType } from "./types";
 
 const WHATSAPP_NUMBER = "2348027775001";
 
-const FALLBACK_NIRA = {
+const FALLBACK_NG = {
   name: "Gods Home For Women Foundation",
   bank: "Zenith Bank",
   account: "1312875360",
@@ -25,43 +26,51 @@ const FALLBACK_GBP = {
 
 type TransferDetailsStepProps = {
   donationType: DonationType;
-  paymentMethod: PaymentMethod;
   onBack: () => void;
   onConfirm: () => void;
 };
 
 export function TransferDetailsStep({
   donationType,
-  paymentMethod,
   onBack,
   onConfirm,
 }: TransferDetailsStepProps) {
-  const isUSD =
-    paymentMethod === "usd-transfer" || paymentMethod === "usd-card";
-  const isGBP =
-    paymentMethod === "gbp-transfer" || paymentMethod === "gbp-card";
+  const [copiedCurrency, setCopiedCurrency] = useState<string | null>(null);
 
-  const currency = isUSD ? "USD" : isGBP ? "GBP" : "NGN";
+  const accounts = [
+    {
+      currency: "Naira (NGN)",
+      bank: process.env.NEXT_PUBLIC_BANK_NAME || FALLBACK_NG.bank,
+      account: process.env.NEXT_PUBLIC_BANK_ACCOUNT || FALLBACK_NG.account,
+      name: process.env.NEXT_PUBLIC_BANK_ACCOUNT_NAME || FALLBACK_NG.name,
+    },
+    {
+      currency: "Dollars (USD)",
+      bank: process.env.NEXT_PUBLIC_USD_BANK_NAME || FALLBACK_USD.bank,
+      account: process.env.NEXT_PUBLIC_USD_BANK_ACCOUNT || FALLBACK_USD.account,
+      name: process.env.NEXT_PUBLIC_USD_BANK_ACCOUNT_NAME || FALLBACK_USD.name,
+    },
+    {
+      currency: "Pounds (GBP)",
+      bank: process.env.NEXT_PUBLIC_GBP_BANK_NAME || FALLBACK_GBP.bank,
+      account: process.env.NEXT_PUBLIC_GBP_BANK_ACCOUNT || FALLBACK_GBP.account,
+      name: process.env.NEXT_PUBLIC_GBP_BANK_ACCOUNT_NAME || FALLBACK_GBP.name,
+    },
+  ];
 
-  const bankName = isUSD
-    ? process.env.NEXT_PUBLIC_USD_BANK_NAME || FALLBACK_USD.bank
-    : isGBP
-      ? process.env.NEXT_PUBLIC_GBP_BANK_NAME || FALLBACK_GBP.bank
-      : process.env.NEXT_PUBLIC_BANK_NAME || FALLBACK_NIRA.bank;
-  const bankAccount = isUSD
-    ? process.env.NEXT_PUBLIC_USD_BANK_ACCOUNT || FALLBACK_USD.account
-    : isGBP
-      ? process.env.NEXT_PUBLIC_GBP_BANK_ACCOUNT || FALLBACK_GBP.account
-      : process.env.NEXT_PUBLIC_BANK_ACCOUNT || FALLBACK_NIRA.account;
-  const bankAccountName = isUSD
-    ? process.env.NEXT_PUBLIC_USD_BANK_ACCOUNT_NAME || FALLBACK_USD.name
-    : isGBP
-      ? process.env.NEXT_PUBLIC_GBP_BANK_ACCOUNT_NAME || FALLBACK_GBP.name
-      : process.env.NEXT_PUBLIC_BANK_ACCOUNT_NAME || FALLBACK_NIRA.name;
+  const copyAccount = async (currency: string, account: string) => {
+    try {
+      await navigator.clipboard.writeText(account);
+      setCopiedCurrency(currency);
+      window.setTimeout(() => setCopiedCurrency(null), 1800);
+    } catch {
+      setCopiedCurrency(null);
+    }
+  };
 
   const openWhatsApp = () => {
     const message = encodeURIComponent(
-      `Hello Goshen Shelters, I have completed my bank transfer to your ${currency} account. Please acknowledge my ${donationType === "monthly" ? "monthly" : "one-time"} donation. Thank you!`,
+      `Hello Goshen Shelters, I have completed my bank transfer. Please acknowledge my ${donationType === "monthly" ? "monthly" : "one-time"} donation. Thank you!`,
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
   };
@@ -76,39 +85,60 @@ export function TransferDetailsStep({
       {/* Intro */}
       <div className="space-y-3">
         <p className="text-[1.05rem] leading-8 text-[#5E5752]">
-          Transfer to our bank account below, then let us know so we can
+          Transfer to any of our accounts below, then let us know so we can
           acknowledge your {donationType === "monthly" ? "monthly" : "one-time"}{" "}
           donation.
         </p>
       </div>
 
       {/* Bank details */}
-      <div className="rounded-3xl border border-[#E5DDD3] bg-white p-6">
-        <div className="flex items-start gap-4">
-          <div className="space-y-3">
-            <h4 className="font-semibold text-[#2F1B69]">
-              Bank transfer details ({currency})
-            </h4>
-            <div className="space-y-1 text-sm text-[#5E5752]">
-              <p>
-                <span className="font-semibold text-[#2F1B69]">Bank:</span>{" "}
-                {bankName}
-              </p>
-              <p>
-                <span className="font-semibold text-[#2F1B69]">
-                  Account number:
-                </span>{" "}
-                {bankAccount}
-              </p>
-              <p>
-                <span className="font-semibold text-[#2F1B69]">
-                  Account name:
-                </span>{" "}
-                {bankAccountName}
-              </p>
+      <div className="space-y-2 flex">
+        {accounts.map((account) => {
+          const copied = copiedCurrency === account.currency;
+
+          return (
+            <div
+              key={account.currency}
+              className="rounded-3xl border border-[#E5DDD3] bg-white p-6"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <h4 className="font-semibold text-[#2F1B69]">
+                  {account.currency}
+                </h4>
+                <button
+                  type="button"
+                  onClick={() => copyAccount(account.currency, account.account)}
+                  className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[#D8CEC4] px-3 py-1.5 text-xs font-semibold text-[#5E5752] transition-colors hover:border-[#43206F] hover:text-[#43206F] focus:outline-none focus:ring-2 focus:ring-[#43206F]/20"
+                >
+                  {copied ? (
+                    <Check className="h-3.5 w-3.5" />
+                  ) : (
+                    <Copy className="h-3.5 w-3.5" />
+                  )}
+                  {copied ? "Copied" : "Copy"}
+                </button>
+              </div>
+              <div className="mt-4 space-y-1 text-sm text-[#5E5752]">
+                <p>
+                  <span className="font-semibold text-[#2F1B69]">Bank:</span>{" "}
+                  {account.bank}
+                </p>
+                <p>
+                  <span className="font-semibold text-[#2F1B69]">
+                    Account number:
+                  </span>{" "}
+                  {account.account}
+                </p>
+                <p>
+                  <span className="font-semibold text-[#2F1B69]">
+                    Account name:
+                  </span>{" "}
+                  {account.name}
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
 
       {/* Instructions */}

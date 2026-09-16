@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | Goshen Shelters",
   },
   description:
-    "God's Home for Women Foundation operates Goshen Shelters — a refuge providing hope, shelter, healing and practical support for women and children escaping domestic violence in Nigeria. Confidential help 24/7 on 0802 777 5001.",
+    "God's Home for Women Foundation operates Goshen Shelters — a refuge providing hope, shelter, healing and practical support for women and children escaping domestic violence in Nigeria. Confidential help 24/7 on 0701 854 9218.",
   keywords: [
     "domestic violence",
     "shelter",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Goshen Shelters — A safe place. A new beginning.",
     description:
-      "Hope, shelter, healing and practical support for women escaping domestic violence. Confidential help 24/7 on 0802 777 5001.",
+      "Hope, shelter, healing and practical support for women escaping domestic violence. Confidential help 24/7 on 0701 854 9218.",
     url: "https://goshenshelters.org",
     siteName: "God's Home for Women Foundation",
     type: "website",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Goshen Shelters — A safe place. A new beginning.",
     description:
-      "Hope, shelter, healing and practical support for women escaping domestic violence. Confidential help 24/7 on 0802 777 5001.",
+      "Hope, shelter, healing and practical support for women escaping domestic violence. Confidential help 24/7 on 0701 854 9218.",
     images: ["/images/steps.jpg"],
   },
 };

@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { Reveal } from "@/components/reveal";
 import { DonateButton } from "@/components/donate-button";
+import { ScrollCue } from "@/components/scroll-cue";
 
 import {
   HERO_CONTENT,
@@ -80,12 +81,19 @@ export function OurWorkClient() {
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(47,27,105,0.55),transparent_38%)]" />
           </div>
         </div>
+
+        <ScrollCue
+          href="#discover"
+          className="text-white/75 hover:text-white focus-visible:outline-[#D9B94C]"
+          iconClassName="text-[#D9B94C]"
+          floating
+        />
       </section>
 
       {/* =====================================================
           WHAT WE DO
       ===================================================== */}
-      <section className="bg-[#F7F3EC]">
+      <section id="discover" className="scroll-mt-24 bg-[#F7F3EC]">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">

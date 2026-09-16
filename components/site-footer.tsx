@@ -101,10 +101,10 @@ export function SiteFooter() {
             <li className="flex items-start gap-2.5">
               <MailIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
               <a
-                href="mailto:goshenshelters2026@gmail.com"
+                href="mailto:info@goshenshelters.org"
                 className="hover:text-cream-50"
               >
-                goshenshelters2026@gmail.com
+                info@goshenshelters.org
               </a>
             </li>
             <li className="flex items-start gap-2.5">

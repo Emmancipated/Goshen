@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { HelpButton } from "@/components/help-button";
 import { ContactForm } from "@/app/contact/contact-form";
+import { ScrollCue } from "@/components/scroll-cue";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -49,8 +50,8 @@ const CONTACT_CHANNELS = [
   },
   {
     label: "Email",
-    lines: ["goshenshelters2026@gmail.com"],
-    href: "mailto:goshenshelters2026@gmail.com",
+    lines: ["info@goshenshelters.org"],
+    href: "mailto:info@goshenshelters.org",
     cta: "Send email",
     external: false,
   },
@@ -146,12 +147,19 @@ export default function ContactPage() {
               </div>
             </Reveal>
           </div>
+
+          <ScrollCue
+            href="#discover"
+            className="text-white/75 hover:text-white focus-visible:outline-[#D9B94C]"
+            iconClassName="text-[#D9B94C]"
+            floating
+          />
         </div>
       </section>
 
       {/* CONTACT CHANNELS */}
       <section
-        className="border-y border-cream-200 bg-white"
+        className="scroll-mt-24 border-y border-cream-200 bg-white"
         id="how-to-reach-us"
       >
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20">

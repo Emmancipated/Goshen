@@ -9,6 +9,7 @@ import { FundraisingJourney } from "@/components/fundraising/fundraising-journey
 import { SurvivorKitJourney } from "@/components/survivor-kit/survivor-kit-journey";
 import { useDonationModal } from "@/components/donation/donation-modal-provider";
 import { Reveal } from "@/components/reveal";
+import { ScrollCue } from "@/components/scroll-cue";
 
 const supportCards = [
   {
@@ -39,7 +40,7 @@ export default function SupportPageClient() {
     <main className="min-h-screen bg-[#F7F3EC]">
       <section className="relative isolate overflow-hidden text-cream-50">
         <Reveal>
-          <div className="grid items-stretch lg:grid-cols-[40%_60%]">
+          <div className="relative grid items-stretch lg:grid-cols-[40%_60%]">
             {/* Left content */}
             <div className="flex items-center px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
               <div className="max-w-xl">
@@ -74,6 +75,13 @@ export default function SupportPageClient() {
               {/* Bottom fade */}
               <div className="absolute inset-0 bg-linear-to-t from-[#F7F3EC] via-[#F7F3EC]/10 to-transparent" />
             </div>
+
+            <ScrollCue
+              href="#discover"
+              className="text-white/75 hover:text-white focus-visible:outline-[#D9B94C]"
+              iconClassName="text-[#D9B94C]"
+              floating
+            />
           </div>
         </Reveal>
         {/* Support cards INSIDE the hero */}
@@ -123,7 +131,7 @@ export default function SupportPageClient() {
         {/* Partner With Us */}
         <Reveal delay={80}>
           <section
-            className="mt-10 overflow-hidden rounded-[28px] bg-[#EFE7E3]"
+            className="mt-10 scroll-mt-24 overflow-hidden rounded-[28px] bg-[#EFE7E3]"
             id="partner"
           >
             <div className="grid items-center lg:grid-cols-[0.9fr_1.1fr] lg:h-75">
