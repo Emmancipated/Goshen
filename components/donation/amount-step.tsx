@@ -172,9 +172,7 @@ export function AmountStep({
             onChange={(e) =>
               onAmountChange(e.target.value.replace(/[^0-9]/g, ""))
             }
-            placeholder={
-              currency === "USD" ? "100" : currency === "GBP" ? "50" : "50000"
-            }
+            placeholder="50000"
             className="w-full rounded-2xl border border-[#E5DDD3] bg-white py-4 pl-12 pr-4 text-xl font-semibold text-[#2F1B69] outline-none transition-all focus:border-[#43206F] focus:ring-2 focus:ring-[#43206F]/10"
           />
         </div>
