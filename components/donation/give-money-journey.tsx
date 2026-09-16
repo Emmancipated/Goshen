@@ -161,12 +161,7 @@ export const GiveMoneyJourney = forwardRef<
     goTo("amount");
   };
 
-  const paystackCurrency =
-    paymentMethod === "usd-card"
-      ? "USD"
-      : paymentMethod === "gbp-card"
-        ? "GBP"
-        : "NGN";
+  const paystackCurrency = "NGN";
 
   const paystackAmountInKobo = (Number(amount) || 0) * 100;
 

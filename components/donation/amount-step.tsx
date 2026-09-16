@@ -49,12 +49,9 @@ export function AmountStep({
   onAmountChange,
   onContinue,
 }: AmountStepProps) {
-  const isUSD = paymentMethod === "usd-card";
-  const isGBP = paymentMethod === "gbp-card";
-
   const isTransfer = paymentMethod === "bank-transfer";
 
-  const currency: Currency = isUSD ? "USD" : isGBP ? "GBP" : "NGN";
+  const currency: Currency = "NGN";
   const symbol = currency === "NGN" ? "₦" : currency === "USD" ? "$" : "£";
   const presets =
     currency === "NGN"
@@ -65,12 +62,8 @@ export function AmountStep({
 
   const paymentLabel = (() => {
     switch (paymentMethod) {
-      case "naira-card":
-        return "Naira card payment";
-      case "usd-card":
-        return "USD card payment";
-      case "gbp-card":
-        return "GBP card payment";
+      case "card":
+        return "Card payment";
       case "bank-transfer":
         return "Bank transfer";
       default:
@@ -179,9 +172,7 @@ export function AmountStep({
             onChange={(e) =>
               onAmountChange(e.target.value.replace(/[^0-9]/g, ""))
             }
-            placeholder={
-              currency === "USD" ? "100" : currency === "GBP" ? "50" : "50000"
-            }
+            placeholder="50000"
             className="w-full rounded-2xl border border-[#E5DDD3] bg-white py-4 pl-12 pr-4 text-xl font-semibold text-[#2F1B69] outline-none transition-all focus:border-[#43206F] focus:ring-2 focus:ring-[#43206F]/10"
           />
         </div>

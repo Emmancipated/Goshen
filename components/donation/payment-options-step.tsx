@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Building2, CreditCard, Lock, Wallet } from "lucide-react";
+import { ArrowRight, Building2, CreditCard, Lock } from "lucide-react";
 import { PaymentMethod, DonationType } from "./types";
 
 type PaymentOptionsStepProps = {
@@ -24,10 +24,10 @@ export function PaymentOptionsStep({
 }: PaymentOptionsStepProps) {
   const options: PaymentOption[] = [
     {
-      method: "naira-card",
-      title: "Pay in Naira",
-      subtitle: "Card payment (₦)",
-      description: "Pay securely with your Nigerian debit or credit card.",
+      method: "card",
+      title: "Pay with card",
+      subtitle: "Secure card payment",
+      description: "Pay securely with your debit or credit card.",
       icon: <CreditCard className="h-6 w-6" />,
       accent: "#43206F",
       badge: "Recommended",
@@ -40,24 +40,6 @@ export function PaymentOptionsStep({
         "View all three bank accounts and transfer in your preferred currency.",
       icon: <Building2 className="h-6 w-6" />,
       accent: "#8B6A3D",
-    },
-    {
-      method: "usd-card",
-      title: "Pay in Dollars",
-      subtitle: "Card payment (USD)",
-      description: "Donate internationally using a USD debit or credit card.",
-      icon: <Wallet className="h-6 w-6" />,
-      accent: "#0B6E4F",
-      badge: "International",
-    },
-    {
-      method: "gbp-card",
-      title: "Pay in Pounds",
-      subtitle: "Card payment (GBP)",
-      description: "Donate internationally using a GBP debit or credit card.",
-      icon: <Wallet className="h-6 w-6" />,
-      accent: "#7C3AED",
-      badge: "International",
     },
   ];
 
