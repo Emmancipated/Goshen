@@ -8,6 +8,7 @@ type PaystackPop = {
     email: string;
     amount: number;
     currency?: string;
+    plan?: string;
     ref?: string;
     callback?: (response: { reference?: string; status?: string }) => void;
     onClose?: () => void;
@@ -20,6 +21,7 @@ type UsePaystackOptions = {
   email: string;
   amount: number;
   currency?: string;
+  plan?: string;
   onSuccess?: (response: { reference?: string; status?: string }) => void;
   onClose?: () => void;
 };
@@ -28,6 +30,7 @@ export function usePaystack({
   email,
   amount,
   currency = "NGN",
+  plan,
   onSuccess,
   onClose,
 }: UsePaystackOptions) {
@@ -61,7 +64,7 @@ export function usePaystack({
 
     setProcessing(true);
 
-    const transaction = paystack.setup({
+    const setupOptions: Parameters<PaystackPop["setup"]>[0] = {
       key: process.env.NEXT_PUBLIC_PAYSTACK_KEY ?? "",
       email,
       amount,
@@ -74,10 +77,16 @@ export function usePaystack({
         setProcessing(false);
         onClose?.();
       },
-    });
+    };
+
+    if (plan) {
+      setupOptions.plan = plan;
+    }
+
+    const transaction = paystack.setup(setupOptions);
 
     transaction.openIframe();
-  }, [email, amount, currency, onSuccess, onClose]);
+  }, [email, amount, currency, plan, onSuccess, onClose]);
 
   return { ready, processing, pay };
 }

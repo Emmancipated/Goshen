@@ -15,7 +15,7 @@ export function EmergencyBanner() {
             <span className="font-bold text-gold-400">Need urgent help?</span>{" "}
             <span className="hidden sm:inline">We are here for you — </span>
             <a
-              href="tel:+2348027775001"
+              href="tel:+2347018549218"
               className="hidden font-semibold underline underline-offset-2 hover:text-gold-300 md:inline"
             >
               0701 854 9218

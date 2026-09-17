@@ -30,7 +30,7 @@ export function DonateForm() {
     processing: paystackProcessing,
     pay,
   } = usePaystack({
-    email: email || "donor@goshenshelters.org",
+    email: email || "info@goshenshelters.org",
     amount: Number(amount || 0) * 100,
     currency: "NGN",
     onSuccess: () => {
@@ -85,7 +85,7 @@ export function DonateForm() {
             <p className="mt-2 text-xs text-night-600/80">
               Then send your name to{" "}
               <a
-                href="https://wa.me/2348027775001"
+                href="https://wa.me/2347018549218"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-gold-700 underline underline-offset-2"
@@ -99,7 +99,7 @@ export function DonateForm() {
           <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-night-600">
             Please call or WhatsApp us on{" "}
             <a
-              href="tel:+2348027775001"
+              href="tel:+2347018549218"
               className="font-semibold text-gold-700 underline underline-offset-2"
             >
               0701 854 9218
@@ -216,7 +216,7 @@ export function DonateForm() {
               <p className="mt-2 text-xs text-night-600/80">
                 Then send your name to{" "}
                 <a
-                  href="https://wa.me/2348027775001"
+                  href="https://wa.me/2347018549218"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-gold-700 underline underline-offset-2"
@@ -230,7 +230,7 @@ export function DonateForm() {
             <p>
               For our bank details, please call or WhatsApp us on{" "}
               <a
-                href="tel:+2348027775001"
+                href="tel:+2347018549218"
                 className="font-semibold text-gold-700 underline underline-offset-2"
               >
                 0701 854 9218

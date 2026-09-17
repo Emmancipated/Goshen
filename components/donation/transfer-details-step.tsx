@@ -4,7 +4,7 @@ import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 import { DonationType } from "./types";
 
-const WHATSAPP_NUMBER = "2348027775001";
+const WHATSAPP_NUMBER = "2347018549218";
 
 const FALLBACK_NG = {
   name: "Gods Home For Women Foundation",

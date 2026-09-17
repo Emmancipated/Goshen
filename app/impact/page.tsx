@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Discover how Goshen Shelters has supported women and children affected by domestic and sexual violence through safety, healing, education, skills development, employment and reintegration.",
     images: [
       {
-        url: "/images/impact.jpg",
+        url: "/images/sprouting-leaf.jpg",
         width: 1200,
         height: 630,
         alt: "Our Impact at Goshen Shelters — supporting women and children",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Our Impact",
     description:
       "Discover how Goshen Shelters has supported women and children affected by domestic and sexual violence through safety, healing, education, skills development, employment and reintegration.",
-    images: ["/images/impact.jpg"],
+    images: ["/images/sprouting-leaf.jpg"],
   },
 };
 

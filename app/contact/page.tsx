@@ -37,14 +37,14 @@ const CONTACT_CHANNELS = [
   {
     label: "Helpline (24/7)",
     lines: ["0701 854 9218", "In an emergency: 112"],
-    href: "tel:+2348027775001",
+    href: "tel:+2347018549218",
     cta: "Call now",
     external: false,
   },
   {
     label: "WhatsApp",
     lines: ["0701 854 9218"],
-    href: "https://wa.me/2348027775001",
+    href: "https://wa.me/2347018549218",
     cta: "Message on WhatsApp",
     external: true,
   },
@@ -56,7 +56,7 @@ const CONTACT_CHANNELS = [
     external: false,
   },
   {
-    label: "Head office",
+    label: "Admin Office",
     lines: ["45C Sobo Arobiodu Close", "GRA Ikeja, Lagos — 102105"],
     href: null,
     cta: null,
@@ -116,7 +116,7 @@ export default function ContactPage() {
                   </a>{" "}
                   or our helpline on{" "}
                   <a
-                    href="tel:+2348027775001"
+                    href="tel:+2347018549218"
                     className="font-semibold text-gold-700 underline underline-offset-2"
                   >
                     0701 854 9218
@@ -175,7 +175,7 @@ export default function ContactPage() {
 
               <p className="mt-6 max-w-xl text-base leading-7 text-night-600">
                 Our team is available around the clock. You can call, message,
-                email or visit our head office during working hours.
+                email or visit our admin office during working hours.
               </p>
 
               <div
@@ -302,7 +302,7 @@ export default function ContactPage() {
                 </HelpButton>
 
                 <a
-                  href="tel:+2348027775001"
+                  href="tel:+2347018549218"
                   className="inline-flex items-center justify-center rounded-full border border-gold-400 px-7 py-3.5 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-gold-500"
                 >
                   0701 854 9218

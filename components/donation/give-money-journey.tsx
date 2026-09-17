@@ -28,6 +28,8 @@ import {
   getProgress,
 } from "./types";
 
+const PAYSTACK_MONTHLY_PLAN = process.env.NEXT_PUBLIC_PAYSTACK_MONTHLY_PLAN ?? "";
+
 type Direction = 1 | -1;
 
 type GiveMoneyJourneyProps = {
@@ -170,9 +172,10 @@ export const GiveMoneyJourney = forwardRef<
     processing: paystackProcessing,
     pay,
   } = usePaystack({
-    email: email || "donor@goshenshelters.org",
+    email: email || "info@goshenshelters.org",
     amount: paystackAmountInKobo,
     currency: paystackCurrency,
+    plan: donationType === "monthly" ? PAYSTACK_MONTHLY_PLAN || undefined : undefined,
     onSuccess: () => {
       setProcessingPayment(false);
       goTo("payment-success");

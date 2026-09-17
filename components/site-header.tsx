@@ -146,7 +146,7 @@ export function SiteHeader() {
               </button>
             </div>
             <a
-              href="tel:+2348027775001"
+              href="tel:+2347018549218"
               className="mt-2 rounded-full border border-night-200 px-5 py-2.5 text-center text-sm font-semibold text-night-600"
             >
               0701 854 9218 (24/7)

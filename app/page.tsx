@@ -25,9 +25,9 @@ const FOUNDER_VIDEO_SRC = "/videos/founder-message.mp4";
 
 const SITE = {
   helplineDisplay: "0701 854 9218",
-  helplineTel: "+2348027775001",
-  whatsapp: "https://wa.me/2348027775001",
-  email: "hello@goshenshelters.org",
+  helplineTel: "+2347018549218",
+  whatsapp: "https://wa.me/2347018549218",
+  email: "info@goshenshelters.org",
   address: "Lagos, Nigeria",
   maps: "https://maps.google.com/?q=Goshen+Shelters+Lagos",
   exitUrl: "https://www.google.com/",
@@ -325,7 +325,7 @@ function Hero() {
                   Confidential helpline · 24/7
                 </p>
                 <a
-                  href="tel:+2348027775001"
+                  href="tel:+2347018549218"
                   className="font-display text-2xl font-semibold text-white hover:text-gold-300"
                 >
                   0701 854 9218
