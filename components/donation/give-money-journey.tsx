@@ -16,6 +16,7 @@ import { MonthlyEmailStep } from "./monthly-email-step";
 import { MonthlySuccessStep } from "./monthly-success-step";
 import { PaymentOptionsStep } from "./payment-options-step";
 import { AmountStep } from "./amount-step";
+import { TransferDetailsStep } from "./transfer-details-step";
 import { PaymentSuccessStep } from "./payment-success-step";
 import { usePaystack } from "@/hooks/use-paystack";
 
@@ -25,8 +26,9 @@ import {
   PaymentMethod,
   INITIAL_DONATION_STATE,
   getProgress,
-  ENABLE_USD,
 } from "./types";
+
+const PAYSTACK_MONTHLY_PLAN = process.env.NEXT_PUBLIC_PAYSTACK_MONTHLY_PLAN ?? "";
 
 type Direction = 1 | -1;
 
@@ -150,21 +152,30 @@ export const GiveMoneyJourney = forwardRef<
 
   const handlePaymentMethod = (method: PaymentMethod) => {
     setPaymentMethod(method);
+
+    const isTransfer = method === "bank-transfer";
+
+    if (isTransfer) {
+      goTo("transfer-details");
+      return;
+    }
+
     goTo("amount");
   };
 
-  const paystackCurrency =
-    ENABLE_USD &&
-    (paymentMethod === "usd-card" || paymentMethod === "usd-transfer")
-      ? "USD"
-      : "NGN";
+  const paystackCurrency = "NGN";
 
   const paystackAmountInKobo = (Number(amount) || 0) * 100;
 
-  const { ready, processing: paystackProcessing, pay } = usePaystack({
-    email: email || "donor@goshenshelters.org",
+  const {
+    ready,
+    processing: paystackProcessing,
+    pay,
+  } = usePaystack({
+    email: email || "info@goshenshelters.org",
     amount: paystackAmountInKobo,
     currency: paystackCurrency,
+    plan: donationType === "monthly" ? PAYSTACK_MONTHLY_PLAN || undefined : undefined,
     onSuccess: () => {
       setProcessingPayment(false);
       goTo("payment-success");
@@ -172,14 +183,25 @@ export const GiveMoneyJourney = forwardRef<
     onClose: () => setProcessingPayment(false),
   });
 
-  const handleAmountContinue = async () => {
+  const handleAmountContinue = () => {
     if (!amount || !paymentMethod) return;
+
+    const isTransfer = paymentMethod === "bank-transfer";
+
+    if (isTransfer) {
+      goTo("transfer-details");
+      return;
+    }
 
     if (ready) {
       setProcessingPayment(true);
       pay();
       return;
     }
+  };
+
+  const handleWhatsAppConfirm = () => {
+    goTo("payment-success");
   };
 
   const title = (() => {
@@ -194,6 +216,8 @@ export const GiveMoneyJourney = forwardRef<
         return "Choose a Payment Option";
       case "amount":
         return "Complete Your Donation";
+      case "transfer-details":
+        return "Bank Transfer Details";
       case "payment-success":
         return "Donation Complete";
     }
@@ -211,6 +235,8 @@ export const GiveMoneyJourney = forwardRef<
         return "Choose your preferred payment method";
       case "amount":
         return "Select the amount you would like to give";
+      case "transfer-details":
+        return "Transfer the amount and let us know when done";
       case "payment-success":
         return "Your generosity makes a real difference";
     }
@@ -305,10 +331,19 @@ export const GiveMoneyJourney = forwardRef<
                 />
               )}
 
+              {step === "transfer-details" && (
+                <TransferDetailsStep
+                  donationType={donationType}
+                  onBack={goBack}
+                  onConfirm={handleWhatsAppConfirm}
+                />
+              )}
+
               {step === "payment-success" && (
                 <PaymentSuccessStep
                   donationType={donationType}
                   amount={amount}
+                  paymentMethod={paymentMethod}
                   onContinue={closeJourney}
                 />
               )}

@@ -36,9 +36,9 @@ const items = [
 
 export function GiveItemsStep({ onContinue }: GiveItemsStepProps) {
   return (
-    <div className="space-y-8">
+    <div className="space-y-4">
       {/* Intro */}{" "}
-      <div className="space-y-4">
+      <div className="space-y-2">
         {" "}
         <p className="text-[1.05rem] leading-8 text-[#5E5752]">
           Women and children sometimes arrive at Goshen having had to leave

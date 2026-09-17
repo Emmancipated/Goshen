@@ -82,15 +82,15 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex items-start gap-2.5">
               <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
-              <a href="tel:+2348027775001" className="hover:text-cream-50">
-                0802 777 5001{" "}
+              <a href="tel:+2347018549218" className="hover:text-cream-50">
+                0701 854 9218{" "}
                 <span className="text-white/50">(24/7 helpline)</span>
               </a>
             </li>
             <li className="flex items-start gap-2.5">
               <WhatsAppIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
               <a
-                href="https://wa.me/2348027775001"
+                href="https://wa.me/2347018549218"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cream-50"
@@ -101,16 +101,16 @@ export function SiteFooter() {
             <li className="flex items-start gap-2.5">
               <MailIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
               <a
-                href="mailto:goshenshelters2026@gmail.com"
+                href="mailto:info@goshenshelters.org"
                 className="hover:text-cream-50"
               >
-                goshenshelters2026@gmail.com
+                info@goshenshelters.org
               </a>
             </li>
             <li className="flex items-start gap-2.5">
               <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
               <span>
-                Head office: 45C Sobo Arobiodu Close, GRA Ikeja, Lagos
+                Admin Office: 45C Sobo Arobiodu Close, GRA Ikeja, Lagos
               </span>
             </li>
           </ul>
@@ -126,7 +126,7 @@ export function SiteFooter() {
           <button
             type="button"
             onClick={() => openHelpModal()}
-            className="mt-4 inline-flex items-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:scale-95"
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-gold-600 active:scale-95 uppercase"
           >
             Get Help Now
           </button>

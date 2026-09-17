@@ -5,6 +5,8 @@ import { HelpButton } from "@/components/help-button";
 // import { AboutValues } from "@/components/about-values";
 import { FounderVideo } from "@/components/about/founder-video";
 import { AboutValues } from "@/components/about/about-values";
+import { VideoCard } from "@/components/video-card";
+import { ScrollCue } from "@/components/scroll-cue";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
       "God's Home for Women Foundation operates Goshen Shelters — a safe, confidential refuge offering hope, healing and restoration for women and children.",
     images: [
       {
-        url: "/images/about.jpg",
+        url: "/images/goshen_stop_violence_hero.png",
         width: 1200,
         height: 630,
         alt: "About Goshen Shelters — a safe, confidential refuge",
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     title: "About Us",
     description:
       "God's Home for Women Foundation operates Goshen Shelters — a safe, confidential refuge offering hope, healing and restoration for women and children.",
-    images: ["/images/about.jpg"],
+    images: ["/images/goshen_stop_violence_hero.png"],
   },
 };
 
@@ -82,29 +84,48 @@ export default function AboutPage() {
             className="relative min-h-70 sm:min-h-90 lg:min-h-130"
           >
             <Image
-              src="/images/hope.jpg"
-              alt="A woman and child"
+              // src="/images/03_Tablet_Portrait_1200x700.jpg"
+              // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
+              src="/images/goshen_stop_violence_hero.png"
+              alt="group of women and children"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-center"
+              // sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-center lg:hidden"
+            />
+            <Image
+              // src="/images/00_MASTER_1718x916.jpg"
+              // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
+              src="/images/goshen_stop_violence_hero.png"
+              alt="group of women and children"
+              fill
+              priority
+              // sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover object-center hidden lg:block"
             />
 
             {/* Desktop curve  */}
-            <div className="absolute inset-y-0 left-0 hidden w-[30%] lg:block">
+            {/* <div className="absolute inset-y-0 left-0 hidden w-[30%] xl:block">
               <div className="absolute inset-0 bg-night-50 [clip-path:ellipse(75%_80%_at_0%_50%)]" />
-            </div>
+            </div> */}
 
             {/* Mobile curve */}
-            <div className="absolute inset-x-0 top-0 h-[30%] lg:hidden">
+            {/* <div className="absolute inset-x-0 top-0 h-[30%] lg:hidden">
               <div className="absolute inset-0 bg-night-50 [clip-path:ellipse(85%_100%_at_50%_0%)]" />
-            </div>
+            </div> */}
           </Reveal>
+
+          <ScrollCue
+            href="#discover"
+            className="text-white hover:text-night-950 focus-visible:outline-gold-500"
+            iconClassName="text-white"
+            floating
+          />
         </div>
       </section>
 
       {/* Story grid */}
-      <section className="bg-white">
+      <section id="discover" className="scroll-mt-24 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <div className="grid gap-6 lg:grid-cols-2">
             <Reveal>
@@ -182,7 +203,7 @@ export default function AboutPage() {
                 <FounderVideo
                   founderName={FOUNDER_NAME}
                   videoSrc={FOUNDER_VIDEO_SRC}
-                  posterSrc="/images/about.jpg"
+                  posterSrc="/images/goshen_stop_violence_hero.png"
                 />
               </Reveal> */}
             </div>
@@ -262,11 +283,26 @@ export default function AboutPage() {
       {/* Looking ahead */}
       <section className="bg-cream-50">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.95fr_1.05fr]">
+          {/* <Reveal>
+            <div className="relative overflow-hidden rounded-4xl border border-night-100 shadow-sm">
+              <div className="relative aspect-4/3">
+                <VideoCard
+                  src="/march.mp4"
+                  poster="/images/mobile_768px.jpg"
+                  title="A message of hope"
+                  className="absolute inset-0 h-full rounded-none! border-0!"
+                  fill
+                  showTitle={false}
+                  inline
+                />
+              </div>
+            </div>
+          </Reveal> */}
           <Reveal>
             <div className="relative overflow-hidden rounded-4xl border border-night-100 shadow-sm">
-              <div className="relative aspect-4/5">
+              <div className="relative aspect-4/3">
                 <Image
-                  src="/images/impact.jpg"
+                  src="/images/mobile_768px.jpg"
                   alt="A woman looking towards the light with hope"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
@@ -328,7 +364,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/our-work"
-                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
+                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white uppercase"
               >
                 Explore our work
               </Link>
@@ -345,7 +381,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/impact"
-                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
+                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white uppercase"
               >
                 See our impact
               </Link>
@@ -362,7 +398,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/support"
-                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
+                className="mt-6 inline-flex items-center justify-center rounded-full border border-gold-400 px-5 py-3 text-sm font-semibold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white uppercase"
               >
                 Support Goshen
               </Link>

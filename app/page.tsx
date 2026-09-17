@@ -9,6 +9,7 @@ import { TestimonialCarousel } from "@/components/testimonial-carousel";
 // import { FounderVideo } from "@/components/founder-video";
 import { HelpButton } from "@/components/help-button";
 import { useDonationModal } from "@/components/donation/donation-modal-provider";
+import { ScrollCue } from "@/components/scroll-cue";
 import {
   ArrowRightIcon,
   HeartIcon,
@@ -19,14 +20,14 @@ import {
 } from "@/components/icons";
 import { FounderVideo } from "@/components/about/founder-video";
 
-const FOUNDER_NAME = "Ajibola Hassan-Odukale";
+const FOUNDER_NAME = "Mrs. Ajibola Hassan-Odukale";
 const FOUNDER_VIDEO_SRC = "/videos/founder-message.mp4";
 
 const SITE = {
-  helplineDisplay: "0802 777 5001",
-  helplineTel: "+2348027775001",
-  whatsapp: "https://wa.me/2348027775001",
-  email: "hello@goshenshelters.org",
+  helplineDisplay: "0701 854 9218",
+  helplineTel: "+2347018549218",
+  whatsapp: "https://wa.me/2347018549218",
+  email: "info@goshenshelters.org",
   address: "Lagos, Nigeria",
   maps: "https://maps.google.com/?q=Goshen+Shelters+Lagos",
   exitUrl: "https://www.google.com/",
@@ -241,7 +242,7 @@ function Hero() {
     <section className="relative isolate overflow-hidden bg-night-950 text-cream-50">
       <div aria-hidden="false" className="absolute inset-0">
         <Image
-          src="/images/hero/hero-mobile.webp"
+          src="/images/hero_phone_portrait_lower_women.png"
           alt="A woman walking away from violence towards safety, support and restoration"
           fill
           sizes="100vw"
@@ -249,7 +250,7 @@ function Hero() {
           className="object-cover md:hidden"
         />
         <Image
-          src="/images/hero/hero-desktop.webp"
+          src="/images/hero_phone_portrait_lower_women.png"
           alt="A woman walking away from violence towards safety, support and restoration"
           fill
           sizes="100vw"
@@ -258,7 +259,7 @@ function Hero() {
       </div>
 
       <div className="absolute inset-0 bg-linear-to-r from-night-950/95 via-night-950/55 to-night-950/10" />
-      <div className="absolute inset-0 bg-linear-to-t from-night-950 via-night-950/10 to-transparent" />
+      {/* <div className="absolute inset-0 bg-linear-to-t from-night-950 via-night-950/10 to-transparent" /> */}
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="animate-float-slow absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gold-500/15 blur-3xl" />
@@ -324,10 +325,10 @@ function Hero() {
                   Confidential helpline · 24/7
                 </p>
                 <a
-                  href="tel:+2348027775001"
+                  href="tel:+2347018549218"
                   className="font-display text-2xl font-semibold text-white hover:text-gold-300"
                 >
-                  0802 777 5001
+                  0701 854 9218
                 </a>
               </div>
             </div>
@@ -362,6 +363,8 @@ function Hero() {
               </p>
             </div>
           </div>
+
+          <ScrollCue href="#discover" floating />
         </div>
       </div>
     </section>
@@ -370,7 +373,7 @@ function Hero() {
 
 function QuickActions() {
   return (
-    <section className="bg-white">
+    <section id="discover" className="scroll-mt-24 bg-white">
       <div className="mx-auto grid max-w-7xl gap-5 px-4 py-16 sm:px-6 lg:grid-cols-3">
         <Reveal>
           <HelpButton
@@ -509,7 +512,7 @@ function Impact() {
 function FounderAndSurvivor() {
   return (
     <section className="bg-cream-50">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto md:grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-16">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-700">
             Our founder&rsquo;s message
@@ -547,16 +550,15 @@ function FounderAndSurvivor() {
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-night-950 sm:text-4xl">
             From fear to freedom
           </h2>
-          <div className="relative mt-8 rounded-2xl bg-white p-8 shadow-sm">
+          <div className="relative mt-8 rounded-2xl bg-white p-4 shadow-sm">
             {/* <span
               aria-hidden="true"
               className="font-display text-6xl leading-none text-night-950/50"
             >
               &ldquo;
             </span> */}
-            <div className="mt-2">
-              <TestimonialCarousel />
-            </div>
+            <TestimonialCarousel />
+
             {/* <p className="mt-8 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-night-600">
               <ShieldIcon className="h-4 w-4 text-night-950" />
               Shared with consent — details anonymised

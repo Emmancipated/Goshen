@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { Reveal } from "@/components/reveal";
 import { DonateButton } from "@/components/donate-button";
+import { ScrollCue } from "@/components/scroll-cue";
 
 import {
   HERO_CONTENT,
@@ -62,7 +63,7 @@ export function OurWorkClient() {
           {/* Right image */}
           <div className="relative min-h-90 sm:min-h-110 lg:min-h-140">
             <Image
-              src="/images/together.jpg"
+              src="/images/round-sisters.jpg"
               alt="A woman embracing a child in a moment of safety and comfort"
               fill
               priority
@@ -80,12 +81,19 @@ export function OurWorkClient() {
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(47,27,105,0.55),transparent_38%)]" />
           </div>
         </div>
+
+        <ScrollCue
+          href="#discover"
+          className="text-white/75 hover:text-white focus-visible:outline-[#D9B94C]"
+          iconClassName="text-[#D9B94C]"
+          floating
+        />
       </section>
 
       {/* =====================================================
           WHAT WE DO
       ===================================================== */}
-      <section className="bg-[#F7F3EC]">
+      <section id="discover" className="scroll-mt-24 bg-[#F7F3EC]">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">
@@ -147,7 +155,7 @@ export function OurWorkClient() {
       <section className="relative overflow-hidden bg-[#2F1B69]">
         <div className="absolute inset-0">
           <Image
-            src="/images/steps.jpg"
+            src="/images/collage.jpg"
             alt=""
             fill
             sizes="100vw"
@@ -268,8 +276,8 @@ export function OurWorkClient() {
             <div className="relative overflow-hidden rounded-4xl bg-[#43206F] px-6 py-10 sm:px-10 sm:py-12 lg:px-14">
               <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
                 <Image
-                  src="/images/donate.jpg"
-                  alt="Women embracing in hope and encouragement"
+                  src="/images/support-hero.jpg"
+                  alt="Donation van"
                   fill
                   sizes="50vw"
                   className="object-cover object-center opacity-80"

@@ -74,7 +74,7 @@ export function ContactForm() {
             id="phone"
             name="phone"
             type="tel"
-            placeholder="0802 777 5001"
+            placeholder="0701 854 9218"
             className="mt-2 w-full rounded-xl border border-night-200 bg-cream-50 px-4 py-3 text-sm text-night-900 placeholder:text-gold-400 focus:border-night-500 focus:outline-none"
           />
         </div>
@@ -143,10 +143,10 @@ export function ContactForm() {
           Something went wrong and your message could not be sent. Please try
           again, or call us on{" "}
           <a
-            href="tel:+2348027775001"
+            href="tel:+2347018549218"
             className="font-semibold text-gold-700 underline underline-offset-2"
           >
-            0802 777 5001
+            0701 854 9218
           </a>
           .
         </p>
@@ -154,10 +154,10 @@ export function ContactForm() {
       {/* <p className="mt-4 rounded-xl bg-cream-100 p-3 text-xs leading-5 text-night-600">
         If it is not safe for you to use this form, please call{" "}
         <a
-          href="tel:+2348027775001"
+          href="tel:+2347018549218"
           className="font-semibold text-gold-700 underline underline-offset-2"
         >
-          0802 777 5001
+          0701 854 9218
         </a>{" "}
         instead, or press the{" "}
         <span className="font-semibold text-night-900">Exit</span> button and

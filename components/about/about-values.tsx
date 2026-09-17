@@ -77,7 +77,7 @@ export function AboutValues() {
                   onFocus={() => reveal(index)}
                   className={[
                     "rounded-full px-3 py-2 font-display text-base font-semibold transition-colors sm:text-lg",
-                    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500",
+                    " focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500",
                     selected
                       ? "bg-night-900 text-cream-50"
                       : "text-night-800 hover:bg-night-100",

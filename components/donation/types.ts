@@ -1,16 +1,8 @@
 export type DonationType = "once" | "monthly";
 
-export type Currency = "NGN" | "USD";
+export type Currency = "NGN" | "USD" | "GBP";
 
-export const ENABLE_USD =
-  process.env.NEXT_PUBLIC_ENABLE_USD === "1" ||
-  process.env.NEXT_PUBLIC_ENABLE_USD === "true";
-
-export type PaymentMethod =
-  | "naira-card"
-  | "usd-card"
-  | "naira-transfer"
-  | "usd-transfer";
+export type PaymentMethod = "card" | "bank-transfer";
 
 export type DonationStep =
   | "give-money"
@@ -18,6 +10,7 @@ export type DonationStep =
   | "monthly-success"
   | "payment-options"
   | "amount"
+  | "transfer-details"
   | "payment-success";
 
 export type PaymentMethodMeta = {
@@ -30,48 +23,30 @@ export type PaymentMethodMeta = {
 };
 
 export const PAYMENT_METHODS: Record<string, PaymentMethodMeta> = {
-  "naira-card": {
-    method: "naira-card",
+  card: {
+    method: "card",
     currency: "NGN",
-    label: "Pay in Naira",
-    description: "Secure card payment in Nigerian Naira",
+    label: "Pay with card",
+    description: "Secure card payment",
     isCard: true,
     isTransfer: false,
   },
 
-  "naira-transfer": {
-    method: "naira-transfer",
+  "bank-transfer": {
+    method: "bank-transfer",
     currency: "NGN",
-    label: "Transfer in Naira",
-    description: "Direct bank transfer in Nigerian Naira",
+    label: "Bank transfer",
+    description: "View our Naira, Dollar and Pound bank details",
     isCard: false,
     isTransfer: true,
   },
 };
 
-if (ENABLE_USD) {
-  PAYMENT_METHODS["usd-card"] = {
-    method: "usd-card",
-    currency: "USD",
-    label: "Pay in Dollars",
-    description: "International card payment in US Dollars",
-    isCard: true,
-    isTransfer: false,
-  };
-
-  PAYMENT_METHODS["usd-transfer"] = {
-    method: "usd-transfer",
-    currency: "USD",
-    label: "Transfer in Dollars",
-    description: "Direct bank transfer in US Dollars",
-    isCard: false,
-    isTransfer: true,
-  };
-}
-
 export const NAIRA_PRESETS = [5000, 10000, 25000, 50000, 100000];
 
 export const USD_PRESETS = [25, 50, 100, 250, 500];
+
+export const GBP_PRESETS = [10, 25, 50, 100, 250];
 
 export function getCurrency(method: PaymentMethod | null): Currency {
   if (!method) return "NGN";
@@ -80,7 +55,14 @@ export function getCurrency(method: PaymentMethod | null): Currency {
 }
 
 export function getCurrencySymbol(currency: Currency): string {
-  return currency === "NGN" ? "₦" : "$";
+  switch (currency) {
+    case "NGN":
+      return "₦";
+    case "USD":
+      return "$";
+    case "GBP":
+      return "£";
+  }
 }
 
 export function formatCurrency(
@@ -91,10 +73,15 @@ export function formatCurrency(
     typeof value === "string" ? Number(value.replace(/,/g, "")) : value;
 
   if (Number.isNaN(amount)) {
-    return currency === "NGN" ? "₦0" : "$0";
+    if (currency === "NGN") return "₦0";
+    if (currency === "USD") return "$0";
+    return "£0";
   }
 
-  return new Intl.NumberFormat(currency === "NGN" ? "en-NG" : "en-US", {
+  const locale =
+    currency === "NGN" ? "en-NG" : currency === "USD" ? "en-US" : "en-GB";
+
+  return new Intl.NumberFormat(locale, {
     style: "currency",
     currency,
     maximumFractionDigits: 0,
@@ -102,7 +89,14 @@ export function formatCurrency(
 }
 
 export function getPresets(currency: Currency): number[] {
-  return currency === "NGN" ? NAIRA_PRESETS : USD_PRESETS;
+  switch (currency) {
+    case "NGN":
+      return NAIRA_PRESETS;
+    case "USD":
+      return USD_PRESETS;
+    case "GBP":
+      return GBP_PRESETS;
+  }
 }
 
 export function getProgress(
@@ -121,6 +115,8 @@ export function getProgress(
         return { current: 4, total: 6 };
       case "amount":
         return { current: 5, total: 6 };
+      case "transfer-details":
+        return { current: 5, total: 6 };
       case "payment-success":
         return { current: 6, total: 6 };
     }
@@ -132,6 +128,8 @@ export function getProgress(
     case "payment-options":
       return { current: 2, total: 4 };
     case "amount":
+      return { current: 3, total: 4 };
+    case "transfer-details":
       return { current: 3, total: 4 };
     case "payment-success":
       return { current: 4, total: 4 };

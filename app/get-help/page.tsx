@@ -51,7 +51,7 @@ const HELPLINES = [
   },
   {
     name: "Goshen 24/7 Helpline",
-    number: "0802 777 5001",
+    number: "0701 854 9218",
     note: "Confidential, trained listeners",
   },
   {
@@ -128,10 +128,10 @@ export default function GetHelpPage() {
                     so the operator knows you need help, then leave the line
                     open. Or call Goshen on{" "}
                     <a
-                      href="tel:+2348027775001"
+                      href="tel:+2347018549218"
                       className="font-bold text-gold-400 underline underline-offset-2"
                     >
-                      0802 777 5001
+                      0701 854 9218
                     </a>{" "}
                     — confidential, 24/7.
                   </p>
@@ -144,11 +144,11 @@ export default function GetHelpPage() {
                       Call 112 now
                     </a>
                     <a
-                      href="tel:+2348027775001"
+                      href="tel:+2347018549218"
                       className="inline-flex items-center gap-2 rounded-full border border-gold-400 px-5 py-2.5 text-sm font-bold text-gold-400 transition-colors hover:bg-gold-500 hover:text-white"
                     >
                       <PhoneIcon className="h-4 w-4" />
-                      0802 777 5001
+                      0701 854 9218
                     </a>
                     {/* <a
                       href="https://www.google.com/"
@@ -242,14 +242,14 @@ export default function GetHelpPage() {
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <a
-                href="tel:+2348027775001"
+                href="tel:+2347018549218"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-gold-600"
               >
                 <PhoneIcon className="h-4 w-4" />
-                0802 777 5001
+                0701 854 9218
               </a>
               <a
-                href="https://wa.me/2348027775001"
+                href="https://wa.me/2347018549218"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-night-300 px-7 py-3.5 text-sm font-semibold text-night-600 transition-colors hover:bg-white"
@@ -332,11 +332,11 @@ export default function GetHelpPage() {
                 through it before you reach out to them.
               </p>
               <a
-                href="tel:+2348027775001"
+                href="tel:+2347018549218"
                 className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:bg-gold-600"
               >
                 <PhoneIcon className="h-4 w-4" />
-                0802 777 5001
+                0701 854 9218
               </a>
             </div>
           </Reveal>
@@ -395,7 +395,7 @@ export default function GetHelpPage() {
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                   <li className="flex items-start gap-3">
                     <ShieldIcon className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" />
-                    Call our referral line 0802 777 5001
+                    Call our referral line 0701 854 9218
                   </li>
                   <li className="flex items-start gap-3">
                     <LockIcon className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" />
@@ -461,10 +461,10 @@ export default function GetHelpPage() {
           <p className="mt-8 text-center text-sm text-night-600/80">
             If it is safer, skip the internet and call us:{" "}
             <a
-              href="tel:+2348027775001"
+              href="tel:+2347018549218"
               className="font-bold text-gold-700 underline underline-offset-4"
             >
-              0802 777 5001
+              0701 854 9218
             </a>
           </p>
         </div>
