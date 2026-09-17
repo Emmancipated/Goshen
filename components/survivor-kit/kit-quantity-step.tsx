@@ -194,7 +194,7 @@ export function KitQuantityStep({
       {/* Contact buttons */}
       <div className="grid gap-3 sm:grid-cols-2">
         <a
-          href="tel:+2348027775001"
+          href="tel:+2347018549218"
           className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#43206F] px-5 py-4 text-sm font-bold text-[#43206F] transition hover:bg-[#43206F] hover:text-white"
         >
           {/* <Phone className="h-5 w-5" /> */}
@@ -202,7 +202,7 @@ export function KitQuantityStep({
         </a>
 
         <a
-          href="https://wa.me/2348027775001"
+          href="https://wa.me/2347018549218"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#1FA855] px-5 py-4 text-sm font-bold text-[#1FA855] transition hover:bg-[#1FA855] hover:text-white"

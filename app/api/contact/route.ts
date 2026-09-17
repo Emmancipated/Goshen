@@ -1,13 +1,17 @@
 export const dynamic = "force-dynamic";
 
-const CONTACT_EMAIL = "goshenshelters2026@gmail.com";
+// const CONTACT_EMAIL = "goshenshelters2026@gmail.com";
+const CONTACT_EMAIL = "emmancipationera@gmail.com";
 
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
 
   if (!apiKey) {
     return Response.json(
-      { error: "Email service is not configured. Set RESEND_API_KEY in your environment." },
+      {
+        error:
+          "Email service is not configured. Set RESEND_API_KEY in your environment.",
+      },
       { status: 503 },
     );
   }
@@ -26,12 +30,17 @@ export async function POST(request: Request) {
   const message = String(body.message ?? "").trim();
 
   if (!name || !email || !message) {
-    return Response.json({ error: "Name, email and message are required." }, { status: 400 });
+    return Response.json(
+      { error: "Name, email and message are required." },
+      { status: 400 },
+    );
   }
 
   const html = [
     `<p><strong>Name:</strong> ${escapeHtml(name)}</p>`,
-    phone ? `<p><strong>Phone / WhatsApp:</strong> ${escapeHtml(phone)}</p>` : "",
+    phone
+      ? `<p><strong>Phone / WhatsApp:</strong> ${escapeHtml(phone)}</p>`
+      : "",
     `<p><strong>Email:</strong> ${escapeHtml(email)}</p>`,
     `<p><strong>Subject:</strong> ${escapeHtml(subject)}</p>`,
     `<p><strong>Message:</strong></p>`,
@@ -46,7 +55,9 @@ export async function POST(request: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: process.env.CONTACT_FROM_EMAIL ?? `Website Enquiries <onboarding@resend.dev>`,
+        from:
+          process.env.CONTACT_FROM_EMAIL ??
+          `Website Enquiries <onboarding@resend.dev>`,
         to: [CONTACT_EMAIL],
         replyTo: [email],
         subject: `Website enquiry: ${subject}`,
@@ -57,7 +68,10 @@ export async function POST(request: Request) {
     if (!res.ok) {
       const detail = await res.text();
       console.error("Resend API error:", detail);
-      return Response.json({ error: "Failed to send message." }, { status: 502 });
+      return Response.json(
+        { error: "Failed to send message." },
+        { status: 502 },
+      );
     }
 
     return Response.json({ ok: true });

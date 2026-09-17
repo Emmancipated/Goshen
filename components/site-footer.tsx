@@ -82,7 +82,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex items-start gap-2.5">
               <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
-              <a href="tel:+2348027775001" className="hover:text-cream-50">
+              <a href="tel:+2347018549218" className="hover:text-cream-50">
                 0701 854 9218{" "}
                 <span className="text-white/50">(24/7 helpline)</span>
               </a>
@@ -90,7 +90,7 @@ export function SiteFooter() {
             <li className="flex items-start gap-2.5">
               <WhatsAppIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
               <a
-                href="https://wa.me/2348027775001"
+                href="https://wa.me/2347018549218"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cream-50"
@@ -110,7 +110,7 @@ export function SiteFooter() {
             <li className="flex items-start gap-2.5">
               <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
               <span>
-                Head office: 45C Sobo Arobiodu Close, GRA Ikeja, Lagos
+                Admin Office: 45C Sobo Arobiodu Close, GRA Ikeja, Lagos
               </span>
             </li>
           </ul>

@@ -81,6 +81,7 @@ public/             Static assets and images
 See `.env.example`. Key variables:
 
 - `NEXT_PUBLIC_PAYSTACK_KEY` — Paystack public key (secure card donations)
+- `NEXT_PUBLIC_PAYSTACK_MONTHLY_PLAN` — optional recurring monthly plan code for Paystack subscriptions
 - `NEXT_PUBLIC_BANK_NAME` / `NEXT_PUBLIC_BANK_ACCOUNT` / `NEXT_PUBLIC_BANK_ACCOUNT_NAME` — bank transfer details
 - `NEXT_PUBLIC_FOUNDER_VIDEO` — URL of the Founder's message video (optional)
 - `RESEND_API_KEY` — for the contact form emails

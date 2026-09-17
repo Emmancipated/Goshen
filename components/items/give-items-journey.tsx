@@ -87,11 +87,11 @@ export function GiveItemsJourney({ children }: GiveItemsJourneyProps) {
       "Hello Goshen Shelters, I would like to donate items. Could you please tell me what items are currently most needed and how I can arrange delivery or collection?",
     );
 
-    window.open(`https://wa.me/2348027775001?text=${message}`, "_blank");
+    window.open(`https://wa.me/2347018549218?text=${message}`, "_blank");
   };
 
   const callShelter = () => {
-    window.location.href = "tel:+2348027775001";
+    window.location.href = "tel:+2347018549218";
   };
 
   const title = step === "give-items" ? "Give Items" : "Get in touch";

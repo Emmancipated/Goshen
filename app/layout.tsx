@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/sprouting-leaf.jpg",
+        url: "/images/hero_phone_portrait_lower_women.png",
         width: 1200,
         height: 630,
         alt: "Goshen Shelters — A safe place. A new beginning.",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Goshen Shelters — A safe place. A new beginning.",
     description:
       "Hope, shelter, healing and practical support for women escaping domestic violence. Confidential help 24/7 on 0701 854 9218.",
-    images: ["/images/steps.jpg"],
+    images: ["/images/hero_phone_portrait_lower_women.png"],
   },
 };
 

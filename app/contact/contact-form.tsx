@@ -143,7 +143,7 @@ export function ContactForm() {
           Something went wrong and your message could not be sent. Please try
           again, or call us on{" "}
           <a
-            href="tel:+2348027775001"
+            href="tel:+2347018549218"
             className="font-semibold text-gold-700 underline underline-offset-2"
           >
             0701 854 9218
@@ -154,7 +154,7 @@ export function ContactForm() {
       {/* <p className="mt-4 rounded-xl bg-cream-100 p-3 text-xs leading-5 text-night-600">
         If it is not safe for you to use this form, please call{" "}
         <a
-          href="tel:+2348027775001"
+          href="tel:+2347018549218"
           className="font-semibold text-gold-700 underline underline-offset-2"
         >
           0701 854 9218

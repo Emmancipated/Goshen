@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       "Support Goshen Shelters by donating, giving items, volunteering, partnering or fundraising. Every gift provides safety, healing and hope.",
     images: [
       {
-        url: "/images/community.jpg",
+        url: "/images/00_Master_Approved_Source.jpg",
         width: 1200,
         height: 630,
         alt: "Support Goshen Shelters — donate, volunteer, partner or fundraise",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Support Goshen",
     description:
       "Support Goshen Shelters by donating, giving items, volunteering, partnering or fundraising. Every gift provides safety, healing and hope.",
-    images: ["/images/community.jpg"],
+    images: ["/images/00_Master_Approved_Source.jpg"],
   },
 };
 

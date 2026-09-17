@@ -57,7 +57,7 @@ export default function DonatePage() {
             Donate Now
           </a>
           <a
-            href="tel:+2348027775001"
+            href="tel:+2347018549218"
             className="animate-fade-up inline-flex items-center gap-2 text-sm text-cream-100/90 transition-colors hover:text-gold-300"
             style={{ animationDelay: "250ms" }}
           >
