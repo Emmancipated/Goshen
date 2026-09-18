@@ -99,6 +99,33 @@ export function getPresets(currency: Currency): number[] {
   }
 }
 
+export function getCurrencyDefaults(currency: Currency): {
+  symbol: string;
+  placeholder: string;
+  presets: number[];
+} {
+  switch (currency) {
+    case "NGN":
+      return {
+        symbol: "₦",
+        placeholder: "50000",
+        presets: NAIRA_PRESETS,
+      };
+    case "USD":
+      return {
+        symbol: "$",
+        placeholder: "100",
+        presets: USD_PRESETS,
+      };
+    case "GBP":
+      return {
+        symbol: "£",
+        placeholder: "50",
+        presets: GBP_PRESETS,
+      };
+  }
+}
+
 export function getProgress(
   step: DonationStep,
   donationType: DonationType,
@@ -116,25 +143,25 @@ export function getProgress(
       case "amount":
         return { current: 5, total: 6 };
       case "transfer-details":
-        return { current: 5, total: 6 };
-      case "payment-success":
         return { current: 6, total: 6 };
+      case "payment-success":
+        return { current: 7, total: 7 };
     }
   }
 
   switch (step) {
     case "give-money":
-      return { current: 1, total: 4 };
+      return { current: 1, total: 5 };
     case "payment-options":
-      return { current: 2, total: 4 };
+      return { current: 2, total: 5 };
     case "amount":
-      return { current: 3, total: 4 };
+      return { current: 3, total: 5 };
     case "transfer-details":
-      return { current: 3, total: 4 };
+      return { current: 4, total: 5 };
     case "payment-success":
-      return { current: 4, total: 4 };
+      return { current: 5, total: 5 };
     default:
-      return { current: 1, total: 4 };
+      return { current: 1, total: 5 };
   }
 }
 
@@ -143,6 +170,7 @@ export type DonationState = {
   donationType: DonationType;
   email: string;
   paymentMethod: PaymentMethod | null;
+  currency: Currency;
   amount: string;
 };
 
@@ -151,5 +179,6 @@ export const INITIAL_DONATION_STATE: DonationState = {
   donationType: "once",
   email: "",
   paymentMethod: null,
+  currency: "NGN",
   amount: "",
 };
