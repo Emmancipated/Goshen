@@ -26,7 +26,7 @@ export function FounderVideo() {
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-night-950/70 via-night-950/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-night-950/70 via-night-950/20 to-transparent" />
           <span className="absolute inset-0 flex items-center justify-center">
             <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold-500 text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
               <PlayIcon className="ml-1 h-6 w-6" />
@@ -38,13 +38,22 @@ export function FounderVideo() {
         </div>
       </button>
 
-      <Modal open={open} onClose={() => setOpen(false)} labelledBy="founder-video-title" maxWidth="max-w-3xl">
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        labelledBy="founder-video-title"
+        maxWidth="max-w-3xl"
+      >
         <div className="p-6 sm:p-8">
-          <h2 id="founder-video-title" className="font-display text-xl font-semibold text-gold-700">
+          <h2
+            id="founder-video-title"
+            className="font-display text-xl font-semibold text-gold-700"
+          >
             A Message From Our Founder
           </h2>
           <p className="mt-1.5 text-sm leading-6 text-night-600">
-            Hear the story and vision behind God&rsquo;s Home for Women Foundation and Goshen Shelters.
+            Hear the story and vision behind God&rsquo;s Home for Women
+            Foundation and Goshen Shelters.
           </p>
           <div className="relative mt-5 overflow-hidden rounded-2xl bg-night-950">
             {FOUNDER_VIDEO ? (
