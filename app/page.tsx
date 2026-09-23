@@ -70,10 +70,21 @@ const PARTNERS = [
   { name: "LeadWay Assurance", src: "/images/leadway.jpeg" },
   { name: "Little Saint Orphanage", src: "/images/littlesaint.png" },
   { name: "Dsvrt", src: "/images/dsvrt.jpeg" },
+  { name: "Vivian", src: "/images/vivian_f.jpeg" },
+  { name: "Valor", src: "/images/women_of_valor.jpeg" },
+  { name: "Valor", src: "/images/Channels_TV.jpg" },
+  { name: "Chrisland", src: "/images/chrisland.jpeg" },
+  { name: "Sapetro", src: "/images/sapetro.png" },
+
   { name: "Warif1", src: "/images/warif.jpeg" },
   { name: "LeadWay Assurance1", src: "/images/leadway.jpeg" },
   { name: "Little Saint Orphanage1", src: "/images/littlesaint.png" },
   { name: "Dsvrt1", src: "/images/dsvrt.jpeg" },
+  { name: "Vivian", src: "/images/vivian_f.jpeg" },
+  { name: "Valor", src: "/images/women_of_valor.jpeg" },
+  { name: "Valor", src: "/images/Channels_TV.jpg" },
+  { name: "Chrisland", src: "/images/chrisland.jpeg" },
+  { name: "Sapetro", src: "/images/sapetro.png" },
 ];
 
 const HELP_INTRO =
