@@ -19,6 +19,7 @@ import {
   UserPlusIcon,
 } from "@/components/icons";
 import { FounderVideo } from "@/components/about/founder-video";
+import { VideoCard } from "@/components/video-card";
 
 const FOUNDER_NAME = "Mrs. Ajibola Hassan-Odukale";
 const FOUNDER_VIDEO_SRC = "/videos/founder-message.mp4";
@@ -534,13 +535,35 @@ function FounderAndSurvivor() {
           {/* <div className="mt-8">
             <FounderVideo />
           </div> */}
-          <Reveal delay={140} className="mt-8">
+          {/* <Reveal delay={140} className="mt-8">
             <FounderVideo
               founderName={FOUNDER_NAME}
               videoSrc={FOUNDER_VIDEO_SRC}
               posterSrc="/images/about.jpg"
             />
+          </Reveal> */}
+          <Reveal delay={140} className="mt-8">
+            <div className="relative overflow-hidden rounded-4xl border border-night-100 shadow-sm">
+              <div className="relative aspect-2/1.5">
+                <VideoCard
+                  src="https://61dt9kqzb4wgnoem.public.blob.vercel-storage.com/videos/1790354070357-Founder-message-video--faststart.mp4"
+                  poster="/images/founder.jpeg"
+                  title="A message of hope"
+                  className="absolute inset-0 h-full rounded-none! border-0!"
+                  fill
+                  showTitle={false}
+                  inline
+                />
+              </div>
+            </div>
           </Reveal>
+          <p className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-gold-600">
+            A message from our founder
+          </p>
+          <p className="mt-1 font-display text-lg font-semibold text-[#2F1B69]">
+            {FOUNDER_NAME}
+          </p>
+
           {/* <p className="mt-5 max-w-lg text-sm leading-7 text-night-600">
             Hear the story and vision behind God&rsquo;s Home for Women
             Foundation and Goshen Shelters.

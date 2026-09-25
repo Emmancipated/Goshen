@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { HelpModalProvider } from "@/components/help-modal-provider";
 import { DonationModalProvider } from "@/components/donation/donation-modal-provider";
 import { fontVariables } from "./fonty/font";
+import { JsonLd } from "@/components/json-ld";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -32,8 +33,7 @@ export const metadata: Metadata = {
     default: "Goshen Shelters — A safe place. A new beginning.",
     template: "%s | Goshen Shelters",
   },
-  description:
-    "God's Home for Women Foundation operates Goshen Shelters — a refuge providing hope, shelter, healing and practical support for women and children escaping domestic violence in Nigeria. Confidential help 24/7 on 0701 854 9218.",
+  description: "Hope, shelter, healing and practical support for women escaping domestic violence in Nigeria. Confidential help 24/7: 0701 854 9218.",
   keywords: [
     "domestic violence",
     "shelter",
@@ -48,16 +48,20 @@ export const metadata: Metadata = {
     "Goshen Shelters",
   ],
   metadataBase: new URL("https://goshenshelters.org"),
+  alternates: {
+    canonical: "https://www.goshenshelters.org",
+  },
   openGraph: {
     title: "Goshen Shelters — A safe place. A new beginning.",
     description:
       "Hope, shelter, healing and practical support for women escaping domestic violence. Confidential help 24/7 on 0701 854 9218.",
     url: "https://goshenshelters.org",
     siteName: "God's Home for Women Foundation",
+    locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/images/hero_phone_portrait_lower_women.png",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Goshen Shelters — A safe place. A new beginning.",
@@ -69,8 +73,10 @@ export const metadata: Metadata = {
     title: "Goshen Shelters — A safe place. A new beginning.",
     description:
       "Hope, shelter, healing and practical support for women escaping domestic violence. Confidential help 24/7 on 0701 854 9218.",
-    images: ["/images/hero_phone_portrait_lower_women.png"],
+    site: "@goshenshelters",
+    images: ["/opengraph-image.png"],
   },
+  themeColor: "#362454",
 };
 
 export default function RootLayout({
@@ -86,6 +92,29 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <HelpModalProvider>
           <DonationModalProvider>
+            <JsonLd
+              data={{
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "God's Home for Women Foundation",
+                alternateName: "Goshen Shelters",
+                description:
+                  "Hope, shelter, healing and practical support for women and children escaping domestic violence in Nigeria.",
+                url: "https://goshenshelters.org",
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  telephone: "+2347018549218",
+                  contactType: "emergency support",
+                  areaServed: "NG",
+                  availableLanguage: "English",
+                },
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Lagos",
+                  addressCountry: "NG",
+                },
+              }}
+            />
             <EmergencyBanner />
             <SiteHeader />
             <div className="flex-1">{children}</div>

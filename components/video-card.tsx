@@ -41,6 +41,7 @@ export function VideoCard({
           src={src}
           autoPlay
           playsInline
+          preload="metadata"
           poster={poster}
           className="h-full w-full object-cover"
         />
@@ -57,7 +58,7 @@ export function VideoCard({
               }
             }}
             aria-label={paused ? "Play video" : "Pause video"}
-            className="flex h-14 w-14 items-center justify-center rounded-full bg-gold-500 text-white shadow-lg transition-transform hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2"
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-gold-500 text-white shadow-lg transition-transform hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 opacity-0 transition-opacity group-hover:opacity-100 forced-colors:opacity-100"
           >
             {paused ? (
               <PlayIcon className="ml-0.5 h-5 w-5" />
@@ -74,7 +75,7 @@ export function VideoCard({
             setPlaying(false);
           }}
           aria-label="Close video"
-          className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-night-950/75 text-cream-50 shadow-lg backdrop-blur transition-colors hover:bg-night-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+          className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-night-950/75 text-cream-50 shadow-lg backdrop-blur transition-colors hover:bg-night-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 opacity-0 transition-opacity group-hover:opacity-100 forced-colors:opacity-100"
         >
           <CloseIcon className="h-4.5 w-4.5" />
         </button>
@@ -145,6 +146,7 @@ export function VideoCard({
                 src={src}
                 controls
                 playsInline
+                preload="metadata"
                 className="aspect-video w-full"
                 controlsList="play volume fullscreen"
               />

@@ -17,7 +17,7 @@ export function PolicyLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className="min-h-screen bg-[#F7F3EC] text-[#4E4742]">
       {/* Dark patterned hero header replicating reference image */}
-      <section className="relative overflow-hidden bg-[#1D1B26] py-16 text-white sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-night-950 py-16 text-white sm:py-20 lg:py-24">
         <div
           className="absolute inset-0 opacity-35 pointer-events-none"
           style={{
@@ -25,7 +25,7 @@ export function PolicyLayout({ children }: { children: React.ReactNode }) {
             backgroundSize: "24px 24px",
           }}
         />
-        <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#1D1B26]/50 to-[#1D1B26]" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-night-950/50 to-night-950" />
 
         <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>

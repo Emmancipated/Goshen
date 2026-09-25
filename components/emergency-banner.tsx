@@ -10,7 +10,6 @@ export function EmergencyBanner() {
     <div className="bg-night-950 text-cream-50">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2.5 text-sm sm:px-6">
         <p className="flex min-w-0 items-center gap-2.5">
-          <AlertIcon className="h-4 w-4 shrink-0 text-gold-400" />
           <span className="truncate">
             <span className="font-bold text-gold-400">Need urgent help?</span>{" "}
             <span className="hidden sm:inline">We are here for you — </span>

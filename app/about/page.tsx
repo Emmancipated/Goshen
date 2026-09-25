@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   },
 };
 
-const FOUNDER_NAME = "Ajibola Hassan-Odukale";
-const FOUNDER_VIDEO_SRC = "/videos/founder-message.mp4";
-
 export default function AboutPage() {
   return (
     <>
@@ -87,7 +84,8 @@ export default function AboutPage() {
               // src="/images/03_Tablet_Portrait_1200x700.jpg"
               // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
               src="/images/goshen_stop_violence_hero.png"
-              alt="group of women and children"
+              // src="/images/support_women.jpeg"
+              alt="group of women"
               fill
               priority
               // sizes="(max-width: 768px) 100vw, 50vw"
@@ -97,7 +95,8 @@ export default function AboutPage() {
               // src="/images/00_MASTER_1718x916.jpg"
               // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
               src="/images/goshen_stop_violence_hero.png"
-              alt="group of women and children"
+              // src="/images/support_women.jpeg"
+              alt="group of women"
               fill
               priority
               // sizes="(max-width: 1024px) 100vw, 50vw"
@@ -283,11 +282,11 @@ export default function AboutPage() {
       {/* Looking ahead */}
       <section className="bg-cream-50">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.95fr_1.05fr]">
-          {/* <Reveal>
+          <Reveal>
             <div className="relative overflow-hidden rounded-4xl border border-night-100 shadow-sm">
               <div className="relative aspect-4/3">
                 <VideoCard
-                  src="/march.mp4"
+                  src="https://61dt9kqzb4wgnoem.public.blob.vercel-storage.com/videos/1790355483557-About-us-video--documentary-faststart.mp4"
                   poster="/images/mobile_768px.jpg"
                   title="A message of hope"
                   className="absolute inset-0 h-full rounded-none! border-0!"
@@ -297,8 +296,8 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-          </Reveal> */}
-          <Reveal>
+          </Reveal>
+          {/* <Reveal>
             <div className="relative overflow-hidden rounded-4xl border border-night-100 shadow-sm">
               <div className="relative aspect-4/3">
                 <Image
@@ -310,7 +309,7 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-          </Reveal>
+          </Reveal> */}
 
           <Reveal delay={120}>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold-600">
