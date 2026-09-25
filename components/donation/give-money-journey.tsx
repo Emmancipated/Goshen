@@ -24,6 +24,7 @@ import {
   DonationStep,
   DonationType,
   PaymentMethod,
+  Currency,
   INITIAL_DONATION_STATE,
   getProgress,
 } from "./types";
@@ -85,6 +86,10 @@ export const GiveMoneyJourney = forwardRef<
     INITIAL_DONATION_STATE.paymentMethod,
   );
 
+  const [currency, setCurrency] = useState<Currency>(
+    INITIAL_DONATION_STATE.currency,
+  );
+
   const [amount, setAmount] = useState(INITIAL_DONATION_STATE.amount);
 
   const [processingPayment, setProcessingPayment] = useState(false);
@@ -98,6 +103,7 @@ export const GiveMoneyJourney = forwardRef<
     setDonationType("once");
     setEmail("");
     setPaymentMethod(null);
+    setCurrency("NGN");
     setAmount("");
     setProcessingPayment(false);
     setHistory([]);
@@ -148,24 +154,28 @@ export const GiveMoneyJourney = forwardRef<
   const handleEmailContinue = (value: string) => {
     setEmail(value);
     goTo("monthly-success");
+
+    try {
+      fetch("/api/monthly-pledge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: value }),
+      }).catch(() => {
+        // non-critical
+      });
+    } catch {
+      // non-critical
+    }
   };
 
   const handlePaymentMethod = (method: PaymentMethod) => {
     setPaymentMethod(method);
-
-    const isTransfer = method === "bank-transfer";
-
-    if (isTransfer) {
-      goTo("transfer-details");
-      return;
-    }
-
     goTo("amount");
   };
 
-  const paystackCurrency = "NGN";
-
-  const paystackAmountInKobo = (Number(amount) || 0) * 100;
+  const handleCurrencyChange = (newCurrency: Currency) => {
+    setCurrency(newCurrency);
+  };
 
   const {
     ready,
@@ -173,8 +183,8 @@ export const GiveMoneyJourney = forwardRef<
     pay,
   } = usePaystack({
     email: email || "info@goshenshelters.org",
-    amount: paystackAmountInKobo,
-    currency: paystackCurrency,
+    amount: (Number(amount) || 0) * 100,
+    currency,
     plan: donationType === "monthly" ? PAYSTACK_MONTHLY_PLAN || undefined : undefined,
     onSuccess: () => {
       setProcessingPayment(false);
@@ -186,9 +196,7 @@ export const GiveMoneyJourney = forwardRef<
   const handleAmountContinue = () => {
     if (!amount || !paymentMethod) return;
 
-    const isTransfer = paymentMethod === "bank-transfer";
-
-    if (isTransfer) {
+    if (paymentMethod === "bank-transfer") {
       goTo("transfer-details");
       return;
     }
@@ -198,10 +206,6 @@ export const GiveMoneyJourney = forwardRef<
       pay();
       return;
     }
-  };
-
-  const handleWhatsAppConfirm = () => {
-    goTo("payment-success");
   };
 
   const title = (() => {
@@ -325,7 +329,9 @@ export const GiveMoneyJourney = forwardRef<
                 <AmountStep
                   donationType={donationType}
                   paymentMethod={paymentMethod}
+                  currency={currency}
                   amount={amount}
+                  onCurrencyChange={handleCurrencyChange}
                   onAmountChange={setAmount}
                   onContinue={handleAmountContinue}
                 />
@@ -334,8 +340,10 @@ export const GiveMoneyJourney = forwardRef<
               {step === "transfer-details" && (
                 <TransferDetailsStep
                   donationType={donationType}
+                  currency={currency}
+                  amount={amount}
                   onBack={goBack}
-                  onConfirm={handleWhatsAppConfirm}
+                  onConfirm={() => goTo("payment-success")}
                 />
               )}
 

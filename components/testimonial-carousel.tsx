@@ -17,6 +17,11 @@ const TESTIMONIALS = [
       "When I came to Goshen Shelters, I was at a difficult point in my life and needed a safe place to rebuild. Goshen provided my children and me with care, support, encouragement and an environment where healing was possible. Through the skills training and empowerment opportunities I received, I gained confidence and the ability to pursue my dreams. Today, I am rebuilding my life with hope, peace and purpose.",
     name: "C.L.O - Status: Former Resident of Goshen Shelters",
   },
+  {
+    quote:
+      "Goshen welcomed me when I had nowhere to go,they gave me and my children a home. They gave me a safe place to stay, food, counseling, and showed me I was not alone. My life changed - I found my voice and peace again.  Today I have a small business and my children are safe in school.  My hope for the future is to go back home to South Africa, be independent and help other women find safety.",
+    name: "P.M.O - Status: Former Resident of Goshen Shelters",
+  },
 ];
 
 export function TestimonialCarousel() {

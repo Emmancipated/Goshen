@@ -1,75 +1,31 @@
 "use client";
 
+import { useState } from "react";
 import { Heart, Lock, CreditCard, Building2 } from "lucide-react";
-import { DonationType, PaymentMethod } from "./types";
+import { DonationType, PaymentMethod, Currency, getCurrencyDefaults } from "./types";
 
 type AmountStepProps = {
   donationType: DonationType;
   paymentMethod: PaymentMethod | null;
+  currency: Currency;
   amount: string;
+  onCurrencyChange: (currency: Currency) => void;
   onAmountChange: (value: string) => void;
   onContinue: () => void;
 };
 
-const NAIRA_PRESETS = ["5000", "10000", "25000", "50000", "100000"];
-const USD_PRESETS = ["25", "50", "100", "250", "500"];
-const GBP_PRESETS = ["10", "25", "50", "100", "250"];
-
-type Currency = "NGN" | "USD" | "GBP";
-
-function formatAmount(value: string, currency: Currency) {
-  if (!value) {
-    if (currency === "NGN") return "₦0";
-    if (currency === "USD") return "$0";
-    return "£0";
-  }
-
-  const number = Number(value.replace(/,/g, ""));
-
-  if (Number.isNaN(number)) {
-    if (currency === "NGN") return `₦${value}`;
-    if (currency === "USD") return `$${value}`;
-    return `£${value}`;
-  }
-
-  const locale =
-    currency === "NGN" ? "en-NG" : currency === "USD" ? "en-US" : "en-GB";
-
-  return new Intl.NumberFormat(locale, {
-    style: "currency",
-    currency,
-    maximumFractionDigits: 0,
-  }).format(number);
-}
-
 export function AmountStep({
   donationType,
   paymentMethod,
+  currency,
   amount,
+  onCurrencyChange,
   onAmountChange,
   onContinue,
 }: AmountStepProps) {
   const isTransfer = paymentMethod === "bank-transfer";
 
-  const currency: Currency = "NGN";
-  const symbol = currency === "NGN" ? "₦" : currency === "USD" ? "$" : "£";
-  const presets =
-    currency === "NGN"
-      ? NAIRA_PRESETS
-      : currency === "USD"
-        ? USD_PRESETS
-        : GBP_PRESETS;
-
-  const paymentLabel = (() => {
-    switch (paymentMethod) {
-      case "card":
-        return "Card payment";
-      case "bank-transfer":
-        return "Bank transfer";
-      default:
-        return "Selected payment method";
-    }
-  })();
+  const { symbol, placeholder } = getCurrencyDefaults(currency);
 
   const paymentIcon =
     paymentMethod === "bank-transfer" ? (
@@ -78,7 +34,32 @@ export function AmountStep({
       <CreditCard className="h-5 w-5 text-[#43206F]" />
     );
 
-  const formattedAmount = formatAmount(amount, currency);
+  function formatAmount(value: string) {
+    if (!value) return `${symbol}0`;
+
+    const number = Number(value.replace(/,/g, ""));
+
+    if (Number.isNaN(number)) {
+      return `${symbol}${value}`;
+    }
+
+    const locale =
+      currency === "NGN" ? "en-NG" : currency === "USD" ? "en-US" : "en-GB";
+
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+      maximumFractionDigits: 0,
+    }).format(number);
+  }
+
+  const formattedAmount = formatAmount(amount);
+
+  const currencies: { value: Currency; label: string }[] = [
+    { value: "NGN", label: "Naira (₦)" },
+    { value: "USD", label: "Dollar ($)" },
+    { value: "GBP", label: "Pound (£)" },
+  ];
 
   return (
     <form
@@ -172,7 +153,7 @@ export function AmountStep({
             onChange={(e) =>
               onAmountChange(e.target.value.replace(/[^0-9]/g, ""))
             }
-            placeholder="50000"
+            placeholder={placeholder}
             className="w-full rounded-2xl border border-[#E5DDD3] bg-white py-4 pl-12 pr-4 text-xl font-semibold text-[#2F1B69] outline-none transition-all focus:border-[#43206F] focus:ring-2 focus:ring-[#43206F]/10"
           />
         </div>
@@ -180,6 +161,29 @@ export function AmountStep({
         <p className="text-sm text-[#6B6560]">
           Enter the amount you would like to donate.
         </p>
+      </div>
+      {/* Currency selector */}
+      <div className="space-y-2">
+        <label
+          htmlFor="currency"
+          className="text-sm font-semibold text-[#2F1B69]"
+        >
+          Currency
+        </label>
+        <select
+          id="currency"
+          value={currency}
+          onChange={(e) =>
+            onCurrencyChange(e.target.value as Currency)
+          }
+          className="w-full rounded-2xl border border-[#E5DDD3] bg-white py-4 px-4 text-base font-semibold text-[#2F1B69] outline-none transition-all focus:border-[#43206F] focus:ring-2 focus:ring-[#43206F]/10"
+        >
+          {currencies.map((c) => (
+            <option key={c.value} value={c.value}>
+              {c.label}
+            </option>
+          ))}
+        </select>
       </div>
       {/* Donation summary */}
       <div className="rounded-3xl border border-[#F0D6D6] bg-[#FFF7F7] p-6">
