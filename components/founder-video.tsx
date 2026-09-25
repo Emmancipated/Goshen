@@ -61,6 +61,7 @@ export function FounderVideo() {
                 src={FOUNDER_VIDEO}
                 controls
                 playsInline
+                preload="metadata"
                 className="aspect-video w-full"
                 controlsList="play volume fullscreen"
               />
