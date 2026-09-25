@@ -102,27 +102,9 @@ function buildEmailHtml(
     <tr>
       <td align="center">
         <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-                    <tr>
+          <tr>
             <td style="background-color:#F7F3EC;padding:24px 40px;text-align:center;border-bottom:2px solid #E5DDD3;">
-              <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-                <tr>
-                  <td style="vertical-align:middle;padding-right:12px;">
-                    <svg width="40" height="40" viewBox="0 0 40 40" style="display:block;">
-                      <rect x="4" y="16" width="32" height="20" rx="2" fill="#362454"/>
-                      <rect x="18" y="6" width="4" height="10" fill="#362454"/>
-                      <rect x="16" y="2" width="8" height="4" rx="1" fill="#A04236"/>
-                      <rect x="10" y="22" width="5" height="14" rx="1" fill="#F7F3EC"/>
-                      <rect x="25" y="22" width="5" height="14" rx="1" fill="#F7F3EC"/>
-                      <rect x="18" y="30" width="4" height="6" rx="1" fill="#A04236"/>
-                    </svg>
-                  </td>
-                  <td style="vertical-align:middle;">
-                    <span style="font-family:Georgia,'Times New Roman',serif;font-size:20px;font-weight:700;color:#362454;letter-spacing:0.5px;">Goshen Shelters</span>
-                    <br/>
-                    <span style="font-family:Georgia,'Times New Roman',serif;font-size:13px;font-weight:600;color:#A04236;letter-spacing:1px;">FOUNDATION</span>
-                  </td>
-                </tr>
-              </table>
+              <img src="https://61dt9kqzb4wgnoem.public.blob.vercel-storage.com/images/1790359032326-GODS-HOME-FOR-WOMEN-FOUNDATION-%281%29.png" alt="Logo" width="418" height="178" style="display:block; margin:0 auto; max-width:100%; height:auto;" />
             </td>
           </tr>
           <tr>
@@ -161,7 +143,9 @@ function buildEmailHtml(
                     </table>
                   </td>
                 </tr>
-                ${phone ? `<tr>
+                ${
+                  phone
+                    ? `<tr>
                   <td style="padding:12px 0;border-bottom:1px solid #E5DDD3;">
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                       <tr>
@@ -174,7 +158,9 @@ function buildEmailHtml(
                       </tr>
                     </table>
                   </td>
-                </tr>` : ""}
+                </tr>`
+                    : ""
+                }
                 <tr>
                   <td style="padding:12px 0;border-bottom:1px solid #E5DDD3;">
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
