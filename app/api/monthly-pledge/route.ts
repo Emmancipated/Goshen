@@ -22,7 +22,10 @@ export async function POST(request: Request) {
   const email = String(body.email ?? "").trim();
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return Response.json({ error: "Valid email is required." }, { status: 400 });
+    return Response.json(
+      { error: "Valid email is required." },
+      { status: 400 },
+    );
   }
 
   try {
@@ -69,6 +72,11 @@ function buildDonorEmail(email: string): string {
 <head><meta charset="UTF-8"><title>Monthly Commitment</title></head>
 <body style="margin:0;padding:40px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:#f7f5f2;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <tr>
+      <td style="background-color:#F7F3EC;padding:24px 40px;text-align:center;border-bottom:2px solid #E5DDD3;">
+        <img src="https://61dt9kqzb4wgnoem.public.blob.vercel-storage.com/images/1790359032326-GODS-HOME-FOR-WOMEN-FOUNDATION-%281%29.png" alt="Logo" width="418" height="178" style="display:block; margin:0 auto; max-width:100%; height:auto;" />
+      </td>
+    </tr>
     <tr><td style="background-color:#2F1B69;padding:32px 40px;text-align:center;">
       <h1 style="margin:0;color:#ffffff;font-family:Georgia,serif;font-size:22px;">Thank you for your monthly commitment!</h1>
     </td></tr>
@@ -106,6 +114,11 @@ function buildTeamEmail(email: string): string {
 <head><meta charset="UTF-8"><title>New Monthly Pledge</title></head>
 <body style="margin:0;padding:40px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:#f7f5f2;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <tr>
+      <td style="background-color:#F7F3EC;padding:24px 40px;text-align:center;border-bottom:2px solid #E5DDD3;">
+        <img src="https://61dt9kqzb4wgnoem.public.blob.vercel-storage.com/images/1790359032326-GODS-HOME-FOR-WOMEN-FOUNDATION-%281%29.png" alt="Logo" width="418" height="178" style="display:block; margin:0 auto; max-width:100%; height:auto;" />
+      </td>
+    </tr>
     <tr><td style="background-color:#A04236;padding:32px 40px;text-align:center;">
       <h1 style="margin:0;color:#ffffff;font-family:Georgia,serif;font-size:22px;">New Monthly Donation Pledge</h1>
     </td></tr>

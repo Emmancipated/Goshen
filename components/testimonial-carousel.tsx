@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 const TESTIMONIALS = [
   {
@@ -77,6 +78,45 @@ export function TestimonialCarousel() {
             </figcaption>
           </figure>
         ))}
+      </div>
+      <div className="mt-2 flex items-center justify-center gap-6">
+        <button
+          type="button"
+          onClick={() => goTo(index - 1)}
+          aria-label="Previous testimonial"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-night-600 text-white/80 transition-colors hover:border-gold-500 bg-gold-500 hover:text-white"
+        >
+          <ChevronLeftIcon className="h-5 w-5" />
+        </button>
+        <div
+          className="flex items-center gap-2.5"
+          role="tablist"
+          aria-label="Testimonials"
+        >
+          {TESTIMONIALS.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              role="tab"
+              aria-selected={i === index}
+              aria-label={`Go to testimonial ${i + 1}`}
+              onClick={() => goTo(i)}
+              className={`h-2.5 rounded-full transition-all ${
+                i === index
+                  ? "w-7 bg-gold-500"
+                  : "w-2.5 bg-night-600 hover:bg-night-500"
+              }`}
+            />
+          ))}
+        </div>
+        <button
+          type="button"
+          onClick={() => goTo(index + 1)}
+          aria-label="Next testimonial"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-night-600 text-white/80 transition-colors hover:border-gold-500 bg-gold-500 hover:text-white"
+        >
+          <ChevronRightIcon className="h-5 w-5" />
+        </button>
       </div>
     </div>
   );

@@ -31,7 +31,9 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const filename = `videos/${Date.now()}-${file.name.replace(/\s+/g, "-")}`;
+  const isImage = file.type.startsWith("image/");
+  const folder = isImage ? "images" : "videos";
+  const filename = `${folder}/${Date.now()}-${file.name.replace(/\s+/g, "-")}`;
 
   try {
     const blob = await put(filename, file, {

@@ -287,7 +287,7 @@ export default function AboutPage() {
               <div className="relative aspect-4/3">
                 <VideoCard
                   src="https://61dt9kqzb4wgnoem.public.blob.vercel-storage.com/videos/1790355483557-About-us-video--documentary-faststart.mp4"
-                  poster="/images/mobile_768px.jpg"
+                  poster="/images/our_story.png"
                   title="A message of hope"
                   className="absolute inset-0 h-full rounded-none! border-0!"
                   fill
