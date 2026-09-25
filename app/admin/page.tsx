@@ -52,7 +52,7 @@ export default function AdminPage() {
       <form onSubmit={handleUpload} className="mt-8 space-y-4">
         <input
           type="file"
-          accept="video/*"
+          accept="video/*,image/*"
           onChange={(e) => setFile(e.target.files?.[0] ?? null)}
           className="block w-full text-sm text-night-600 file:mr-4 file:rounded-full file:border-0 file:bg-gold-500 file:px-4 file:py-2 file:text-xs file:font-bold file:text-white hover:file:bg-gold-600"
         />
