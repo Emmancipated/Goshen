@@ -37,7 +37,7 @@ export function TestimonialCarousel() {
   useEffect(() => {
     timer.current = setInterval(() => {
       setIndex((i) => (i + 1) % TESTIMONIALS.length);
-    }, 4000);
+    }, 15000);
     return () => {
       if (timer.current) clearInterval(timer.current);
     };

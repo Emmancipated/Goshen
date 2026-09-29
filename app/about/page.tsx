@@ -83,7 +83,8 @@ export default function AboutPage() {
             <Image
               // src="/images/03_Tablet_Portrait_1200x700.jpg"
               // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
-              src="/images/goshen_stop_violence_hero.png"
+              // src="/images/goshen_stop_violence_hero.png"
+              src="/images/Mobile_1080x810.jpg"
               // src="/images/support_women.jpeg"
               alt="group of women"
               fill
@@ -94,7 +95,8 @@ export default function AboutPage() {
             <Image
               // src="/images/00_MASTER_1718x916.jpg"
               // src="/images/00_MASTER_APPROVED_GROUP_PHOTO_1536x1024.jpg"
-              src="/images/goshen_stop_violence_hero.png"
+              // src="/images/goshen_stop_violence_hero.png"
+              src="/images/Mobile_1080x810.jpg"
               // src="/images/support_women.jpeg"
               alt="group of women"
               fill
@@ -293,6 +295,7 @@ export default function AboutPage() {
                   fill
                   showTitle={false}
                   inline
+                  showCountdown
                 />
               </div>
             </div>
