@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { StatCounter } from "@/components/stat-counter";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
-// import { FounderVideo } from "@/components/founder-video";
 import { HelpButton } from "@/components/help-button";
 import { useDonationModal } from "@/components/donation/donation-modal-provider";
 import { ScrollCue } from "@/components/scroll-cue";
@@ -16,13 +15,10 @@ import {
   PhoneIcon,
   ShieldIcon,
   SparklesIcon,
-  UserPlusIcon,
 } from "@/components/icons";
-import { FounderVideo } from "@/components/about/founder-video";
 import { VideoCard } from "@/components/video-card";
 
 const FOUNDER_NAME = "Mrs. Ajibola Hassan-Odukale";
-const FOUNDER_VIDEO_SRC = "/videos/founder-message.mp4";
 
 const SITE = {
   helplineDisplay: "0701 854 9218",
@@ -76,6 +72,7 @@ const PARTNERS = [
   { name: "Valor", src: "/images/Channels_TV.jpg" },
   { name: "Chrisland", src: "/images/chrisland.jpeg" },
   { name: "Sapetro", src: "/images/sapetro.png" },
+  { name: "Allied", src: "/images/allied_computers.png" },
 
   { name: "Warif1", src: "/images/warif.jpeg" },
   { name: "LeadWay Assurance1", src: "/images/leadway.jpeg" },
@@ -86,6 +83,7 @@ const PARTNERS = [
   { name: "Valor", src: "/images/Channels_TV.jpg" },
   { name: "Chrisland", src: "/images/chrisland.jpeg" },
   { name: "Sapetro", src: "/images/sapetro.png" },
+  { name: "Allied", src: "/images/allied_computers.png" },
 ];
 
 const HELP_INTRO =
@@ -553,6 +551,7 @@ function FounderAndSurvivor() {
                   fill
                   showTitle={false}
                   inline
+                  showCountdown
                 />
               </div>
             </div>
