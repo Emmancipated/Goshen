@@ -1,8 +1,6 @@
 export const dynamic = "force-dynamic";
 
-// const CONTACT_EMAIL = "goshenshelters2026@gmail.com";
-const CONTACT_EMAIL = "emmancipationera@gmail.com";
-
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "info@goshenshelters.org";
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
 
